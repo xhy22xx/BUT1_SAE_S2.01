@@ -1,9 +1,7 @@
 ﻿Public Class Form1
     Private Sub btnLancer_Click(sender As Object, e As EventArgs) Handles btnLancer.Click
         If cbxNom.Text.Length >= 3 Then
-
-            'Entrer dans le formulaire JEU
-
+            Form2.Show()
         End If
     End Sub
 
