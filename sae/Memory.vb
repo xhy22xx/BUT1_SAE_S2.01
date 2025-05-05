@@ -3,4 +3,8 @@
         Dim choix As MsgBoxResult = MsgBox("Êtes vous sûr de vouloir abandonner la partie en cours?", MsgBoxStyle.YesNo, "Confirmation")
         If choix = vbYes Then End
     End Sub
+
+
+
+    jhgfdsqsdfghjk
 End Class
