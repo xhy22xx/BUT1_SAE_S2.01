@@ -1,7 +1,9 @@
 ﻿Public Class Form1
     Private Sub btnLancer_Click(sender As Object, e As EventArgs) Handles btnLancer.Click
         If cbxNom.Text.Length >= 3 Then
-            Form2.Show()
+            Dim nom As String = cbxNom.Text
+            Memory.Show()
+            Memory.Label2.Text = nom
         End If
     End Sub
 
