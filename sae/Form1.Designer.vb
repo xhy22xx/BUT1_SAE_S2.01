@@ -22,64 +22,64 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        cbxNom = New ComboBox()
+        cbxNoms = New ComboBox()
         btnLancer = New Button()
         btnQuitter = New Button()
-        btnAfficher = New Button()
+        btnAfficherScore = New Button()
         SuspendLayout()
         ' 
-        ' cbxNom
+        ' cbxNoms
         ' 
-        cbxNom.FormattingEnabled = True
-        cbxNom.Location = New Point(168, 130)
-        cbxNom.Name = "cbxNom"
-        cbxNom.Size = New Size(242, 40)
-        cbxNom.TabIndex = 0
+        cbxNoms.FormattingEnabled = True
+        cbxNoms.Location = New Point(155, 122)
+        cbxNoms.Name = "cbxNoms"
+        cbxNoms.Size = New Size(224, 38)
+        cbxNoms.TabIndex = 0
         ' 
         ' btnLancer
         ' 
-        btnLancer.Location = New Point(260, 464)
+        btnLancer.Location = New Point(240, 435)
         btnLancer.Name = "btnLancer"
-        btnLancer.Size = New Size(150, 46)
+        btnLancer.Size = New Size(138, 43)
         btnLancer.TabIndex = 1
         btnLancer.Text = "Lancement"
         btnLancer.UseVisualStyleBackColor = True
         ' 
         ' btnQuitter
         ' 
-        btnQuitter.Location = New Point(582, 464)
+        btnQuitter.Location = New Point(537, 435)
         btnQuitter.Name = "btnQuitter"
-        btnQuitter.Size = New Size(150, 46)
+        btnQuitter.Size = New Size(138, 43)
         btnQuitter.TabIndex = 2
         btnQuitter.Text = "Quitter"
         btnQuitter.UseVisualStyleBackColor = True
         ' 
-        ' btnAfficher
+        ' btnAfficherScore
         ' 
-        btnAfficher.Location = New Point(887, 464)
-        btnAfficher.Name = "btnAfficher"
-        btnAfficher.Size = New Size(150, 46)
-        btnAfficher.TabIndex = 3
-        btnAfficher.Text = "Affichage"
-        btnAfficher.UseVisualStyleBackColor = True
+        btnAfficherScore.Location = New Point(819, 435)
+        btnAfficherScore.Name = "btnAfficherScore"
+        btnAfficherScore.Size = New Size(138, 43)
+        btnAfficherScore.TabIndex = 3
+        btnAfficherScore.Text = "Affichage"
+        btnAfficherScore.UseVisualStyleBackColor = True
         ' 
         ' Form1
         ' 
-        AutoScaleDimensions = New SizeF(13F, 32F)
+        AutoScaleDimensions = New SizeF(12F, 30F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1323, 730)
-        Controls.Add(btnAfficher)
+        ClientSize = New Size(1221, 684)
+        Controls.Add(btnAfficherScore)
         Controls.Add(btnQuitter)
         Controls.Add(btnLancer)
-        Controls.Add(cbxNom)
+        Controls.Add(cbxNoms)
         Name = "Form1"
-        Text = "Form1"
+        Text = "Accueil"
         ResumeLayout(False)
     End Sub
 
-    Friend WithEvents cbxNom As ComboBox
+    Friend WithEvents cbxNoms As ComboBox
     Friend WithEvents btnLancer As Button
     Friend WithEvents btnQuitter As Button
-    Friend WithEvents btnAfficher As Button
+    Friend WithEvents btnAfficherScore As Button
 
 End Class
