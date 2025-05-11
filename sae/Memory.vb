@@ -12,27 +12,14 @@
     Private Sub Memory_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Timer1.Start()
         time = 61
-        listeImages.Add(My.Resources.Celebi)
-        listeImages.Add(My.Resources.Celebi)
-        listeImages.Add(My.Resources.Celebi)
-        listeImages.Add(My.Resources.Celebi)
-        listeImages.Add(My.Resources.Mew)
-        listeImages.Add(My.Resources.Mew)
-        listeImages.Add(My.Resources.Mew)
-        listeImages.Add(My.Resources.Mew)
-        listeImages.Add(My.Resources.Marill)
-        listeImages.Add(My.Resources.Marill)
-        listeImages.Add(My.Resources.Marill)
-        listeImages.Add(My.Resources.Marill)
-        listeImages.Add(My.Resources.Dracaufeu)
-        listeImages.Add(My.Resources.Dracaufeu)
-        listeImages.Add(My.Resources.Dracaufeu)
-        listeImages.Add(My.Resources.Dracaufeu)
-        listeImages.Add(My.Resources.Evoli)
-        listeImages.Add(My.Resources.Evoli)
-        listeImages.Add(My.Resources.Evoli)
-        listeImages.Add(My.Resources.Evoli)
-
+        listeImages.Clear()
+        listeImages.AddRange({My.Resources.Celebi, My.Resources.Mew, My.Resources.Marill,
+                              My.Resources.Dracaufeu, My.Resources.Evoli})
+        listeImages.AddRange(listeImages)
+        listeImages.AddRange(listeImages)
+        listeImages.AddRange(listeImages)
+        Dim rand As New Random()
+        listeImages = listeImages.OrderBy(Function() rand.Next()).ToList()
 
     End Sub
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
@@ -53,7 +40,11 @@
 
     End Sub
 
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click,
+        PictureBox2.Click, PictureBox3.Click, PictureBox4.Click, PictureBox5.Click, PictureBox6.Click,
+        PictureBox7.Click, PictureBox8.Click, PictureBox9.Click, PictureBox10.Click, PictureBox11.Click, PictureBox12.Click,
+        PictureBox13.Click, PictureBox14.Click, PictureBox15.Click, PictureBox16.Click, PictureBox17.Click,
+        PictureBox18.Click, PictureBox19.Click, PictureBox20.Click
 
     End Sub
 End Class
