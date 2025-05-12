@@ -50,6 +50,7 @@ Partial Class Memory
         PictureBox3 = New PictureBox()
         PictureBox2 = New PictureBox()
         PictureBox1 = New PictureBox()
+        Timer2 = New Timer(components)
         TableLayoutPanel1.SuspendLayout()
         CType(PictureBox20, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox19, ComponentModel.ISupportInitialize).BeginInit()
@@ -131,10 +132,10 @@ Partial Class Memory
         TableLayoutPanel1.BackColor = SystemColors.ButtonHighlight
         TableLayoutPanel1.CellBorderStyle = TableLayoutPanelCellBorderStyle.Inset
         TableLayoutPanel1.ColumnCount = 4
-        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 25.0F))
-        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 25.0F))
-        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 25.0F))
-        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 25.0F))
+        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 25F))
+        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 25F))
+        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 25F))
+        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 25F))
         TableLayoutPanel1.Controls.Add(PictureBox20, 3, 4)
         TableLayoutPanel1.Controls.Add(PictureBox19, 2, 4)
         TableLayoutPanel1.Controls.Add(PictureBox18, 1, 4)
@@ -158,11 +159,11 @@ Partial Class Memory
         TableLayoutPanel1.Location = New Point(153, 89)
         TableLayoutPanel1.Name = "TableLayoutPanel1"
         TableLayoutPanel1.RowCount = 5
-        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 20.0F))
-        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 20.0F))
-        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 20.0F))
-        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 20.0F))
-        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 20.0F))
+        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 20F))
+        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 20F))
+        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 20F))
+        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 20F))
+        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 20F))
         TableLayoutPanel1.Size = New Size(463, 688)
         TableLayoutPanel1.TabIndex = 5
         ' 
@@ -406,9 +407,12 @@ Partial Class Memory
         PictureBox1.TabIndex = 0
         PictureBox1.TabStop = False
         ' 
+        ' Timer2
+        ' 
+        ' 
         ' Memory
         ' 
-        AutoScaleDimensions = New SizeF(10.0F, 25.0F)
+        AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = SystemColors.Control
         ClientSize = New Size(799, 825)
@@ -473,4 +477,5 @@ Partial Class Memory
     Friend WithEvents PictureBox11 As PictureBox
     Friend WithEvents PictureBox10 As PictureBox
     Friend WithEvents PictureBox9 As PictureBox
+    Friend WithEvents Timer2 As Timer
 End Class

@@ -2,6 +2,8 @@
     Dim time As Integer
     Dim listeImages As New List(Of Image)
     Dim listeCartes As New List(Of PictureBox)
+    Dim listeCartesFlipped As New List(Of PictureBox)
+    Dim compteurCarteRetournee As Integer
 
 
     Private Sub btnAbandon_Click(sender As Object, e As EventArgs) Handles btnAbandon.Click
@@ -75,7 +77,28 @@
         Dim pbCliquee As PictureBox = CType(sender, PictureBox)
         Dim nom As String = pbCliquee.Name
         pbCliquee.Image = listeImages(listeCartes.IndexOf(pbCliquee))
+        listeCartesFlipped.Add(pbCliquee)
+        compteurCarteRetournee += 1
+
+        If compteurCarteRetournee >= 3 Then
+            For Each pb As PictureBox In listeCartesFlipped
+                If Not pbCliquee.Image.Equals(pb.Image) Then
+                    Timer2.Start()
+                    For Each pbF As PictureBox In listeCartesFlipped
+                        pbF.Image = My.Resources.Carte_pokemon_dos
+                    Next
+                    compteurCarteRetournee = 0
+                    listeCartesFlipped.Clear()
+                    Exit For
+                End If
+            Next
+        End If
+        If compteurCarteRetournee = 4 Then
+            listeCartesFlipped.Clear()
+            compteurCarteRetournee = 0
+        End If
 
 
     End Sub
+
 End Class
