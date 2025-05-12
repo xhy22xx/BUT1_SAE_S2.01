@@ -1,7 +1,37 @@
 ﻿Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 
 Public Class FormScores
+
+    Dim tnoms() As String = {"le russe", "paracétamol", "amoxiciline", "doliprane", "smecta", "protagoniste", "sarah", "fitia", "eva", "celia"}
+
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ComboBoxJoueur.Items.AddRange(tnoms)
+        LstJoueurs.Items.Add("sarah")
+        LstJoueurs.Items.Add("celia")
+        LstJoueurs.Items.Add("fitia")
+        LstJoueurs.Items.Add("eva")
+
+        LstCarres.Items.Add(2)
+        LstCarres.Items.Add(2)
+        LstCarres.Items.Add(3)
+        LstCarres.Items.Add(3)
+
+        LstTempsM.Items.Add(60)
+        LstTempsM.Items.Add(50)
+        LstTempsM.Items.Add(45)
+        LstTempsM.Items.Add(60)
+
+        LstParties.Items.Add(3)
+        LstParties.Items.Add(6)
+        LstParties.Items.Add(9)
+        LstParties.Items.Add(5)
+
+        LstTempsT.Items.Add(180)
+        LstTempsT.Items.Add(200)
+        LstTempsT.Items.Add(270)
+        LstTempsT.Items.Add(300)
+
+
 
     End Sub
 
