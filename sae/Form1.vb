@@ -1,4 +1,6 @@
-﻿Public Class Form1
+﻿Imports System.Diagnostics.Eventing.Reader
+
+Public Class Form1
 
     Dim tnoms() As String = {"le russe", "paracétamol", "amoxiciline", "doliprane", "smecta", "protagoniste", "sarah", "fitia", "eva", "celia"}
 
@@ -11,27 +13,21 @@
     End Sub
 
     Private Sub btnLancer_Click(sender As Object, e As EventArgs) Handles btnLancer.Click
-        Dim nomValide As Boolean = False
-
-        If cbxNoms.Text.Length < 3 Then
-            Exit Sub
-        End If
-
-        For Each s As String In tnoms
-            If s = cbxNoms.Text Then
-                nomValide = True
-                Exit For
-            End If
-        Next
-
-        If nomValide = False Then
+        If cbxNoms.Text = "" Then
+            MsgBox("Nom obligatoire.")
             cbxNoms.Focus()
             Exit Sub
         End If
 
-        Dim nom As String = cbxNoms.Text
-        Memory.Show()
-        Memory.Label2.Text = nom
+        If cbxNoms.Text.Length < 3 Then
+            MsgBox("Veuillez entrez un nom d’au moins 3 caractères.", MsgBoxStyle.Information, "Nom invalide")
+            cbxNoms.Focus()
+
+        Else
+            Dim nom As String = cbxNoms.Text
+            Memory.Show()
+            Memory.Label2.Text = nom
+        End If
 
     End Sub
 
@@ -43,4 +39,14 @@
     Private Sub btnAfficherScore_Click(sender As Object, e As EventArgs) Handles btnAfficherScore.Click
         FormScores.Show()
     End Sub
+
+
+    Private Sub cbxNoms_alphabet(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles cbxNoms.KeyPress
+        If e.KeyChar = vbBack Then Exit Sub
+        If Not Char.IsLetter(e.KeyChar) Then
+            e.Handled = True
+
+        End If
+    End Sub
+
 End Class
