@@ -83,10 +83,10 @@
         listeCartesFlipped.Add(pbCliquee)
         compteurCarteRetournee += 1
 
-        If compteurCarteRetournee >= 3 Then
+        If compteurCarteRetournee >= 2 Then
             For Each pb As PictureBox In listeCartesFlipped
                 If Not pbCliquee.Image.Equals(pb.Image) Then
-                    Timer2.Start()
+                    Task.Delay(600).Wait()
                     For Each pbF As PictureBox In listeCartesFlipped
                         pbF.Image = My.Resources.Carte_pokemon_dos
                     Next
@@ -97,11 +97,15 @@
             Next
         End If
         If compteurCarteRetournee = 4 Then
+            For Each pbTrouvé As PictureBox In listeCartesFlipped
+                pbTrouvé.Enabled = False
+            Next
             listeCartesFlipped.Clear()
             compteurCarteRetournee = 0
         End If
 
 
     End Sub
+
 
 End Class
