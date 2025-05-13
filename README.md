@@ -1,5 +1,5 @@
 # SAÉ S2.01 - Développement d'une application
-Réaliser en période D: Mai 2025 - Juin 2025.
+Réaliser en période D: Mai 2025.
 
 Nous avons réalisé ce projet avec une équipe de 4 étudiantes.
 
