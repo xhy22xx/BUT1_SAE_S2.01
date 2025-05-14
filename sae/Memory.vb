@@ -4,22 +4,27 @@
     Dim listeCartes As New List(Of PictureBox)
     Dim listeCartesFlipped As New List(Of PictureBox)
     Dim compteurCarteRetournee As Integer
-
+    Dim pointsJoueur As Integer
+    Dim tempsJoueur As Integer
 
     Private Sub btnAbandon_Click(sender As Object, e As EventArgs) Handles btnAbandon.Click
         Dim choix As MsgBoxResult = MsgBox("Êtes vous sûr de vouloir abandonner la partie en cours?", MsgBoxStyle.YesNo, "Confirmation")
         If choix = vbYes Then
             Me.Hide()
             Form1.Show()
+            For Each pbF As PictureBox In listeCartesFlipped
+                pbF.Image = My.Resources.Carte_pokemon_dos
+            Next
         End If
     End Sub
 
     Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
     End Sub
     Private Sub Memory_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Timer1.Start()
-        time = 61
+        pointsJoueur = 0
+        tempsJoueur = 0
         'j'ajoute nos images dans une liste
+        Label4.Text = "1:00"
         listeImages.Clear()
         listeImages.AddRange({My.Resources.Celebi, My.Resources.Mew, My.Resources.Marill,
                               My.Resources.Dracaufeu, My.Resources.Evoli})
@@ -56,7 +61,8 @@
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         Timer1.Start()
         Timer1.Interval = 1000
-        time = time - 1
+        time -= 1
+        tempsJoueur += 1
         Dim minutes As Integer = time \ 60
         Dim secondes As Integer = (time Mod 60)
         If Label4.Text = "0:01" Then
@@ -67,15 +73,15 @@
         Label4.Text = minutes.ToString("0") & ":" & secondes.ToString("00")
     End Sub
 
-    Private Sub TableLayoutPanel1_Paint(sender As Object, e As PaintEventArgs) Handles TableLayoutPanel1.Paint
-
-    End Sub
-
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click,
         PictureBox2.Click, PictureBox3.Click, PictureBox4.Click, PictureBox5.Click, PictureBox6.Click,
         PictureBox7.Click, PictureBox8.Click, PictureBox9.Click, PictureBox10.Click, PictureBox11.Click, PictureBox12.Click,
         PictureBox13.Click, PictureBox14.Click, PictureBox15.Click, PictureBox16.Click, PictureBox17.Click,
         PictureBox18.Click, PictureBox19.Click, PictureBox20.Click
+        If Not Timer1.Enabled Then
+            time = 120
+            Timer1.Start()
+        End If
 
         Dim pbCliquee As PictureBox = CType(sender, PictureBox)
         Dim nom As String = pbCliquee.Name
@@ -86,7 +92,7 @@
         If compteurCarteRetournee >= 2 Then
             For Each pb As PictureBox In listeCartesFlipped
                 If Not pbCliquee.Image.Equals(pb.Image) Then
-                    Task.Delay(600).Wait()
+                    Task.Delay(500).Wait()
                     For Each pbF As PictureBox In listeCartesFlipped
                         pbF.Image = My.Resources.Carte_pokemon_dos
                     Next
@@ -102,8 +108,12 @@
             Next
             listeCartesFlipped.Clear()
             compteurCarteRetournee = 0
+            pointsJoueur += 1
         End If
 
+        If pointsJoueur = 5 Or Label4.Text.Equals("0:00") Then
+            Timer1.Stop()
+        End If
 
     End Sub
 

@@ -2,14 +2,15 @@
 
 Public Class Form1
 
-    Dim tnoms() As String = {"le russe", "paracétamol", "amoxiciline", "doliprane", "smecta", "protagoniste", "sarah", "fitia", "eva", "celia"}
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim i As Integer = 0
-        For Each s As String In tnoms
-            cbxNoms.Items.Add(tnoms(i))
-            i += 1
-        Next
+        Dim noms As PERS() = Module_Enregistrement.GetPersonnes()
+
+        If noms IsNot Nothing Then
+            For Each s As PERS In noms
+                cbxNoms.Items.Add(s)
+            Next
+        End If
     End Sub
 
     Private Sub btnLancer_Click(sender As Object, e As EventArgs) Handles btnLancer.Click
