@@ -11,6 +11,18 @@ Public Class Form1
                 cbxNoms.Items.Add(s.Nom)
             Next
         End If
+
+        'Initialisation des radiobuttons à mettre dans le Form1, les Rbtn ne seront pas initialisée si on ne va pas sur options puis on valide.
+        FormOptions.RbtnFacile.Checked = True
+        FormOptions.RbtnFacile.PerformClick()
+
+        FormOptions.RbtnL1.Checked = True
+        FormOptions.RbtnL1.PerformClick()
+
+        FormOptions.RbtnX1.Checked = True
+        FormOptions.RbtnX1.PerformClick()
+
+
     End Sub
 
     Private Sub btnLancer_Click(sender As Object, e As EventArgs) Handles btnLancer.Click
@@ -26,11 +38,24 @@ Public Class Form1
 
         Else
             Dim name As String = cbxNoms.Text
-            Memory.Show()
             Module_Enregistrement.AJOUT(name)
-            Memory.Label2.Text = name
-        End If
 
+            If FormOptions.RbtnFacile.Checked = True Then
+                Memory.Show()
+                Memory.Label2.Text = name    'Faudrait renommer ca!!
+            ElseIf FormOptions.RbtnMoyen.Checked = True Then
+                'Memory2.Show()
+                'Memory........
+                MsgBox("Memory niv moyen pas encore créer")
+            ElseIf FormOptions.RbtnDifficile.Checked = True Then
+                'Memory3.Show()
+                'Memory........
+                MsgBox("Memory niv difficile pas encore créer")
+            Else
+                'Normalement il n'affiche pas ca 
+                MsgBox("Erreur. Niveau de difficulté non choisit. Aller sur options et choisir le niveau.")
+            End If
+        End If
     End Sub
 
     Private Sub btnQuitter_Click(sender As Object, e As EventArgs) Handles btnQuitter.Click
@@ -64,6 +89,6 @@ Public Class Form1
 
 
     Private Sub btnOptions_Click(sender As Object, e As EventArgs) Handles btnOptions.Click
-        Options.Show()
+        FormOptions.Show()
     End Sub
 End Class

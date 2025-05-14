@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Options
+Partial Class FormOptions
     Inherits System.Windows.Forms.Form
 
     'Form remplace la méthode Dispose pour nettoyer la liste des composants.
@@ -37,6 +37,7 @@ Partial Class Options
         RbtnX3 = New RadioButton()
         RbtnX2 = New RadioButton()
         RbtnX1 = New RadioButton()
+        btnValidation = New Button()
         pnlOp1.SuspendLayout()
         pnlOp2.SuspendLayout()
         pnlOp3.SuspendLayout()
@@ -198,18 +199,28 @@ Partial Class Options
         RbtnX1.Text = "type 1"
         RbtnX1.UseVisualStyleBackColor = True
         ' 
-        ' Options
+        ' btnValidation
+        ' 
+        btnValidation.Location = New Point(164, 410)
+        btnValidation.Name = "btnValidation"
+        btnValidation.Size = New Size(75, 23)
+        btnValidation.TabIndex = 7
+        btnValidation.Text = "Valider"
+        btnValidation.UseVisualStyleBackColor = True
+        ' 
+        ' FormOptions
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(413, 454)
+        Controls.Add(btnValidation)
         Controls.Add(Label1)
         Controls.Add(pnlOp3)
         Controls.Add(lblL)
         Controls.Add(pnlOp2)
         Controls.Add(lblDifficulte)
         Controls.Add(pnlOp1)
-        Name = "Options"
+        Name = "FormOptions"
         Text = "Options"
         pnlOp1.ResumeLayout(False)
         pnlOp1.PerformLayout()
@@ -236,4 +247,5 @@ Partial Class Options
     Friend WithEvents RbtnX3 As RadioButton
     Friend WithEvents RbtnX2 As RadioButton
     Friend WithEvents RbtnX1 As RadioButton
+    Friend WithEvents btnValidation As Button
 End Class

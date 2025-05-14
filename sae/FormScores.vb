@@ -1,11 +1,11 @@
 ﻿Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 
 Public Class FormScores
-
+    'Faudrait enlever ca
     Dim tnoms() As String = {"le russe", "paracétamol", "amoxiciline", "doliprane", "smecta", "protagoniste", "sarah", "fitia", "eva", "celia"}
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ComboBoxJoueur.Items.AddRange(tnoms)
+        ComboBoxJoueur.Items.AddRange(tnoms) 'A enlever aussi
         LstJoueurs.Items.Add("sarah")
         LstJoueurs.Items.Add("celia")
         LstJoueurs.Items.Add("fitia")
