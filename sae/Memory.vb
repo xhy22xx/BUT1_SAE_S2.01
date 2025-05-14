@@ -1,5 +1,5 @@
 ﻿Public Class Memory
-    Dim time As Integer
+    Dim time As Integer = 60
     Dim listeImages As New List(Of Image)
     Dim listeCartes As New List(Of PictureBox)
     Dim listeCartesFlipped As New List(Of PictureBox)
@@ -10,11 +10,8 @@
     Private Sub btnAbandon_Click(sender As Object, e As EventArgs) Handles btnAbandon.Click
         Dim choix As MsgBoxResult = MsgBox("Êtes vous sûr de vouloir abandonner la partie en cours?", MsgBoxStyle.YesNo, "Confirmation")
         If choix = vbYes Then
-            Me.Hide()
+            Me.Close()
             Form1.Show()
-            For Each pbF As PictureBox In listeCartesFlipped
-                pbF.Image = My.Resources.Carte_pokemon_dos
-            Next
         End If
     End Sub
 
@@ -23,8 +20,10 @@
     Private Sub Memory_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         pointsJoueur = 0
         tempsJoueur = 0
+        Dim minutes As Integer = time \ 60
+        Dim secondes As Integer = (time Mod 60)
+        Label4.Text = minutes.ToString("0") & ":" & secondes.ToString("00")
         'j'ajoute nos images dans une liste
-        Label4.Text = "1:00"
         listeImages.Clear()
         listeImages.AddRange({My.Resources.Celebi, My.Resources.Mew, My.Resources.Marill,
                               My.Resources.Dracaufeu, My.Resources.Evoli})
@@ -65,7 +64,7 @@
         tempsJoueur += 1
         Dim minutes As Integer = time \ 60
         Dim secondes As Integer = (time Mod 60)
-        If Label4.Text = "0:01" Then
+        If Label4.Text = "0:00" Then
             Timer1.Enabled = False
             MsgBox("Temps écoulé!")
             Timer1.Stop()
@@ -79,7 +78,6 @@
         PictureBox13.Click, PictureBox14.Click, PictureBox15.Click, PictureBox16.Click, PictureBox17.Click,
         PictureBox18.Click, PictureBox19.Click, PictureBox20.Click
         If Not Timer1.Enabled Then
-            time = 120
             Timer1.Start()
         End If
 
@@ -92,7 +90,7 @@
         If compteurCarteRetournee >= 2 Then
             For Each pb As PictureBox In listeCartesFlipped
                 If Not pbCliquee.Image.Equals(pb.Image) Then
-                    Task.Delay(500).Wait()
+                    Task.Delay(400).Wait()
                     For Each pbF As PictureBox In listeCartesFlipped
                         pbF.Image = My.Resources.Carte_pokemon_dos
                     Next
