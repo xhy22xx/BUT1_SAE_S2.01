@@ -26,12 +26,13 @@ Partial Class Form1
         btnLancer = New Button()
         btnQuitter = New Button()
         btnAfficherScore = New Button()
+        btnOptions = New Button()
         SuspendLayout()
         ' 
         ' cbxNoms
         ' 
         cbxNoms.FormattingEnabled = True
-        cbxNoms.Location = New Point(90, 61)
+        cbxNoms.Location = New Point(90, 115)
         cbxNoms.Margin = New Padding(2)
         cbxNoms.Name = "cbxNoms"
         cbxNoms.Size = New Size(132, 23)
@@ -39,39 +40,49 @@ Partial Class Form1
         ' 
         ' btnLancer
         ' 
-        btnLancer.Location = New Point(140, 218)
+        btnLancer.Location = New Point(90, 244)
         btnLancer.Margin = New Padding(2)
         btnLancer.Name = "btnLancer"
-        btnLancer.Size = New Size(80, 22)
+        btnLancer.Size = New Size(89, 38)
         btnLancer.TabIndex = 1
         btnLancer.Text = "Lancement"
         btnLancer.UseVisualStyleBackColor = True
         ' 
         ' btnQuitter
         ' 
-        btnQuitter.Location = New Point(313, 218)
+        btnQuitter.Location = New Point(237, 244)
         btnQuitter.Margin = New Padding(2)
         btnQuitter.Name = "btnQuitter"
-        btnQuitter.Size = New Size(80, 22)
+        btnQuitter.Size = New Size(89, 38)
         btnQuitter.TabIndex = 2
         btnQuitter.Text = "Quitter"
         btnQuitter.UseVisualStyleBackColor = True
         ' 
         ' btnAfficherScore
         ' 
-        btnAfficherScore.Location = New Point(478, 218)
+        btnAfficherScore.Location = New Point(385, 244)
         btnAfficherScore.Margin = New Padding(2)
         btnAfficherScore.Name = "btnAfficherScore"
-        btnAfficherScore.Size = New Size(80, 22)
+        btnAfficherScore.Size = New Size(89, 38)
         btnAfficherScore.TabIndex = 3
         btnAfficherScore.Text = "Affichage"
         btnAfficherScore.UseVisualStyleBackColor = True
         ' 
+        ' btnOptions
+        ' 
+        btnOptions.Location = New Point(488, 12)
+        btnOptions.Name = "btnOptions"
+        btnOptions.Size = New Size(75, 23)
+        btnOptions.TabIndex = 4
+        btnOptions.Text = "Options"
+        btnOptions.UseVisualStyleBackColor = True
+        ' 
         ' Form1
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(712, 342)
+        ClientSize = New Size(585, 365)
+        Controls.Add(btnOptions)
         Controls.Add(btnAfficherScore)
         Controls.Add(btnQuitter)
         Controls.Add(btnLancer)
@@ -86,5 +97,6 @@ Partial Class Form1
     Friend WithEvents btnLancer As Button
     Friend WithEvents btnQuitter As Button
     Friend WithEvents btnAfficherScore As Button
+    Friend WithEvents btnOptions As Button
 
 End Class

@@ -10,8 +10,6 @@ Public Class Form1
             For Each s As PERS In personne
                 cbxNoms.Items.Add(s.Nom)
             Next
-        Else
-        MsgBox("Aucun joueur enregistré.")
         End If
     End Sub
 
@@ -63,7 +61,9 @@ Public Class Form1
         End If
     End Sub
 
-    Private Sub cbxNoms_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxNoms.SelectedIndexChanged
 
+
+    Private Sub btnOptions_Click(sender As Object, e As EventArgs) Handles btnOptions.Click
+        Options.Show()
     End Sub
 End Class
