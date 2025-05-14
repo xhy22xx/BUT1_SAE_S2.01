@@ -32,7 +32,7 @@ Partial Class Form1
         ' 
         cbxNoms.FormattingEnabled = True
         cbxNoms.Location = New Point(90, 61)
-        cbxNoms.Margin = New Padding(2, 2, 2, 2)
+        cbxNoms.Margin = New Padding(2)
         cbxNoms.Name = "cbxNoms"
         cbxNoms.Size = New Size(132, 23)
         cbxNoms.TabIndex = 0
@@ -40,7 +40,7 @@ Partial Class Form1
         ' btnLancer
         ' 
         btnLancer.Location = New Point(140, 218)
-        btnLancer.Margin = New Padding(2, 2, 2, 2)
+        btnLancer.Margin = New Padding(2)
         btnLancer.Name = "btnLancer"
         btnLancer.Size = New Size(80, 22)
         btnLancer.TabIndex = 1
@@ -50,7 +50,7 @@ Partial Class Form1
         ' btnQuitter
         ' 
         btnQuitter.Location = New Point(313, 218)
-        btnQuitter.Margin = New Padding(2, 2, 2, 2)
+        btnQuitter.Margin = New Padding(2)
         btnQuitter.Name = "btnQuitter"
         btnQuitter.Size = New Size(80, 22)
         btnQuitter.TabIndex = 2
@@ -60,7 +60,7 @@ Partial Class Form1
         ' btnAfficherScore
         ' 
         btnAfficherScore.Location = New Point(478, 218)
-        btnAfficherScore.Margin = New Padding(2, 2, 2, 2)
+        btnAfficherScore.Margin = New Padding(2)
         btnAfficherScore.Name = "btnAfficherScore"
         btnAfficherScore.Size = New Size(80, 22)
         btnAfficherScore.TabIndex = 3
@@ -76,7 +76,7 @@ Partial Class Form1
         Controls.Add(btnQuitter)
         Controls.Add(btnLancer)
         Controls.Add(cbxNoms)
-        Margin = New Padding(2, 2, 2, 2)
+        Margin = New Padding(2)
         Name = "Form1"
         Text = "Accueil"
         ResumeLayout(False)

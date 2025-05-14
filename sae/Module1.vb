@@ -5,12 +5,13 @@ Module Module_Enregistrement
         End Structure
 
     Private TPERS() As PERS
-    Private index As Integer = 0
+    Private index As Integer = -1
 
 
     Public Sub AJOUT(nom As String)
-        ReDim TPERS(index + 1)
-        TPERS(index + 1).Nom = nom
+        index += 1
+        ReDim Preserve TPERS(index)
+        TPERS(index).Nom = nom
 
     End Sub
 

@@ -4,12 +4,14 @@ Public Class Form1
 
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim noms As PERS() = Module_Enregistrement.GetPersonnes()
+        Dim personne As PERS() = Module_Enregistrement.GetPersonnes()
 
-        If noms IsNot Nothing Then
-            For Each s As PERS In noms
-                cbxNoms.Items.Add(s)
+        If personne IsNot Nothing AndAlso personne.Length > 0 Then
+            For Each s As PERS In personne
+                cbxNoms.Items.Add(s.Nom)
             Next
+        Else
+        MsgBox("Aucun joueur enregistré.")
         End If
     End Sub
 
@@ -48,6 +50,16 @@ Public Class Form1
         If Not Char.IsLetter(e.KeyChar) Then
             e.Handled = True
 
+        End If
+    End Sub
+
+    Private Sub Form1_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
+        cbxNoms.Items.Clear()
+        Dim personnes As PERS() = Module_Enregistrement.GetPersonnes()
+        If personnes IsNot Nothing Then
+            For Each s As PERS In personnes
+                cbxNoms.Items.Add(s.Nom)
+            Next
         End If
     End Sub
 
