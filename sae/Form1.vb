@@ -25,9 +25,10 @@ Public Class Form1
             cbxNoms.Focus()
 
         Else
-            Dim nom As String = cbxNoms.Text
+            Dim name As String = cbxNoms.Text
             Memory.Show()
-            Memory.Label2.Text = nom
+            Module_Enregistrement.AJOUT(name)
+            Memory.Label2.Text = name
         End If
 
     End Sub
@@ -50,4 +51,7 @@ Public Class Form1
         End If
     End Sub
 
+    Private Sub cbxNoms_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxNoms.SelectedIndexChanged
+
+    End Sub
 End Class

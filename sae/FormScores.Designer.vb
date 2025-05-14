@@ -47,7 +47,7 @@ Partial Class FormScores
         ' 
         BtnTrier.BackColor = Color.FromArgb(CByte(192), CByte(192), CByte(255))
         BtnTrier.Location = New Point(551, 100)
-        BtnTrier.Margin = New Padding(2, 2, 2, 2)
+        BtnTrier.Margin = New Padding(2)
         BtnTrier.Name = "BtnTrier"
         BtnTrier.Size = New Size(65, 24)
         BtnTrier.TabIndex = 10
@@ -109,7 +109,7 @@ Partial Class FormScores
         LstTempsT.FormattingEnabled = True
         LstTempsT.ItemHeight = 15
         LstTempsT.Location = New Point(404, 61)
-        LstTempsT.Margin = New Padding(2, 2, 2, 2)
+        LstTempsT.Margin = New Padding(2)
         LstTempsT.Name = "LstTempsT"
         LstTempsT.Size = New Size(125, 124)
         LstTempsT.TabIndex = 4
@@ -119,7 +119,7 @@ Partial Class FormScores
         LstParties.FormattingEnabled = True
         LstParties.ItemHeight = 15
         LstParties.Location = New Point(312, 61)
-        LstParties.Margin = New Padding(2, 2, 2, 2)
+        LstParties.Margin = New Padding(2)
         LstParties.Name = "LstParties"
         LstParties.Size = New Size(88, 124)
         LstParties.TabIndex = 3
@@ -129,7 +129,7 @@ Partial Class FormScores
         LstTempsM.FormattingEnabled = True
         LstTempsM.ItemHeight = 15
         LstTempsM.Location = New Point(220, 61)
-        LstTempsM.Margin = New Padding(2, 2, 2, 2)
+        LstTempsM.Margin = New Padding(2)
         LstTempsM.Name = "LstTempsM"
         LstTempsM.Size = New Size(88, 124)
         LstTempsM.TabIndex = 2
@@ -139,7 +139,7 @@ Partial Class FormScores
         LstCarres.FormattingEnabled = True
         LstCarres.ItemHeight = 15
         LstCarres.Location = New Point(121, 61)
-        LstCarres.Margin = New Padding(2, 2, 2, 2)
+        LstCarres.Margin = New Padding(2)
         LstCarres.Name = "LstCarres"
         LstCarres.Size = New Size(95, 124)
         LstCarres.TabIndex = 1
@@ -149,7 +149,7 @@ Partial Class FormScores
         LstJoueurs.FormattingEnabled = True
         LstJoueurs.ItemHeight = 15
         LstJoueurs.Location = New Point(18, 61)
-        LstJoueurs.Margin = New Padding(2, 2, 2, 2)
+        LstJoueurs.Margin = New Padding(2)
         LstJoueurs.Name = "LstJoueurs"
         LstJoueurs.Size = New Size(100, 124)
         LstJoueurs.TabIndex = 0
@@ -168,7 +168,7 @@ Partial Class FormScores
         ' 
         BtnRechercher.BackColor = Color.FromArgb(CByte(192), CByte(192), CByte(255))
         BtnRechercher.Location = New Point(84, 99)
-        BtnRechercher.Margin = New Padding(2, 2, 2, 2)
+        BtnRechercher.Margin = New Padding(2)
         BtnRechercher.Name = "BtnRechercher"
         BtnRechercher.Size = New Size(111, 24)
         BtnRechercher.TabIndex = 1
@@ -179,7 +179,7 @@ Partial Class FormScores
         ' 
         ComboBoxJoueur.FormattingEnabled = True
         ComboBoxJoueur.Location = New Point(37, 60)
-        ComboBoxJoueur.Margin = New Padding(2, 2, 2, 2)
+        ComboBoxJoueur.Margin = New Padding(2)
         ComboBoxJoueur.Name = "ComboBoxJoueur"
         ComboBoxJoueur.Size = New Size(211, 23)
         ComboBoxJoueur.TabIndex = 0
@@ -188,7 +188,7 @@ Partial Class FormScores
         ' 
         BtnRetour.BackColor = Color.FromArgb(CByte(192), CByte(192), CByte(255))
         BtnRetour.Location = New Point(388, 287)
-        BtnRetour.Margin = New Padding(2, 2, 2, 2)
+        BtnRetour.Margin = New Padding(2)
         BtnRetour.Name = "BtnRetour"
         BtnRetour.Size = New Size(222, 33)
         BtnRetour.TabIndex = 3
@@ -210,9 +210,9 @@ Partial Class FormScores
         GroupBox1.Controls.Add(LJoueur)
         GroupBox1.Controls.Add(LCarres)
         GroupBox1.Location = New Point(18, 24)
-        GroupBox1.Margin = New Padding(2, 2, 2, 2)
+        GroupBox1.Margin = New Padding(2)
         GroupBox1.Name = "GroupBox1"
-        GroupBox1.Padding = New Padding(2, 2, 2, 2)
+        GroupBox1.Padding = New Padding(2)
         GroupBox1.Size = New Size(641, 202)
         GroupBox1.TabIndex = 4
         GroupBox1.TabStop = False
@@ -225,9 +225,9 @@ Partial Class FormScores
         GroupBox2.Controls.Add(LNom)
         GroupBox2.Controls.Add(ComboBoxJoueur)
         GroupBox2.Location = New Point(18, 239)
-        GroupBox2.Margin = New Padding(2, 2, 2, 2)
+        GroupBox2.Margin = New Padding(2)
         GroupBox2.Name = "GroupBox2"
-        GroupBox2.Padding = New Padding(2, 2, 2, 2)
+        GroupBox2.Padding = New Padding(2)
         GroupBox2.Size = New Size(289, 142)
         GroupBox2.TabIndex = 0
         GroupBox2.TabStop = False
@@ -242,7 +242,7 @@ Partial Class FormScores
         Controls.Add(GroupBox2)
         Controls.Add(BtnRetour)
         Controls.Add(GroupBox1)
-        Margin = New Padding(2, 2, 2, 2)
+        Margin = New Padding(2)
         Name = "FormScores"
         Text = "Scores"
         GroupBox1.ResumeLayout(False)

@@ -117,7 +117,7 @@ Partial Class Memory
         ' btnAbandon
         ' 
         btnAbandon.Location = New Point(452, 23)
-        btnAbandon.Margin = New Padding(1, 1, 1, 1)
+        btnAbandon.Margin = New Padding(1)
         btnAbandon.Name = "btnAbandon"
         btnAbandon.Size = New Size(80, 22)
         btnAbandon.TabIndex = 4
@@ -392,10 +392,10 @@ Partial Class Memory
         TableLayoutPanel1.BackColor = SystemColors.ButtonFace
         TableLayoutPanel1.CellBorderStyle = TableLayoutPanelCellBorderStyle.Inset
         TableLayoutPanel1.ColumnCount = 4
-        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 25.0F))
-        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 25.0F))
-        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 25.0F))
-        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 25.0F))
+        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 25F))
+        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 25F))
+        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 25F))
+        TableLayoutPanel1.ColumnStyles.Add(New ColumnStyle(SizeType.Percent, 25F))
         TableLayoutPanel1.Controls.Add(PictureBox20, 3, 4)
         TableLayoutPanel1.Controls.Add(PictureBox19, 2, 4)
         TableLayoutPanel1.Controls.Add(PictureBox18, 1, 4)
@@ -420,17 +420,17 @@ Partial Class Memory
         TableLayoutPanel1.Margin = New Padding(2)
         TableLayoutPanel1.Name = "TableLayoutPanel1"
         TableLayoutPanel1.RowCount = 5
-        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 20.0F))
-        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 20.0F))
-        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 20.0F))
-        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 20.0F))
-        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 20.0F))
+        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 20F))
+        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 20F))
+        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 20F))
+        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 20F))
+        TableLayoutPanel1.RowStyles.Add(New RowStyle(SizeType.Percent, 20F))
         TableLayoutPanel1.Size = New Size(495, 497)
         TableLayoutPanel1.TabIndex = 5
         ' 
         ' Memory
         ' 
-        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = SystemColors.Control
         ClientSize = New Size(653, 587)
@@ -440,7 +440,7 @@ Partial Class Memory
         Controls.Add(Label3)
         Controls.Add(Label2)
         Controls.Add(Label1)
-        Margin = New Padding(1, 1, 1, 1)
+        Margin = New Padding(1)
         Name = "Memory"
         Text = "Form2"
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()

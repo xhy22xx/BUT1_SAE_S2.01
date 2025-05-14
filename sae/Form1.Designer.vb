@@ -31,47 +31,52 @@ Partial Class Form1
         ' cbxNoms
         ' 
         cbxNoms.FormattingEnabled = True
-        cbxNoms.Location = New Point(155, 122)
+        cbxNoms.Location = New Point(90, 61)
+        cbxNoms.Margin = New Padding(2, 2, 2, 2)
         cbxNoms.Name = "cbxNoms"
-        cbxNoms.Size = New Size(224, 38)
+        cbxNoms.Size = New Size(132, 23)
         cbxNoms.TabIndex = 0
         ' 
         ' btnLancer
         ' 
-        btnLancer.Location = New Point(240, 435)
+        btnLancer.Location = New Point(140, 218)
+        btnLancer.Margin = New Padding(2, 2, 2, 2)
         btnLancer.Name = "btnLancer"
-        btnLancer.Size = New Size(138, 43)
+        btnLancer.Size = New Size(80, 22)
         btnLancer.TabIndex = 1
         btnLancer.Text = "Lancement"
         btnLancer.UseVisualStyleBackColor = True
         ' 
         ' btnQuitter
         ' 
-        btnQuitter.Location = New Point(537, 435)
+        btnQuitter.Location = New Point(313, 218)
+        btnQuitter.Margin = New Padding(2, 2, 2, 2)
         btnQuitter.Name = "btnQuitter"
-        btnQuitter.Size = New Size(138, 43)
+        btnQuitter.Size = New Size(80, 22)
         btnQuitter.TabIndex = 2
         btnQuitter.Text = "Quitter"
         btnQuitter.UseVisualStyleBackColor = True
         ' 
         ' btnAfficherScore
         ' 
-        btnAfficherScore.Location = New Point(819, 435)
+        btnAfficherScore.Location = New Point(478, 218)
+        btnAfficherScore.Margin = New Padding(2, 2, 2, 2)
         btnAfficherScore.Name = "btnAfficherScore"
-        btnAfficherScore.Size = New Size(138, 43)
+        btnAfficherScore.Size = New Size(80, 22)
         btnAfficherScore.TabIndex = 3
         btnAfficherScore.Text = "Affichage"
         btnAfficherScore.UseVisualStyleBackColor = True
         ' 
         ' Form1
         ' 
-        AutoScaleDimensions = New SizeF(12F, 30F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1221, 684)
+        ClientSize = New Size(712, 342)
         Controls.Add(btnAfficherScore)
         Controls.Add(btnQuitter)
         Controls.Add(btnLancer)
         Controls.Add(cbxNoms)
+        Margin = New Padding(2, 2, 2, 2)
         Name = "Form1"
         Text = "Accueil"
         ResumeLayout(False)

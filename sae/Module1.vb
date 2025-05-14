@@ -4,16 +4,17 @@ Module Module_Enregistrement
             Dim Nom As String
         End Structure
 
-        Private TPERS() As PERS
-        Private index As Integer = 0
+    Private TPERS() As PERS
+    Private index As Integer = 0
 
 
-        Public Sub AJOUT(nom As String)
-            TPERS(index).Nom = nom
-            index += 1
-        End Sub
+    Public Sub AJOUT(nom As String)
+        ReDim TPERS(index + 1)
+        TPERS(index + 1).Nom = nom
 
-        Public Function GetPersonnes() As PERS()
+    End Sub
+
+    Public Function GetPersonnes() As PERS()
             Return TPERS
         End Function
 
