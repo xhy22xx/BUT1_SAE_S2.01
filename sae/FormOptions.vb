@@ -22,6 +22,22 @@
     Dim DefaultTextlblJoueur As String
     Dim DefaultTextlblTempsR As String
     Dim DefaultTextbtnAbandon As String
+
+    Dim DefaultTextConfirmation As String
+    Dim DefaultTextbtnYes As String
+    Dim DefaultTextbtnNo As String
+
+    Dim DefaultTextGpB1 As String
+    Dim DefaultTextGpB2 As String
+    Dim DefaultTextLJoueur As String
+    Dim DefaultTextLCarres As String
+    Dim DefaultTextLTempsM As String
+    Dim DefaultTextLParties As String
+    Dim DefaultTextLTempsT As String
+    Dim DefaultTextLNom As String
+    Dim DefaultTextBtnTrier As String
+    Dim DefaultTextBtnRetour As String
+    Dim DefaultTextbtnRechercher As String
     Private Sub Options_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         'Sauvegarde des textes initials (PAGE D'ACCUEIL)
@@ -47,6 +63,22 @@
         DefaultTextlblJoueur = Memory.lblJoueur.Text
         DefaultTextlblTempsR = Memory.lblTempsR.Text
         DefaultTextbtnAbandon = Memory.btnAbandon.Text
+        'Initialisation de la boîte de Confirmation
+        DefaultTextConfirmation = formConfirmation.Text
+        DefaultTextbtnYes = formConfirmation.btnYes.Text
+        DefaultTextbtnNo = formConfirmation.btnNo.Text
+        'Initialisation FormScores
+        DefaultTextGpB1 = FormScores.GroupBox1.Text
+        DefaultTextGpB2 = FormScores.GroupBox2.Text
+        DefaultTextLJoueur = FormScores.LJoueur.Text
+        DefaultTextLCarres = FormScores.LCarres.Text
+        DefaultTextLTempsM = FormScores.LTempsM.Text
+        DefaultTextLParties = FormScores.LParties.Text
+        DefaultTextLTempsT = FormScores.LTempsT.Text
+        DefaultTextLNom = FormScores.LNom.Text
+        DefaultTextBtnTrier = FormScores.BtnTrier.Text
+        DefaultTextBtnRetour = FormScores.BtnRetour.Text
+        DefaultTextbtnRechercher = FormScores.BtnRechercher.Text
 
     End Sub
 
@@ -79,15 +111,22 @@
             Memory.lblJoueur.Text = DefaultTextlblJoueur
             Memory.lblTempsR.Text = DefaultTextlblTempsR
             Memory.btnAbandon.Text = DefaultTextbtnAbandon
+
+            formConfirmation.Text = DefaultTextConfirmation
+            formConfirmation.btnYes.Text = DefaultTextbtnYes
+            formConfirmation.btnNo.Text = DefaultTextbtnNo
+
+            'A mettre ici!!!!!!!!!!!!! ajout pour les langues du formscores!!
+
         ElseIf RbtnL2.Checked = True Then
             Form1.btnLancer.Text = "Start"
             Form1.btnQuitter.Text = "Quit"
             Form1.btnAfficherScore.Text = "Show Score"
             Form1.btnOptions.Text = "Settings"
 
-            lblD.Text = "Difficulty selection"
-            lblL.Text = "Language choice"
-            lblC.Text = "Visual card style"
+            lblD.Text = "Difficulty selection: "
+            lblL.Text = "Language choice: "
+            lblC.Text = "Visual card style: "
             btnValidation.Text = "OK"
             RbtnFacile.Text = "Easy"
             RbtnMoyen.Text = "Medium"
@@ -102,15 +141,19 @@
             Memory.lblJoueur.Text = "Player: "
             Memory.lblTempsR.Text = "Time remaining: "
             Memory.btnAbandon.Text = "Surrender"
+
+            formConfirmation.Text = "Confirmation"
+            formConfirmation.btnYes.Text = "Yes"
+            formConfirmation.btnNo.Text = "No"
         ElseIf RbtnL3.Checked = True Then
             Form1.btnLancer.Text = "开始"
             Form1.btnQuitter.Text = "退出"
             Form1.btnAfficherScore.Text = "显示分数"
             Form1.btnOptions.Text = "设置"
 
-            lblD.Text = "难度选择"
-            lblL.Text = "语言选择"
-            lblC.Text = "卡牌视觉风格"
+            lblD.Text = "难度选择: "
+            lblL.Text = "语言选择: "
+            lblC.Text = "卡牌视觉风格: "
             btnValidation.Text = "确认"
             RbtnFacile.Text = "简单"
             RbtnMoyen.Text = "中等"
@@ -125,12 +168,13 @@
             Memory.lblJoueur.Text = "玩家: "
             Memory.lblTempsR.Text = "剩余时间: "
             Memory.btnAbandon.Text = "放弃"
+
+            formConfirmation.Text = "确认"
+            formConfirmation.btnYes.Text = "确定"
+            formConfirmation.btnNo.Text = "取消"
         Else
             MsgBox("Erreur. Langue non choisit???")   'A enlever si ya plus de problèmes
         End If
-
-
-
 
         Me.Hide()
         Form1.Show()

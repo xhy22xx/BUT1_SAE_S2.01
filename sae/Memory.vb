@@ -8,27 +8,19 @@
     Dim tempsJoueur As Integer
 
     Private Sub btnAbandon_Click(sender As Object, e As EventArgs) Handles btnAbandon.Click
-        If FormOptions.RbtnL1.Checked = True Then   'A modifier !!!! faire un  msgbox personnaliser
-            Dim choix As MsgBoxResult = MsgBox("Êtes vous sûr de vouloir abandonner la partie en cours?", MsgBoxStyle.YesNo, "Confirmation")
-            If choix = vbYes Then
-                Me.Close()
-                Form1.Show()
-            End If
+
+        If FormOptions.RbtnL1.Checked = True Then
+            formConfirmation.lblConfirmation.Text = "Voulez-vous abandonner la partie en cours?"
         ElseIf FormOptions.RbtnL2.Checked = True Then
-            Dim choix As MsgBoxResult = MsgBox("Are you sure you want to quit the current game?", MsgBoxStyle.YesNo, "Confirmation")
-            If choix = vbYes Then
-                Me.Close()
-                Form1.Show()
-            End If
+            formConfirmation.lblConfirmation.Text = "Do you want to quit the current game?"
         ElseIf FormOptions.RbtnL3.Checked = True Then
-            Dim choix As MsgBoxResult = MsgBox("你确定要放弃当前游戏吗？", MsgBoxStyle.YesNo, "确认")
-            If choix = vbYes Then
-                Me.Close()
-                Form1.Show()
-            End If
+            formConfirmation.lblConfirmation.Text = "你确定要放弃当前游戏吗？"
         End If
-
-
+        Dim result As DialogResult = formConfirmation.ShowDialog()
+        If result = DialogResult.Yes Then
+            Me.Close()
+            Form1.Show()
+        End If
     End Sub
 
     Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click

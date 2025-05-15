@@ -115,7 +115,4 @@ Public Class FormScores
         Form1.Show()
     End Sub
 
-    Private Sub LJoueur_Click(sender As Object, e As EventArgs) Handles LJoueur.Click
-
-    End Sub
 End Class

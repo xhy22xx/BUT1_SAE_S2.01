@@ -2,6 +2,9 @@
 Imports System.Media
 Public Class Form1
 
+    Dim form2 As New Form()
+    'déclare le nouveau form'
+
     Dim player As SoundPlayer
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim personne As PERS() = Module_Enregistrement.GetPersonnes()
@@ -25,9 +28,6 @@ Public Class Form1
 
         'player = New SoundPlayer("CallYouMine.wav")
         'player.Play() ' Utilise .PlayLooping() pour jouer en boucle
-
-
-
     End Sub
 
     Private Sub btnLancer_Click(sender As Object, e As EventArgs) Handles btnLancer.Click
@@ -78,14 +78,15 @@ Public Class Form1
 
     Private Sub btnQuitter_Click(sender As Object, e As EventArgs) Handles btnQuitter.Click   'A modifier le MsgBox à personnaliser!!
         If FormOptions.RbtnL1.Checked = True Then
-            Dim choix As MsgBoxResult = MsgBox("Êtes vous sûr de vouloir quitter l'application?", MsgBoxStyle.YesNo, "Confirmation")
-            If choix = vbYes Then End
+            formConfirmation.lblConfirmation.Text = "Êtes vous sûr de vouloir quitter l'application?"
         ElseIf FormOptions.RbtnL2.Checked = True Then
-            Dim choix As MsgBoxResult = MsgBox("Are you sure you want to quit the application?", MsgBoxStyle.YesNo, "Confirmation")
-            If choix = vbYes Then End
+            formConfirmation.lblConfirmation.Text = "Are you sure you want to quit the application?"
         ElseIf FormOptions.RbtnL3.Checked = True Then
-            Dim choix As MsgBoxResult = MsgBox("确定要退出应用程序吗？", MsgBoxStyle.YesNo, "确认")
-            If choix = vbYes Then End
+            formConfirmation.lblConfirmation.Text = "确定要退出应用程序吗？"
+        End If
+        Dim result As DialogResult = formConfirmation.ShowDialog()
+        If result = DialogResult.Yes Then
+            End
         End If
     End Sub
 
