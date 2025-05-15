@@ -27,69 +27,78 @@ Partial Class Form1
         btnQuitter = New Button()
         btnAfficherScore = New Button()
         btnOptions = New Button()
+        FileSystemWatcher1 = New IO.FileSystemWatcher()
+        CType(FileSystemWatcher1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' cbxNoms
         ' 
         cbxNoms.FormattingEnabled = True
-        cbxNoms.Location = New Point(90, 115)
-        cbxNoms.Margin = New Padding(2)
+        cbxNoms.Location = New Point(154, 230)
+        cbxNoms.Margin = New Padding(3, 4, 3, 4)
         cbxNoms.Name = "cbxNoms"
-        cbxNoms.Size = New Size(132, 23)
+        cbxNoms.Size = New Size(223, 38)
         cbxNoms.TabIndex = 0
         ' 
         ' btnLancer
         ' 
-        btnLancer.Location = New Point(90, 244)
-        btnLancer.Margin = New Padding(2)
+        btnLancer.Location = New Point(136, 488)
+        btnLancer.Margin = New Padding(3, 4, 3, 4)
         btnLancer.Name = "btnLancer"
-        btnLancer.Size = New Size(89, 38)
+        btnLancer.Size = New Size(171, 76)
         btnLancer.TabIndex = 1
-        btnLancer.Text = "Lancement"
+        btnLancer.Text = "Lancer"
         btnLancer.UseVisualStyleBackColor = True
         ' 
         ' btnQuitter
         ' 
-        btnQuitter.Location = New Point(237, 244)
-        btnQuitter.Margin = New Padding(2)
+        btnQuitter.Location = New Point(388, 488)
+        btnQuitter.Margin = New Padding(3, 4, 3, 4)
         btnQuitter.Name = "btnQuitter"
-        btnQuitter.Size = New Size(89, 38)
+        btnQuitter.Size = New Size(171, 76)
         btnQuitter.TabIndex = 2
         btnQuitter.Text = "Quitter"
         btnQuitter.UseVisualStyleBackColor = True
         ' 
         ' btnAfficherScore
         ' 
-        btnAfficherScore.Location = New Point(385, 244)
-        btnAfficherScore.Margin = New Padding(2)
+        btnAfficherScore.Location = New Point(642, 488)
+        btnAfficherScore.Margin = New Padding(3, 4, 3, 4)
         btnAfficherScore.Name = "btnAfficherScore"
-        btnAfficherScore.Size = New Size(89, 38)
+        btnAfficherScore.Size = New Size(171, 76)
         btnAfficherScore.TabIndex = 3
-        btnAfficherScore.Text = "Affichage"
+        btnAfficherScore.Text = "Afficher Score"
         btnAfficherScore.UseVisualStyleBackColor = True
         ' 
         ' btnOptions
         ' 
-        btnOptions.Location = New Point(488, 12)
+        btnOptions.Location = New Point(837, 24)
+        btnOptions.Margin = New Padding(5, 6, 5, 6)
         btnOptions.Name = "btnOptions"
-        btnOptions.Size = New Size(75, 23)
+        btnOptions.Size = New Size(129, 46)
         btnOptions.TabIndex = 4
         btnOptions.Text = "Options"
         btnOptions.UseVisualStyleBackColor = True
         ' 
+        ' FileSystemWatcher1
+        ' 
+        FileSystemWatcher1.EnableRaisingEvents = True
+        FileSystemWatcher1.SynchronizingObject = Me
+        ' 
         ' Form1
         ' 
-        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
+        AutoScaleDimensions = New SizeF(12F, 30F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(585, 365)
+        ClientSize = New Size(1003, 730)
         Controls.Add(btnOptions)
         Controls.Add(btnAfficherScore)
         Controls.Add(btnQuitter)
         Controls.Add(btnLancer)
         Controls.Add(cbxNoms)
-        Margin = New Padding(2)
+        Margin = New Padding(3, 4, 3, 4)
         Name = "Form1"
         Text = "Accueil"
+        CType(FileSystemWatcher1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
@@ -98,5 +107,6 @@ Partial Class Form1
     Friend WithEvents btnQuitter As Button
     Friend WithEvents btnAfficherScore As Button
     Friend WithEvents btnOptions As Button
+    Friend WithEvents FileSystemWatcher1 As IO.FileSystemWatcher
 
 End Class

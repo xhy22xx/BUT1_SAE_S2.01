@@ -26,17 +26,17 @@ Partial Class FormOptions
         pnlOp1 = New Panel()
         RbtnDifficile = New RadioButton()
         RbtnMoyen = New RadioButton()
-        lblDifficulte = New Label()
+        lblD = New Label()
         lblL = New Label()
         pnlOp2 = New Panel()
         RbtnL3 = New RadioButton()
         RbtnL2 = New RadioButton()
         RbtnL1 = New RadioButton()
-        Label1 = New Label()
+        lblC = New Label()
         pnlOp3 = New Panel()
-        RbtnX3 = New RadioButton()
-        RbtnX2 = New RadioButton()
-        RbtnX1 = New RadioButton()
+        RbtnT3 = New RadioButton()
+        RbtnT2 = New RadioButton()
+        RbtnT1 = New RadioButton()
         btnValidation = New Button()
         pnlOp1.SuspendLayout()
         pnlOp2.SuspendLayout()
@@ -46,9 +46,10 @@ Partial Class FormOptions
         ' RbtnFacile
         ' 
         RbtnFacile.AutoSize = True
-        RbtnFacile.Location = New Point(21, 18)
+        RbtnFacile.Location = New Point(36, 36)
+        RbtnFacile.Margin = New Padding(5, 6, 5, 6)
         RbtnFacile.Name = "RbtnFacile"
-        RbtnFacile.Size = New Size(55, 19)
+        RbtnFacile.Size = New Size(89, 34)
         RbtnFacile.TabIndex = 0
         RbtnFacile.TabStop = True
         RbtnFacile.Text = "Facile"
@@ -59,17 +60,19 @@ Partial Class FormOptions
         pnlOp1.Controls.Add(RbtnDifficile)
         pnlOp1.Controls.Add(RbtnMoyen)
         pnlOp1.Controls.Add(RbtnFacile)
-        pnlOp1.Location = New Point(34, 64)
+        pnlOp1.Location = New Point(58, 128)
+        pnlOp1.Margin = New Padding(5, 6, 5, 6)
         pnlOp1.Name = "pnlOp1"
-        pnlOp1.Size = New Size(138, 135)
+        pnlOp1.Size = New Size(237, 270)
         pnlOp1.TabIndex = 1
         ' 
         ' RbtnDifficile
         ' 
         RbtnDifficile.AutoSize = True
-        RbtnDifficile.Location = New Point(21, 97)
+        RbtnDifficile.Location = New Point(36, 194)
+        RbtnDifficile.Margin = New Padding(5, 6, 5, 6)
         RbtnDifficile.Name = "RbtnDifficile"
-        RbtnDifficile.Size = New Size(65, 19)
+        RbtnDifficile.Size = New Size(108, 34)
         RbtnDifficile.TabIndex = 2
         RbtnDifficile.TabStop = True
         RbtnDifficile.Text = "Difficile"
@@ -78,29 +81,32 @@ Partial Class FormOptions
         ' RbtnMoyen
         ' 
         RbtnMoyen.AutoSize = True
-        RbtnMoyen.Location = New Point(21, 57)
+        RbtnMoyen.Location = New Point(36, 114)
+        RbtnMoyen.Margin = New Padding(5, 6, 5, 6)
         RbtnMoyen.Name = "RbtnMoyen"
-        RbtnMoyen.Size = New Size(62, 19)
+        RbtnMoyen.Size = New Size(102, 34)
         RbtnMoyen.TabIndex = 3
         RbtnMoyen.TabStop = True
         RbtnMoyen.Text = "Moyen"
         RbtnMoyen.UseVisualStyleBackColor = True
         ' 
-        ' lblDifficulte
+        ' lblD
         ' 
-        lblDifficulte.AutoSize = True
-        lblDifficulte.Location = New Point(34, 46)
-        lblDifficulte.Name = "lblDifficulte"
-        lblDifficulte.Size = New Size(136, 15)
-        lblDifficulte.TabIndex = 2
-        lblDifficulte.Text = "Sélection de la difficulté:"
+        lblD.AutoSize = True
+        lblD.Location = New Point(58, 92)
+        lblD.Margin = New Padding(5, 0, 5, 0)
+        lblD.Name = "lblD"
+        lblD.Size = New Size(240, 30)
+        lblD.TabIndex = 2
+        lblD.Text = "Sélection de la difficulté:"
         ' 
         ' lblL
         ' 
         lblL.AutoSize = True
-        lblL.Location = New Point(34, 232)
+        lblL.Location = New Point(58, 464)
+        lblL.Margin = New Padding(5, 0, 5, 0)
         lblL.Name = "lblL"
-        lblL.Size = New Size(113, 15)
+        lblL.Size = New Size(200, 30)
         lblL.TabIndex = 4
         lblL.Text = "Sélection de langue:"
         ' 
@@ -109,17 +115,19 @@ Partial Class FormOptions
         pnlOp2.Controls.Add(RbtnL3)
         pnlOp2.Controls.Add(RbtnL2)
         pnlOp2.Controls.Add(RbtnL1)
-        pnlOp2.Location = New Point(34, 250)
+        pnlOp2.Location = New Point(58, 500)
+        pnlOp2.Margin = New Padding(5, 6, 5, 6)
         pnlOp2.Name = "pnlOp2"
-        pnlOp2.Size = New Size(113, 135)
+        pnlOp2.Size = New Size(194, 270)
         pnlOp2.TabIndex = 3
         ' 
         ' RbtnL3
         ' 
         RbtnL3.AutoSize = True
-        RbtnL3.Location = New Point(21, 97)
+        RbtnL3.Location = New Point(36, 194)
+        RbtnL3.Margin = New Padding(5, 6, 5, 6)
         RbtnL3.Name = "RbtnL3"
-        RbtnL3.Size = New Size(63, 19)
+        RbtnL3.Size = New Size(103, 34)
         RbtnL3.TabIndex = 2
         RbtnL3.TabStop = True
         RbtnL3.Text = "chinois"
@@ -128,9 +136,10 @@ Partial Class FormOptions
         ' RbtnL2
         ' 
         RbtnL2.AutoSize = True
-        RbtnL2.Location = New Point(21, 57)
+        RbtnL2.Location = New Point(36, 114)
+        RbtnL2.Margin = New Padding(5, 6, 5, 6)
         RbtnL2.Name = "RbtnL2"
-        RbtnL2.Size = New Size(62, 19)
+        RbtnL2.Size = New Size(103, 34)
         RbtnL2.TabIndex = 3
         RbtnL2.TabStop = True
         RbtnL2.Text = "anglais"
@@ -139,87 +148,95 @@ Partial Class FormOptions
         ' RbtnL1
         ' 
         RbtnL1.AutoSize = True
-        RbtnL1.Location = New Point(21, 18)
+        RbtnL1.Location = New Point(36, 36)
+        RbtnL1.Margin = New Padding(5, 6, 5, 6)
         RbtnL1.Name = "RbtnL1"
-        RbtnL1.Size = New Size(66, 19)
+        RbtnL1.Size = New Size(110, 34)
         RbtnL1.TabIndex = 0
         RbtnL1.TabStop = True
         RbtnL1.Text = "francais"
         RbtnL1.UseVisualStyleBackColor = True
         ' 
-        ' Label1
+        ' lblC
         ' 
-        Label1.AutoSize = True
-        Label1.Location = New Point(227, 232)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(123, 15)
-        Label1.TabIndex = 6
-        Label1.Text = "Style visuel des cartes:"
+        lblC.AutoSize = True
+        lblC.Location = New Point(389, 464)
+        lblC.Margin = New Padding(5, 0, 5, 0)
+        lblC.Name = "lblC"
+        lblC.Size = New Size(218, 30)
+        lblC.TabIndex = 6
+        lblC.Text = "Style visuel des cartes:"
         ' 
         ' pnlOp3
         ' 
-        pnlOp3.Controls.Add(RbtnX3)
-        pnlOp3.Controls.Add(RbtnX2)
-        pnlOp3.Controls.Add(RbtnX1)
-        pnlOp3.Location = New Point(227, 250)
+        pnlOp3.Controls.Add(RbtnT3)
+        pnlOp3.Controls.Add(RbtnT2)
+        pnlOp3.Controls.Add(RbtnT1)
+        pnlOp3.Location = New Point(389, 500)
+        pnlOp3.Margin = New Padding(5, 6, 5, 6)
         pnlOp3.Name = "pnlOp3"
-        pnlOp3.Size = New Size(123, 135)
+        pnlOp3.Size = New Size(256, 270)
         pnlOp3.TabIndex = 5
         ' 
-        ' RbtnX3
+        ' RbtnT3
         ' 
-        RbtnX3.AutoSize = True
-        RbtnX3.Location = New Point(21, 97)
-        RbtnX3.Name = "RbtnX3"
-        RbtnX3.Size = New Size(57, 19)
-        RbtnX3.TabIndex = 2
-        RbtnX3.TabStop = True
-        RbtnX3.Text = "type 3"
-        RbtnX3.UseVisualStyleBackColor = True
+        RbtnT3.AutoSize = True
+        RbtnT3.Location = New Point(36, 194)
+        RbtnT3.Margin = New Padding(5, 6, 5, 6)
+        RbtnT3.Name = "RbtnT3"
+        RbtnT3.Size = New Size(95, 34)
+        RbtnT3.TabIndex = 2
+        RbtnT3.TabStop = True
+        RbtnT3.Text = "type 3"
+        RbtnT3.UseVisualStyleBackColor = True
         ' 
-        ' RbtnX2
+        ' RbtnT2
         ' 
-        RbtnX2.AutoSize = True
-        RbtnX2.Location = New Point(21, 57)
-        RbtnX2.Name = "RbtnX2"
-        RbtnX2.Size = New Size(57, 19)
-        RbtnX2.TabIndex = 3
-        RbtnX2.TabStop = True
-        RbtnX2.Text = "type 2"
-        RbtnX2.UseVisualStyleBackColor = True
+        RbtnT2.AutoSize = True
+        RbtnT2.Location = New Point(36, 114)
+        RbtnT2.Margin = New Padding(5, 6, 5, 6)
+        RbtnT2.Name = "RbtnT2"
+        RbtnT2.Size = New Size(95, 34)
+        RbtnT2.TabIndex = 3
+        RbtnT2.TabStop = True
+        RbtnT2.Text = "type 2"
+        RbtnT2.UseVisualStyleBackColor = True
         ' 
-        ' RbtnX1
+        ' RbtnT1
         ' 
-        RbtnX1.AutoSize = True
-        RbtnX1.Location = New Point(21, 18)
-        RbtnX1.Name = "RbtnX1"
-        RbtnX1.Size = New Size(57, 19)
-        RbtnX1.TabIndex = 0
-        RbtnX1.TabStop = True
-        RbtnX1.Text = "type 1"
-        RbtnX1.UseVisualStyleBackColor = True
+        RbtnT1.AutoSize = True
+        RbtnT1.Location = New Point(36, 36)
+        RbtnT1.Margin = New Padding(5, 6, 5, 6)
+        RbtnT1.Name = "RbtnT1"
+        RbtnT1.Size = New Size(188, 34)
+        RbtnT1.TabIndex = 0
+        RbtnT1.TabStop = True
+        RbtnT1.Text = "Cartes Pokémon"
+        RbtnT1.UseVisualStyleBackColor = True
         ' 
         ' btnValidation
         ' 
-        btnValidation.Location = New Point(164, 410)
+        btnValidation.Location = New Point(281, 820)
+        btnValidation.Margin = New Padding(5, 6, 5, 6)
         btnValidation.Name = "btnValidation"
-        btnValidation.Size = New Size(75, 23)
+        btnValidation.Size = New Size(129, 46)
         btnValidation.TabIndex = 7
         btnValidation.Text = "Valider"
         btnValidation.UseVisualStyleBackColor = True
         ' 
         ' FormOptions
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(12F, 30F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(413, 454)
+        ClientSize = New Size(708, 908)
         Controls.Add(btnValidation)
-        Controls.Add(Label1)
+        Controls.Add(lblC)
         Controls.Add(pnlOp3)
         Controls.Add(lblL)
         Controls.Add(pnlOp2)
-        Controls.Add(lblDifficulte)
+        Controls.Add(lblD)
         Controls.Add(pnlOp1)
+        Margin = New Padding(5, 6, 5, 6)
         Name = "FormOptions"
         Text = "Options"
         pnlOp1.ResumeLayout(False)
@@ -236,16 +253,16 @@ Partial Class FormOptions
     Friend WithEvents pnlOp1 As Panel
     Friend WithEvents RbtnDifficile As RadioButton
     Friend WithEvents RbtnMoyen As RadioButton
-    Friend WithEvents lblDifficulte As Label
+    Friend WithEvents lblD As Label
     Friend WithEvents lblL As Label
     Friend WithEvents pnlOp2 As Panel
     Friend WithEvents RbtnL3 As RadioButton
     Friend WithEvents RbtnL2 As RadioButton
     Friend WithEvents RbtnL1 As RadioButton
-    Friend WithEvents Label1 As Label
+    Friend WithEvents lblC As Label
     Friend WithEvents pnlOp3 As Panel
-    Friend WithEvents RbtnX3 As RadioButton
-    Friend WithEvents RbtnX2 As RadioButton
-    Friend WithEvents RbtnX1 As RadioButton
+    Friend WithEvents RbtnT3 As RadioButton
+    Friend WithEvents RbtnT2 As RadioButton
+    Friend WithEvents RbtnT1 As RadioButton
     Friend WithEvents btnValidation As Button
 End Class

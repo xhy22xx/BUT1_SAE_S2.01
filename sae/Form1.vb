@@ -1,8 +1,8 @@
 ﻿Imports System.Diagnostics.Eventing.Reader
-
+Imports System.Media
 Public Class Form1
 
-
+    Dim player As SoundPlayer
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim personne As PERS() = Module_Enregistrement.GetPersonnes()
 
@@ -19,23 +19,41 @@ Public Class Form1
         FormOptions.RbtnL1.Checked = True
         FormOptions.RbtnL1.PerformClick()
 
-        FormOptions.RbtnX1.Checked = True
-        FormOptions.RbtnX1.PerformClick()
+        FormOptions.RbtnT1.Checked = True
+        FormOptions.RbtnT1.PerformClick()
+
+
+        'player = New SoundPlayer("CallYouMine.wav")
+        'player.Play() ' Utilise .PlayLooping() pour jouer en boucle
+
 
 
     End Sub
 
     Private Sub btnLancer_Click(sender As Object, e As EventArgs) Handles btnLancer.Click
         If cbxNoms.Text = "" Then
-            MsgBox("Nom obligatoire.")
+            If FormOptions.RbtnL1.Checked = True Then
+                MsgBox("Nom obligatoire.")
+            ElseIf FormOptions.RbtnL2.Checked = True Then
+                MsgBox("Please enter a name.")
+            ElseIf FormOptions.RbtnL3.Checked = True Then
+                MsgBox("请输入玩家名称。")
+            Else
+                MsgBox("Erreur!!! (dans la boucle) Nom obligatoire.") ' A enlever si c bon
+            End If
             cbxNoms.Focus()
             Exit Sub
         End If
 
         If cbxNoms.Text.Length < 3 Then
-            MsgBox("Veuillez entrez un nom d’au moins 3 caractères.", MsgBoxStyle.Information, "Nom invalide")
+            If FormOptions.RbtnL1.Checked = True Then
+                MsgBox("Veuillez entrez un nom d’au moins 3 caractères.", MsgBoxStyle.Information, "Nom invalide")
+            ElseIf FormOptions.RbtnL2.Checked = True Then
+                MsgBox("Please enter a name with at least 3 characters.", MsgBoxStyle.Information, "Invalid Name")
+            ElseIf FormOptions.RbtnL3.Checked = True Then
+                MsgBox("请输入至少3个字符的名称。", MsgBoxStyle.Information, "无效名称")
+            End If
             cbxNoms.Focus()
-
         Else
             Dim name As String = cbxNoms.Text
             Module_Enregistrement.AJOUT(name)
@@ -58,9 +76,17 @@ Public Class Form1
         End If
     End Sub
 
-    Private Sub btnQuitter_Click(sender As Object, e As EventArgs) Handles btnQuitter.Click
-        Dim choix As MsgBoxResult = MsgBox("Êtes vous sûr de vouloir quitter l'application?", MsgBoxStyle.YesNo, "Confirmation")
-        If choix = vbYes Then End
+    Private Sub btnQuitter_Click(sender As Object, e As EventArgs) Handles btnQuitter.Click   'A modifier le MsgBox à personnaliser!!
+        If FormOptions.RbtnL1.Checked = True Then
+            Dim choix As MsgBoxResult = MsgBox("Êtes vous sûr de vouloir quitter l'application?", MsgBoxStyle.YesNo, "Confirmation")
+            If choix = vbYes Then End
+        ElseIf FormOptions.RbtnL2.Checked = True Then
+            Dim choix As MsgBoxResult = MsgBox("Are you sure you want to quit the application?", MsgBoxStyle.YesNo, "Confirmation")
+            If choix = vbYes Then End
+        ElseIf FormOptions.RbtnL3.Checked = True Then
+            Dim choix As MsgBoxResult = MsgBox("确定要退出应用程序吗？", MsgBoxStyle.YesNo, "确认")
+            If choix = vbYes Then End
+        End If
     End Sub
 
     Private Sub btnAfficherScore_Click(sender As Object, e As EventArgs) Handles btnAfficherScore.Click
@@ -91,4 +117,5 @@ Public Class Form1
     Private Sub btnOptions_Click(sender As Object, e As EventArgs) Handles btnOptions.Click
         FormOptions.Show()
     End Sub
+
 End Class

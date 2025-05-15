@@ -8,11 +8,27 @@
     Dim tempsJoueur As Integer
 
     Private Sub btnAbandon_Click(sender As Object, e As EventArgs) Handles btnAbandon.Click
-        Dim choix As MsgBoxResult = MsgBox("Êtes vous sûr de vouloir abandonner la partie en cours?", MsgBoxStyle.YesNo, "Confirmation")
-        If choix = vbYes Then
-            Me.Close()
-            Form1.Show()
+        If FormOptions.RbtnL1.Checked = True Then   'A modifier !!!! faire un  msgbox personnaliser
+            Dim choix As MsgBoxResult = MsgBox("Êtes vous sûr de vouloir abandonner la partie en cours?", MsgBoxStyle.YesNo, "Confirmation")
+            If choix = vbYes Then
+                Me.Close()
+                Form1.Show()
+            End If
+        ElseIf FormOptions.RbtnL2.Checked = True Then
+            Dim choix As MsgBoxResult = MsgBox("Are you sure you want to quit the current game?", MsgBoxStyle.YesNo, "Confirmation")
+            If choix = vbYes Then
+                Me.Close()
+                Form1.Show()
+            End If
+        ElseIf FormOptions.RbtnL3.Checked = True Then
+            Dim choix As MsgBoxResult = MsgBox("你确定要放弃当前游戏吗？", MsgBoxStyle.YesNo, "确认")
+            If choix = vbYes Then
+                Me.Close()
+                Form1.Show()
+            End If
         End If
+
+
     End Sub
 
     Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
@@ -66,7 +82,13 @@
         Dim secondes As Integer = (time Mod 60)
         If Label4.Text = "0:00" Then
             Timer1.Enabled = False
-            MsgBox("Temps écoulé!")
+            If FormOptions.RbtnL1.Checked = True Then
+                MsgBox("Temps écoulé!")
+            ElseIf FormOptions.RbtnL2.Checked = True Then
+                MsgBox("Time's up!")
+            ElseIf FormOptions.RbtnL3.Checked = True Then
+                MsgBox("时间限制已到!")
+            End If
             Timer1.Stop()
         End If
         Label4.Text = minutes.ToString("0") & ":" & secondes.ToString("00")
@@ -115,7 +137,7 @@
 
     End Sub
 
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles lblJoueur.Click
 
     End Sub
 End Class
