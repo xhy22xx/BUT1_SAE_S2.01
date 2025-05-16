@@ -24,20 +24,10 @@ Public Class Form1
         FormOptions.RbtnT1.Checked = True
         FormOptions.RbtnT1.PerformClick()
 
-        Dim filePath As String = Path.Combine(Application.StartupPath, "Resources\CallYouMine.wav")
 
-        If File.Exists(filePath) Then
-            Dim bytes As Byte() = File.ReadAllBytes(filePath)
-            Dim wavStream As New MemoryStream(bytes)
-
-            player = New SoundPlayer(wavStream)
-            player.Play()
-        Else
-            MessageBox.Show("Fichier introuvable : " & filePath)
-        End If
 
         'player = New SoundPlayer("Resources\CallYouMine.wav")
-        'player.Play() ' Utilise .PlayLooping() pour jouer en boucle
+        'player.PlayLooping() ' pour jouer en boucle
     End Sub
 
     Private Sub Form1_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
@@ -48,14 +38,17 @@ Public Class Form1
                 cbxNoms.Items.Add(s.Nom)
             Next
         End If
-        'If Not isMusicPlayed Then
-        'Dim 'wavStream As New MemoryStream("Resources\CallYouMine.wav")
-        'player = New SoundPlayer(wavStream)
-        'pla'yer.Play()
-        'isMusicPlayed = True
-        'End If
+        If Not isMusicPlayed Then
+            player = New SoundPlayer("Resources\CallYouMine.wav")
+            player.PlayLooping()
+            isMusicPlayed = True
+        End If
+        If player IsNot Nothing Then player.Play()
     End Sub
 
+    Private Sub Form1_Deactivate(sender As Object, e As EventArgs) Handles Me.Deactivate
+        If player IsNot Nothing Then player.Stop()
+    End Sub
 
     Private Sub btnLancer_Click(sender As Object, e As EventArgs) Handles btnLancer.Click
         If cbxNoms.Text = "" Then
