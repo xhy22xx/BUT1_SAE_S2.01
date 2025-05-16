@@ -1,11 +1,10 @@
 ﻿Imports System.Diagnostics.Eventing.Reader
+Imports System.IO
 Imports System.Media
 Public Class Form1
 
-    Dim form2 As New Form()
-    'déclare le nouveau form'
-
     Dim player As SoundPlayer
+    Dim isMusicPlayed As Boolean = False
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim personne As PERS() = Module_Enregistrement.GetPersonnes()
 
@@ -25,10 +24,38 @@ Public Class Form1
         FormOptions.RbtnT1.Checked = True
         FormOptions.RbtnT1.PerformClick()
 
+        Dim filePath As String = Path.Combine(Application.StartupPath, "Resources\CallYouMine.wav")
 
-        'player = New SoundPlayer("CallYouMine.wav")
+        If File.Exists(filePath) Then
+            Dim bytes As Byte() = File.ReadAllBytes(filePath)
+            Dim wavStream As New MemoryStream(bytes)
+
+            player = New SoundPlayer(wavStream)
+            player.Play()
+        Else
+            MessageBox.Show("Fichier introuvable : " & filePath)
+        End If
+
+        'player = New SoundPlayer("Resources\CallYouMine.wav")
         'player.Play() ' Utilise .PlayLooping() pour jouer en boucle
     End Sub
+
+    Private Sub Form1_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
+        cbxNoms.Items.Clear()
+        Dim personnes As PERS() = Module_Enregistrement.GetPersonnes()
+        If personnes IsNot Nothing Then
+            For Each s As PERS In personnes
+                cbxNoms.Items.Add(s.Nom)
+            Next
+        End If
+        'If Not isMusicPlayed Then
+        'Dim 'wavStream As New MemoryStream("Resources\CallYouMine.wav")
+        'player = New SoundPlayer(wavStream)
+        'pla'yer.Play()
+        'isMusicPlayed = True
+        'End If
+    End Sub
+
 
     Private Sub btnLancer_Click(sender As Object, e As EventArgs) Handles btnLancer.Click
         If cbxNoms.Text = "" Then
@@ -103,15 +130,7 @@ Public Class Form1
         End If
     End Sub
 
-    Private Sub Form1_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
-        cbxNoms.Items.Clear()
-        Dim personnes As PERS() = Module_Enregistrement.GetPersonnes()
-        If personnes IsNot Nothing Then
-            For Each s As PERS In personnes
-                cbxNoms.Items.Add(s.Nom)
-            Next
-        End If
-    End Sub
+
 
 
 
@@ -119,4 +138,7 @@ Public Class Form1
         FormOptions.Show()
     End Sub
 
+    Private Sub cbxNoms_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxNoms.SelectedIndexChanged
+
+    End Sub
 End Class

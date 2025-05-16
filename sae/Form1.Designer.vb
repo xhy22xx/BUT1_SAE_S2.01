@@ -34,48 +34,48 @@ Partial Class Form1
         ' cbxNoms
         ' 
         cbxNoms.FormattingEnabled = True
-        cbxNoms.Location = New Point(154, 230)
-        cbxNoms.Margin = New Padding(3, 4, 3, 4)
+        cbxNoms.Location = New Point(103, 153)
+        cbxNoms.Margin = New Padding(2, 3, 2, 3)
         cbxNoms.Name = "cbxNoms"
-        cbxNoms.Size = New Size(223, 38)
+        cbxNoms.Size = New Size(150, 28)
         cbxNoms.TabIndex = 0
         ' 
         ' btnLancer
         ' 
-        btnLancer.Location = New Point(136, 488)
-        btnLancer.Margin = New Padding(3, 4, 3, 4)
+        btnLancer.Location = New Point(91, 325)
+        btnLancer.Margin = New Padding(2, 3, 2, 3)
         btnLancer.Name = "btnLancer"
-        btnLancer.Size = New Size(171, 76)
+        btnLancer.Size = New Size(114, 51)
         btnLancer.TabIndex = 1
         btnLancer.Text = "Lancer"
         btnLancer.UseVisualStyleBackColor = True
         ' 
         ' btnQuitter
         ' 
-        btnQuitter.Location = New Point(388, 488)
-        btnQuitter.Margin = New Padding(3, 4, 3, 4)
+        btnQuitter.Location = New Point(259, 325)
+        btnQuitter.Margin = New Padding(2, 3, 2, 3)
         btnQuitter.Name = "btnQuitter"
-        btnQuitter.Size = New Size(171, 76)
+        btnQuitter.Size = New Size(114, 51)
         btnQuitter.TabIndex = 2
         btnQuitter.Text = "Quitter"
         btnQuitter.UseVisualStyleBackColor = True
         ' 
         ' btnAfficherScore
         ' 
-        btnAfficherScore.Location = New Point(642, 488)
-        btnAfficherScore.Margin = New Padding(3, 4, 3, 4)
+        btnAfficherScore.Location = New Point(428, 325)
+        btnAfficherScore.Margin = New Padding(2, 3, 2, 3)
         btnAfficherScore.Name = "btnAfficherScore"
-        btnAfficherScore.Size = New Size(171, 76)
+        btnAfficherScore.Size = New Size(114, 51)
         btnAfficherScore.TabIndex = 3
         btnAfficherScore.Text = "Afficher Score"
         btnAfficherScore.UseVisualStyleBackColor = True
         ' 
         ' btnOptions
         ' 
-        btnOptions.Location = New Point(837, 24)
-        btnOptions.Margin = New Padding(5, 6, 5, 6)
+        btnOptions.Location = New Point(558, 16)
+        btnOptions.Margin = New Padding(3, 4, 3, 4)
         btnOptions.Name = "btnOptions"
-        btnOptions.Size = New Size(129, 46)
+        btnOptions.Size = New Size(86, 31)
         btnOptions.TabIndex = 4
         btnOptions.Text = "Options"
         btnOptions.UseVisualStyleBackColor = True
@@ -87,15 +87,15 @@ Partial Class Form1
         ' 
         ' Form1
         ' 
-        AutoScaleDimensions = New SizeF(12F, 30F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1003, 730)
+        ClientSize = New Size(669, 487)
         Controls.Add(btnOptions)
         Controls.Add(btnAfficherScore)
         Controls.Add(btnQuitter)
         Controls.Add(btnLancer)
         Controls.Add(cbxNoms)
-        Margin = New Padding(3, 4, 3, 4)
+        Margin = New Padding(2, 3, 2, 3)
         Name = "Form1"
         Text = "Accueil"
         CType(FileSystemWatcher1, ComponentModel.ISupportInitialize).EndInit()
