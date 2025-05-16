@@ -3,8 +3,7 @@ Imports System.IO
 Imports System.Media
 Public Class Form1
 
-    Dim player As SoundPlayer
-    Dim isMusicPlayed As Boolean = False
+    Dim position As Double = 0
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim personne As PERS() = Module_Enregistrement.GetPersonnes()
 
@@ -24,11 +23,8 @@ Public Class Form1
         FormOptions.RbtnT1.Checked = True
         FormOptions.RbtnT1.PerformClick()
 
-
-
-        'player = New SoundPlayer("Resources\CallYouMine.wav")
-        'player.PlayLooping() ' pour jouer en boucle
     End Sub
+
 
     Private Sub Form1_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
         cbxNoms.Items.Clear()
@@ -38,16 +34,25 @@ Public Class Form1
                 cbxNoms.Items.Add(s.Nom)
             Next
         End If
-        If Not isMusicPlayed Then
-            player = New SoundPlayer("Resources\CallYouMine.wav")
-            player.PlayLooping()
-            isMusicPlayed = True
-        End If
-        If player IsNot Nothing Then player.Play()
+        AxWindowsMediaPlayer1.URL = "Resources\CallYouMine.wav"
+        AxWindowsMediaPlayer1.settings.setMode("loop", True)
+        AxWindowsMediaPlayer1.Ctlcontrols.play()
     End Sub
 
     Private Sub Form1_Deactivate(sender As Object, e As EventArgs) Handles Me.Deactivate
-        If player IsNot Nothing Then player.Stop()
+        Try
+            AxWindowsMediaPlayer1.Ctlcontrols.stop()
+        Catch ex As Exception
+        End Try
+    End Sub
+    Private Sub ButtonStop_Click(sender As Object, e As EventArgs) Handles ButtonStopMusic.Click
+        position = AxWindowsMediaPlayer1.Ctlcontrols.currentPosition
+        AxWindowsMediaPlayer1.Ctlcontrols.pause()
+    End Sub
+
+    Private Sub ButtonResume_Click(sender As Object, e As EventArgs) Handles ButtonContinueMusic.Click
+        AxWindowsMediaPlayer1.Ctlcontrols.currentPosition = position
+        AxWindowsMediaPlayer1.Ctlcontrols.play()
     End Sub
 
     Private Sub btnLancer_Click(sender As Object, e As EventArgs) Handles btnLancer.Click
@@ -132,6 +137,18 @@ Public Class Form1
     End Sub
 
     Private Sub cbxNoms_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxNoms.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub AxWindowsMediaPlayer1_Enter(sender As Object, e As EventArgs) Handles AxWindowsMediaPlayer1.Enter
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles ButtonStopMusic.Click
+
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles ButtonContinueMusic.Click
 
     End Sub
 End Class

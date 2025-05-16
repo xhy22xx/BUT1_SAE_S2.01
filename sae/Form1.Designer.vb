@@ -22,13 +22,16 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         cbxNoms = New ComboBox()
         btnLancer = New Button()
         btnQuitter = New Button()
         btnAfficherScore = New Button()
         btnOptions = New Button()
-        FileSystemWatcher1 = New IO.FileSystemWatcher()
-        CType(FileSystemWatcher1, ComponentModel.ISupportInitialize).BeginInit()
+        AxWindowsMediaPlayer1 = New AxWMPLib.AxWindowsMediaPlayer()
+        ButtonStopMusic = New Button()
+        ButtonContinueMusic = New Button()
+        CType(AxWindowsMediaPlayer1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' cbxNoms
@@ -80,16 +83,41 @@ Partial Class Form1
         btnOptions.Text = "Options"
         btnOptions.UseVisualStyleBackColor = True
         ' 
-        ' FileSystemWatcher1
+        ' AxWindowsMediaPlayer1
         ' 
-        FileSystemWatcher1.EnableRaisingEvents = True
-        FileSystemWatcher1.SynchronizingObject = Me
+        AxWindowsMediaPlayer1.Enabled = True
+        AxWindowsMediaPlayer1.Location = New Point(12, 441)
+        AxWindowsMediaPlayer1.Name = "AxWindowsMediaPlayer1"
+        AxWindowsMediaPlayer1.OcxState = CType(resources.GetObject("AxWindowsMediaPlayer1.OcxState"), AxHost.State)
+        AxWindowsMediaPlayer1.Size = New Size(222, 34)
+        AxWindowsMediaPlayer1.TabIndex = 5
+        ' 
+        ' ButtonStopMusic
+        ' 
+        ButtonStopMusic.Location = New Point(558, 141)
+        ButtonStopMusic.Name = "ButtonStopMusic"
+        ButtonStopMusic.Size = New Size(94, 29)
+        ButtonStopMusic.TabIndex = 6
+        ButtonStopMusic.Text = "Stop Music"
+        ButtonStopMusic.UseVisualStyleBackColor = True
+        ' 
+        ' ButtonContinueMusic
+        ' 
+        ButtonContinueMusic.Location = New Point(551, 185)
+        ButtonContinueMusic.Name = "ButtonContinueMusic"
+        ButtonContinueMusic.Size = New Size(106, 29)
+        ButtonContinueMusic.TabIndex = 7
+        ButtonContinueMusic.Text = "Ecoute Music"
+        ButtonContinueMusic.UseVisualStyleBackColor = True
         ' 
         ' Form1
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(669, 487)
+        Controls.Add(ButtonContinueMusic)
+        Controls.Add(ButtonStopMusic)
+        Controls.Add(AxWindowsMediaPlayer1)
         Controls.Add(btnOptions)
         Controls.Add(btnAfficherScore)
         Controls.Add(btnQuitter)
@@ -98,7 +126,7 @@ Partial Class Form1
         Margin = New Padding(2, 3, 2, 3)
         Name = "Form1"
         Text = "Accueil"
-        CType(FileSystemWatcher1, ComponentModel.ISupportInitialize).EndInit()
+        CType(AxWindowsMediaPlayer1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
@@ -107,6 +135,8 @@ Partial Class Form1
     Friend WithEvents btnQuitter As Button
     Friend WithEvents btnAfficherScore As Button
     Friend WithEvents btnOptions As Button
-    Friend WithEvents FileSystemWatcher1 As IO.FileSystemWatcher
+    Friend WithEvents AxWindowsMediaPlayer1 As AxWMPLib.AxWindowsMediaPlayer
+    Friend WithEvents ButtonStopMusic As Button
+    Friend WithEvents ButtonContinueMusic As Button
 
 End Class
