@@ -1,4 +1,6 @@
-﻿Public Class Memory
+﻿Imports System.Security.Cryptography
+
+Public Class Memory
     Dim time As Integer = 60
     Dim listeImages As New List(Of Image)
     Dim listeCartes As New List(Of PictureBox)
@@ -6,7 +8,6 @@
     Dim compteurCarteRetournee As Integer
     Dim pointsJoueur As Integer
     Dim tempsJoueur As Integer
-
     Private Sub btnAbandon_Click(sender As Object, e As EventArgs) Handles btnAbandon.Click
 
         If FormOptions.RbtnL1.Checked = True Then
@@ -72,7 +73,7 @@
         tempsJoueur += 1
         Dim minutes As Integer = time \ 60
         Dim secondes As Integer = (time Mod 60)
-        If Label4.Text = "0:00" Then
+        If Label4.Text = "0:01" Then
             Timer1.Enabled = False
             If FormOptions.RbtnL1.Checked = True Then
                 MsgBox("Temps écoulé!")
@@ -94,27 +95,26 @@
         If Not Timer1.Enabled Then
             Timer1.Start()
         End If
+        Timer2.Interval = 450
 
         Dim pbCliquee As PictureBox = CType(sender, PictureBox)
-        Dim nom As String = pbCliquee.Name
         pbCliquee.Image = listeImages(listeCartes.IndexOf(pbCliquee))
         listeCartesFlipped.Add(pbCliquee)
-        compteurCarteRetournee += 1
-
-        If compteurCarteRetournee >= 2 Then
+        If compteurCarteRetournee >= 1 Then
             For Each pb As PictureBox In listeCartesFlipped
                 If Not pbCliquee.Image.Equals(pb.Image) Then
-                    Task.Delay(400).Wait()
-                    For Each pbF As PictureBox In listeCartesFlipped
-                        pbF.Image = My.Resources.Carte_pokemon_dos
+                    Timer2.Start()
+                    For Each pbF As PictureBox In listeCartes
+                        pbF.Enabled = False
                     Next
-                    compteurCarteRetournee = 0
-                    listeCartesFlipped.Clear()
                     Exit For
+                ElseIf pbCliquee.Image.Equals(pb.Image) Then
+                    compteurCarteRetournee += 1
                 End If
             Next
+        Else compteurCarteRetournee += 1
         End If
-        If compteurCarteRetournee = 4 Then
+        If compteurCarteRetournee = 4 Then 'And listeCartesFlipped(3).Image.Equals(listeCartesFlipped(2)) Then
             For Each pbTrouvé As PictureBox In listeCartesFlipped
                 pbTrouvé.Enabled = False
             Next
@@ -129,7 +129,16 @@
 
     End Sub
 
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles lblJoueur.Click
-
+    Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
+        Timer2.Stop()
+        ' Réactive les cartes
+        For Each pbE As PictureBox In listeCartes
+            pbE.Enabled = True
+        Next
+        For Each pbF As PictureBox In listeCartesFlipped
+            pbF.Image = My.Resources.Carte_pokemon_dos
+        Next
+        compteurCarteRetournee = 0
+        listeCartesFlipped.Clear()
     End Sub
 End Class

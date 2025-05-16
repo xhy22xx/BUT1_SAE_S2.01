@@ -68,7 +68,7 @@ Public Class Form1
             ElseIf FormOptions.RbtnDifficile.Checked = True Then
                 'Memory3.Show()
                 'Memory........
-                MsgBox("Memory niv difficile pas encore créer")
+                MsgBox("Memory niv difficile pas encore créé")
             Else
                 'Normalement il n'affiche pas ca 
                 MsgBox("Erreur. Niveau de difficulté non choisit. Aller sur options et choisir le niveau.")
@@ -80,7 +80,7 @@ Public Class Form1
         If FormOptions.RbtnL1.Checked = True Then
             formConfirmation.lblConfirmation.Text = "Êtes vous sûr de vouloir quitter l'application?"
         ElseIf FormOptions.RbtnL2.Checked = True Then
-            formConfirmation.lblConfirmation.Text = "Are you sure you want to quit the application?"
+            formConfirmation.lblConfirmation.Text = "Are you sure you want to exit the application?"
         ElseIf FormOptions.RbtnL3.Checked = True Then
             formConfirmation.lblConfirmation.Text = "确定要退出应用程序吗？"
         End If

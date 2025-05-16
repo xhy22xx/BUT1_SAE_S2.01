@@ -39,7 +39,6 @@
     Dim DefaultTextBtnRetour As String
     Dim DefaultTextbtnRechercher As String
     Private Sub Options_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
         'Sauvegarde des textes initials (PAGE D'ACCUEIL)
         DefaultTextbtnLancer = Form1.btnLancer.Text
         DefaultTextbtnQuitter = Form1.btnQuitter.Text
@@ -140,7 +139,7 @@
 
             Memory.lblJoueur.Text = "Player: "
             Memory.lblTempsR.Text = "Time remaining: "
-            Memory.btnAbandon.Text = "Surrender"
+            Memory.btnAbandon.Text = "Give Up"
 
             formConfirmation.Text = "Confirmation"
             formConfirmation.btnYes.Text = "Yes"
@@ -173,7 +172,7 @@
             formConfirmation.btnYes.Text = "确定"
             formConfirmation.btnNo.Text = "取消"
         Else
-            MsgBox("Erreur. Langue non choisit???")   'A enlever si ya plus de problèmes
+            MsgBox("Erreur. Langue non choisie???")   'A enlever si ya plus de problèmes
         End If
 
         Me.Hide()

@@ -29,18 +29,20 @@ Partial Class formConfirmation
         ' 
         ' btnNo
         ' 
-        btnNo.Location = New Point(354, 229)
+        btnNo.Location = New Point(295, 191)
+        btnNo.Margin = New Padding(2, 2, 2, 2)
         btnNo.Name = "btnNo"
-        btnNo.Size = New Size(174, 49)
+        btnNo.Size = New Size(145, 41)
         btnNo.TabIndex = 0
         btnNo.Text = "Non"
         btnNo.UseVisualStyleBackColor = True
         ' 
         ' btnYes
         ' 
-        btnYes.Location = New Point(110, 229)
+        btnYes.Location = New Point(92, 191)
+        btnYes.Margin = New Padding(2, 2, 2, 2)
         btnYes.Name = "btnYes"
-        btnYes.Size = New Size(174, 49)
+        btnYes.Size = New Size(145, 41)
         btnYes.TabIndex = 1
         btnYes.Text = "Oui"
         btnYes.UseVisualStyleBackColor = True
@@ -48,23 +50,25 @@ Partial Class formConfirmation
         ' lblConfirmation
         ' 
         lblConfirmation.AutoSize = True
-        lblConfirmation.Location = New Point(110, 120)
+        lblConfirmation.Location = New Point(92, 100)
+        lblConfirmation.Margin = New Padding(2, 0, 2, 0)
         lblConfirmation.Name = "lblConfirmation"
-        lblConfirmation.Size = New Size(23, 30)
+        lblConfirmation.Size = New Size(20, 25)
         lblConfirmation.TabIndex = 2
         lblConfirmation.Text = "x"
         lblConfirmation.TextAlign = ContentAlignment.MiddleLeft
         ' 
-        ' formConfirmation1
+        ' formConfirmation
         ' 
-        AutoScaleDimensions = New SizeF(12F, 30F)
+        AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
         AutoValidate = AutoValidate.Disable
-        ClientSize = New Size(648, 329)
+        ClientSize = New Size(540, 274)
         Controls.Add(lblConfirmation)
         Controls.Add(btnYes)
         Controls.Add(btnNo)
-        Name = "formConfirmation1"
+        Margin = New Padding(2, 2, 2, 2)
+        Name = "formConfirmation"
         Text = "Confirmation"
         ResumeLayout(False)
         PerformLayout()
