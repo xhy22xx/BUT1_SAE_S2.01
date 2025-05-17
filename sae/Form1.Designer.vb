@@ -173,8 +173,7 @@ Partial Class Form1
         ' 
         ' Form1
         ' 
-        AutoScaleDimensions = New SizeF(13F, 32F)
-        AutoScaleMode = AutoScaleMode.Font
+        AutoScaleMode = AutoScaleMode.None
         BackgroundImage = My.Resources.Resources.menu
         BackgroundImageLayout = ImageLayout.None
         ClientSize = New Size(1071, 672)
@@ -188,8 +187,10 @@ Partial Class Form1
         Controls.Add(cbxNoms)
         FormBorderStyle = FormBorderStyle.FixedSingle
         Margin = New Padding(3, 5, 3, 5)
+        MaximizeBox = False
         MinimizeBox = False
         Name = "Form1"
+        StartPosition = FormStartPosition.CenterParent
         Text = "Accueil"
         CType(AxWindowsMediaPlayer1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
