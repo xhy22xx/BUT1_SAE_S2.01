@@ -58,16 +58,12 @@ Public Class Form1
     Private Sub btnLancer_Click(sender As Object, e As EventArgs) Handles btnLancer.Click
         If cbxNoms.Text = "" Then
             If FormOptions.RbtnL1.Checked = True Then
-                formErreur.lblErreur.Text = "Nom obligatoire."
-                formErreur.Text = "Erreur d'entrée"
+                MsgBox("Nom obligatoire.", MsgBoxStyle.Information, "Erreur d'entrée")
             ElseIf FormOptions.RbtnL2.Checked = True Then
-                formErreur.lblErreur.Text = "Please enter a name."
-                formErreur.Text = "Input error"
+                MsgBox("Please enter a name.", MsgBoxStyle.Information, "Input error")
             ElseIf FormOptions.RbtnL3.Checked = True Then
-                formErreur.lblErreur.Text = "请输入玩家名称。"
-                formErreur.Text = "输入错误"
+                MsgBox("请输入玩家名称。", MsgBoxStyle.Information, "输入错误")
             End If
-            formErreur.ShowDialog()
             cbxNoms.Focus()
             Exit Sub
         End If

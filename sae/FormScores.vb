@@ -60,19 +60,13 @@ Public Class FormScores
 
         If nom = "" Then
             If FormOptions.RbtnL1.Checked = True Then
-                formErreur.lblErreur.Text = "Veuillez entrer un nom."
-                formErreur.Text = "Erreur d'entrée"
+                MsgBox("Veuillez entrer un nom.", MsgBoxStyle.Information, "Erreur d'entrée")
             ElseIf FormOptions.RbtnL2.Checked = True Then
-                formErreur.lblErreur.Text = "Please enter a name."
-                formErreur.Text = "Input error"
+                MsgBox("Please enter a name.", MsgBoxStyle.Information, "Input error")
             ElseIf FormOptions.RbtnL3.Checked = True Then
-                formErreur.lblErreur.Text = "请输入玩家名称。"
-                formErreur.Text = "输入错误"
+                MsgBox("请输入玩家名称。", MsgBoxStyle.Information, "输入错误")
             End If
-            Dim result As DialogResult = formErreur.ShowDialog()
-            If result = DialogResult.OK Then
-                Exit Sub
-            End If
+            Exit Sub
         End If
 
         If index >= 0 Then
