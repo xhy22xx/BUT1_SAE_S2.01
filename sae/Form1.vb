@@ -3,13 +3,15 @@ Imports System.IO
 Imports System.Media
 Public Class Form1
 
-    Dim position As Double = 0
+    Dim positionMusique As Double = 0
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim personne As PERS() = Module_Enregistrement.GetPersonnes()
 
         If personne IsNot Nothing AndAlso personne.Length > 0 Then
             For Each s As PERS In personne
-                cbxNoms.Items.Add(s.Nom)
+                If Not cbxNoms.Items.Contains(s.Nom) Then
+                    cbxNoms.Items.Add(s.Nom)
+                End If
             Next
         End If
 
@@ -34,24 +36,26 @@ Public Class Form1
                 cbxNoms.Items.Add(s.Nom)
             Next
         End If
-        AxWindowsMediaPlayer1.URL = "Resources\CallYouMine.wav"
-        AxWindowsMediaPlayer1.settings.setMode("loop", True)
+
+        If AxWindowsMediaPlayer1.URL = "" Then
+            AxWindowsMediaPlayer1.URL = "Resources\CallYouMine.wav"
+            AxWindowsMediaPlayer1.settings.setMode("loop", True)
+        End If
+
+        If positionMusique > 0 Then
+            AxWindowsMediaPlayer1.Ctlcontrols.currentPosition = positionMusique
+        End If
         AxWindowsMediaPlayer1.Ctlcontrols.play()
     End Sub
 
-    Private Sub Form1_Deactivate(sender As Object, e As EventArgs) Handles Me.Deactivate
-        Try
-            AxWindowsMediaPlayer1.Ctlcontrols.stop()
-        Catch ex As Exception
-        End Try
-    End Sub
+
     Private Sub ButtonStop_Click(sender As Object, e As EventArgs) Handles ButtonStopMusic.Click
-        position = AxWindowsMediaPlayer1.Ctlcontrols.currentPosition
+        positionMusique = AxWindowsMediaPlayer1.Ctlcontrols.currentPosition
         AxWindowsMediaPlayer1.Ctlcontrols.pause()
     End Sub
 
     Private Sub ButtonResume_Click(sender As Object, e As EventArgs) Handles ButtonContinueMusic.Click
-        AxWindowsMediaPlayer1.Ctlcontrols.currentPosition = position
+        AxWindowsMediaPlayer1.Ctlcontrols.currentPosition = positionMusique
         AxWindowsMediaPlayer1.Ctlcontrols.play()
     End Sub
 
@@ -78,6 +82,8 @@ Public Class Form1
             End If
             cbxNoms.Focus()
         Else
+            AxWindowsMediaPlayer1.Ctlcontrols.currentPosition = 0
+            AxWindowsMediaPlayer1.Ctlcontrols.pause()
             Dim name As String = cbxNoms.Text
             Module_Enregistrement.AJOUT(name, 0, 0, 0, 0)
 
