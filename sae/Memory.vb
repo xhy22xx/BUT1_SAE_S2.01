@@ -70,7 +70,7 @@ Public Class Memory
         Timer1.Start()
         Timer1.Interval = 1000
         time -= 1
-        tempsJoueur += 1
+        tempsJoueur += 1                       'Faut stocker le temps du joueur qq part
         Dim minutes As Integer = time \ 60
         Dim secondes As Integer = (time Mod 60)
         If Label4.Text = "0:01" Then
@@ -100,31 +100,50 @@ Public Class Memory
         Dim pbCliquee As PictureBox = CType(sender, PictureBox)
         pbCliquee.Image = listeImages(listeCartes.IndexOf(pbCliquee))
         listeCartesFlipped.Add(pbCliquee)
-        If compteurCarteRetournee >= 1 Then
-            For Each pb As PictureBox In listeCartesFlipped
-                If Not pbCliquee.Image.Equals(pb.Image) Then
-                    Timer2.Start()
-                    For Each pbF As PictureBox In listeCartes
-                        pbF.Enabled = False
-                    Next
+        If listeCartesFlipped.Count >= 1 Then
+            Dim toutesIdentiques As Boolean = True
+            Dim carteRetournee As Integer = 0
+
+            If listeCartesFlipped.Count = 2 Then
+                carteRetournee = 2
+            ElseIf listeCartesFlipped.Count = 3 Then
+                carteRetournee = 3
+            ElseIf listeCartesFlipped.Count = 4 Then
+                carteRetournee = 4
+            End If
+            For i As Integer = 1 To carteRetournee - 1
+                If Not listeCartesFlipped(i).Image.Equals(listeCartesFlipped(0).Image) Then
+                    toutesIdentiques = False
                     Exit For
-                ElseIf pbCliquee.Image.Equals(pb.Image) Then
-                    compteurCarteRetournee += 1
                 End If
             Next
-        Else compteurCarteRetournee += 1
-        End If
-        If compteurCarteRetournee = 4 Then 'And listeCartesFlipped(3).Image.Equals(listeCartesFlipped(2)) Then
-            For Each pbTrouvé As PictureBox In listeCartesFlipped
-                pbTrouvé.Enabled = False
-            Next
-            listeCartesFlipped.Clear()
-            compteurCarteRetournee = 0
-            pointsJoueur += 1
+            If toutesIdentiques Then
+                If carteRetournee = 4 Then
+                    ' Bloque les cartes trouvées
+                    For Each pbTrouve As PictureBox In listeCartesFlipped
+                        pbTrouve.Enabled = False
+                    Next
+                    pointsJoueur += 1
+                    listeCartesFlipped.Clear()
+                End If
+            Else
+                ' Sinon, déclenche Timer2 pour les retourner
+                Timer2.Start()
+                For Each pb As PictureBox In listeCartes
+                    pb.Enabled = False
+                Next
+            End If
         End If
 
         If pointsJoueur = 5 Or Label4.Text.Equals("0:00") Then
             Timer1.Stop()
+            If FormOptions.RbtnL1.Checked = True Then
+                MsgBox("Bravoooo! Vous avez trouvé toutes les paires de cartes!")
+            ElseIf FormOptions.RbtnL2.Checked = True Then
+                MsgBox("You won! You found all the pairs of cards!")
+            ElseIf FormOptions.RbtnL3.Checked = True Then
+                MsgBox("你赢了！你找到了所有的卡片！")
+            End If
         End If
 
     End Sub
