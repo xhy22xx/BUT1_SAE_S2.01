@@ -254,8 +254,7 @@ Partial Class FormOptions
         ' 
         ' FormOptions
         ' 
-        AutoScaleDimensions = New SizeF(13F, 32F)
-        AutoScaleMode = AutoScaleMode.Font
+        AutoScaleMode = AutoScaleMode.None
         BackColor = SystemColors.ButtonHighlight
         ClientSize = New Size(767, 969)
         Controls.Add(btnValidation)

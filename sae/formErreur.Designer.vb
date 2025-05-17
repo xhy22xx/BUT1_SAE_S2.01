@@ -54,8 +54,7 @@ Partial Class formErreur
         ' 
         ' formErreur
         ' 
-        AutoScaleDimensions = New SizeF(12F, 28F)
-        AutoScaleMode = AutoScaleMode.Font
+        AutoScaleMode = AutoScaleMode.None
         BackgroundImage = My.Resources.Resources.affiche
         BackgroundImageLayout = ImageLayout.Center
         ClientSize = New Size(726, 298)

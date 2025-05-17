@@ -76,8 +76,7 @@ Partial Class formConfirmation
         ' 
         ' formConfirmation
         ' 
-        AutoScaleDimensions = New SizeF(13F, 32F)
-        AutoScaleMode = AutoScaleMode.Font
+        AutoScaleMode = AutoScaleMode.None
         AutoValidate = AutoValidate.Disable
         BackgroundImage = My.Resources.Resources.affiche
         BackgroundImageLayout = ImageLayout.Center

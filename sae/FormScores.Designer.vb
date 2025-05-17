@@ -276,8 +276,7 @@ Partial Class FormScores
         ' 
         ' FormScores
         ' 
-        AutoScaleDimensions = New SizeF(13F, 32F)
-        AutoScaleMode = AutoScaleMode.Font
+        AutoScaleMode = AutoScaleMode.None
         BackColor = Color.White
         BackgroundImageLayout = ImageLayout.Center
         ClientSize = New Size(1074, 981)
