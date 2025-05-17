@@ -1,38 +1,21 @@
 ﻿Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 
 Public Class FormScores
-    'Faudrait enlever ca
-    Dim tnoms() As String = {"le russe", "paracétamol", "amoxiciline", "doliprane", "smecta", "protagoniste", "sarah", "fitia", "eva", "celia"}
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ComboBoxJoueur.Items.AddRange(tnoms) 'A enlever aussi
-        LstJoueurs.Items.Add("sarah")
-        LstJoueurs.Items.Add("celia")
-        LstJoueurs.Items.Add("fitia")
-        LstJoueurs.Items.Add("eva")
+        Dim personnes As PERS() = Module_Enregistrement.GetPersonnes()
 
-        LstCarres.Items.Add(2)
-        LstCarres.Items.Add(2)
-        LstCarres.Items.Add(3)
-        LstCarres.Items.Add(3)
+        If personnes IsNot Nothing Then
+            For Each p In personnes
+                LstJoueurs.Items.Add(p.Nom)
+                LstCarres.Items.Add(p.Carres)
+                LstTempsM.Items.Add(p.TempsMin)
+                LstParties.Items.Add(p.Parties)
+                LstTempsT.Items.Add(p.TempsTotal)
 
-        LstTempsM.Items.Add(60)
-        LstTempsM.Items.Add(50)
-        LstTempsM.Items.Add(45)
-        LstTempsM.Items.Add(60)
-
-        LstParties.Items.Add(3)
-        LstParties.Items.Add(6)
-        LstParties.Items.Add(9)
-        LstParties.Items.Add(5)
-
-        LstTempsT.Items.Add(180)
-        LstTempsT.Items.Add(200)
-        LstTempsT.Items.Add(270)
-        LstTempsT.Items.Add(300)
-
-
-
+                ComboBoxJoueur.Items.Add(p.Nom)
+            Next
+        End If
     End Sub
 
     Private Sub ListBox_SelectedIndexChanged(sender As Object, e As EventArgs) _

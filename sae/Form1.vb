@@ -79,7 +79,7 @@ Public Class Form1
             cbxNoms.Focus()
         Else
             Dim name As String = cbxNoms.Text
-            Module_Enregistrement.AJOUT(name)
+            Module_Enregistrement.AJOUT(name, 0, 0, 0, 0)
 
             If FormOptions.RbtnFacile.Checked = True Then
                 Memory.Show()
