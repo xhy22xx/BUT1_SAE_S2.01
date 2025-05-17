@@ -8,6 +8,11 @@ Public Class Memory
     Dim compteurCarteRetournee As Integer
     Dim pointsJoueur As Integer
     Dim tempsJoueur As Integer
+    Dim pictureBoxes As PictureBox() = {
+    PictureBox1, PictureBox2, PictureBox3, PictureBox4, PictureBox5,
+    PictureBox6, PictureBox7, PictureBox8, PictureBox9, PictureBox10,
+    PictureBox11, PictureBox12, PictureBox13, PictureBox14, PictureBox15,
+    PictureBox16, PictureBox17, PictureBox18, PictureBox19, PictureBox20}
     Private Sub btnAbandon_Click(sender As Object, e As EventArgs) Handles btnAbandon.Click
 
         If FormOptions.RbtnL1.Checked = True Then
@@ -34,8 +39,19 @@ Public Class Memory
         Label4.Text = minutes.ToString("0") & ":" & secondes.ToString("00")
         'j'ajoute nos images dans une liste
         listeImages.Clear()
-        listeImages.AddRange({My.Resources.Celebi, My.Resources.Mew, My.Resources.Marill,
+        If FormOptions.RbtnT1.Checked = True Then
+            listeImages.AddRange({My.Resources.Celebi, My.Resources.Mew, My.Resources.Marill,
                               My.Resources.Dracaufeu, My.Resources.Evoli})
+        ElseIf FormOptions.RbtnT2.Checked = True Then
+            'Modifier le dos des cartes. Je n'y arrive pas TvT
+            listeImages.AddRange({My.Resources.LC1, My.Resources.LC2, My.Resources.LC3,
+                                 My.Resources.LC4, My.Resources.LC5})
+        ElseIf FormOptions.RbtnT3.Checked = True Then
+
+            'Les autres cartes
+        Else
+            MsgBox("Erreur qq part")
+        End If
         listeImages.AddRange(listeImages)
         listeImages.AddRange(listeImages)
 
