@@ -4,6 +4,7 @@
     Dim DefaultTextbtnQuitter As String
     Dim DefaultTextbtnAfficherScore As String
     Dim DefaultTextbtnOptions As String
+    Dim DefaultTextForm1 As String
 
     Dim DefaultTextlblD As String
     Dim DefaultTextlblL As String
@@ -18,10 +19,12 @@
     Dim DefaultTextRbtnT1 As String
     Dim DefaultTextRbtnT2 As String
     Dim DefaultTextRbtnT3 As String
+    Dim DefaultTextFormOptions As String
 
     Dim DefaultTextlblJoueur As String
     Dim DefaultTextlblTempsR As String
     Dim DefaultTextbtnAbandon As String
+    Dim DefaultTextMemory As String
 
     Dim DefaultTextConfirmation As String
     Dim DefaultTextbtnYes As String
@@ -38,12 +41,14 @@
     Dim DefaultTextBtnTrier As String
     Dim DefaultTextBtnRetour As String
     Dim DefaultTextbtnRechercher As String
+    Dim DefaultTextScores As String
     Private Sub Options_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Sauvegarde des textes initials (PAGE D'ACCUEIL)
         DefaultTextbtnLancer = Form1.btnLancer.Text
         DefaultTextbtnQuitter = Form1.btnQuitter.Text
         DefaultTextbtnAfficherScore = Form1.btnAfficherScore.Text
         DefaultTextbtnOptions = Form1.btnOptions.Text
+        DefaultTextForm1 = Form1.Text
         'Sauvegarde des textes initiales (Options)
         DefaultTextlblD = lblD.Text
         DefaultTextlblL = lblL.Text
@@ -58,10 +63,13 @@
         DefaultTextRbtnT1 = RbtnT1.Text
         DefaultTextRbtnT2 = RbtnT2.Text
         DefaultTextRbtnT3 = RbtnT3.Text
+        DefaultTextFormOptions = Me.Text
+
         'Sauvegarde des textes initiales (Memory)
         DefaultTextlblJoueur = Memory.lblJoueur.Text
         DefaultTextlblTempsR = Memory.lblTempsR.Text
         DefaultTextbtnAbandon = Memory.btnAbandon.Text
+        DefaultTextMemory = Memory.Text
         'Initialisation de la boîte de Confirmation
         DefaultTextConfirmation = formConfirmation.Text
         DefaultTextbtnYes = formConfirmation.btnYes.Text
@@ -78,7 +86,7 @@
         DefaultTextBtnTrier = FormScores.BtnTrier.Text
         DefaultTextBtnRetour = FormScores.BtnRetour.Text
         DefaultTextbtnRechercher = FormScores.BtnRechercher.Text
-
+        DefaultTextScores = FormScores.Text
     End Sub
 
     'A mettre dans les autres FORMULAIREEEEEEEEEEEEEEEEEEEEEEEEEEEE
@@ -92,6 +100,7 @@
             Form1.btnQuitter.Text = DefaultTextbtnQuitter
             Form1.btnAfficherScore.Text = DefaultTextbtnAfficherScore
             Form1.btnOptions.Text = DefaultTextbtnOptions
+            Form1.Text = DefaultTextForm1
 
             lblD.Text = DefaultTextlblD
             lblL.Text = DefaultTextlblL
@@ -106,22 +115,36 @@
             RbtnT1.Text = DefaultTextRbtnT1
             RbtnT2.Text = DefaultTextRbtnT2
             RbtnT3.Text = DefaultTextRbtnT3
+            Me.Text = DefaultTextFormOptions
 
             Memory.lblJoueur.Text = DefaultTextlblJoueur
             Memory.lblTempsR.Text = DefaultTextlblTempsR
             Memory.btnAbandon.Text = DefaultTextbtnAbandon
+            Memory.Text = DefaultTextMemory
 
             formConfirmation.Text = DefaultTextConfirmation
             formConfirmation.btnYes.Text = DefaultTextbtnYes
             formConfirmation.btnNo.Text = DefaultTextbtnNo
 
-            'A mettre ici!!!!!!!!!!!!! ajout pour les langues du formscores!!
+            FormScores.Text = DefaultTextScores
+            FormScores.GroupBox1.Text = DefaultTextGpB1
+            FormScores.GroupBox2.Text = DefaultTextGpB2
+            FormScores.LJoueur.Text = DefaultTextLJoueur
+            FormScores.LCarres.Text = DefaultTextLCarres
+            FormScores.LTempsM.Text = DefaultTextLTempsM
+            FormScores.LParties.Text = DefaultTextLParties
+            FormScores.LTempsT.Text = DefaultTextLTempsT
+            FormScores.LNom.Text = DefaultTextLNom
+            FormScores.BtnTrier.Text = DefaultTextBtnTrier
+            FormScores.BtnRetour.Text = DefaultTextBtnRetour
+            FormScores.BtnRechercher.Text = DefaultTextbtnRechercher
 
         ElseIf RbtnL2.Checked = True Then
             Form1.btnLancer.Text = "Start"
             Form1.btnQuitter.Text = "Quit"
             Form1.btnAfficherScore.Text = "Show Score"
             Form1.btnOptions.Text = "Settings"
+            Form1.Text = "Main Menu"
 
             lblD.Text = "Difficulty selection: "
             lblL.Text = "Language choice: "
@@ -136,19 +159,35 @@
             RbtnT1.Text = "Pokémon Card"
             RbtnT2.Text = "type 2 en" 'A modifier
             RbtnT3.Text = "type 3 en" 'A modifier
+            Me.Text = "Options"
 
             Memory.lblJoueur.Text = "Player: "
             Memory.lblTempsR.Text = "Time remaining: "
             Memory.btnAbandon.Text = "Give Up"
+            Memory.Text = "Memory"
 
             formConfirmation.Text = "Confirmation"
             formConfirmation.btnYes.Text = "Yes"
             formConfirmation.btnNo.Text = "No"
+
+            FormScores.Text = "Score"
+            FormScores.GroupBox1.Text = "Stats"
+            FormScores.GroupBox2.Text = "Search Players"
+            FormScores.LJoueur.Text = "Players"
+            FormScores.LCarres.Text = "Squares Found"
+            FormScores.LTempsM.Text = "Record Time"
+            FormScores.LParties.Text = "Games Played"
+            FormScores.LTempsT.Text = "Total Play Time"
+            FormScores.LNom.Text = "Player Name:"
+            FormScores.BtnTrier.Text = "Sort"
+            FormScores.BtnRetour.Text = "Back"
+            FormScores.BtnRechercher.Text = "Search"
         ElseIf RbtnL3.Checked = True Then
             Form1.btnLancer.Text = "开始"
             Form1.btnQuitter.Text = "退出"
             Form1.btnAfficherScore.Text = "显示分数"
             Form1.btnOptions.Text = "设置"
+            Form1.Text = "主菜单"
 
             lblD.Text = "难度选择: "
             lblL.Text = "语言选择: "
@@ -163,14 +202,29 @@
             RbtnT1.Text = "宝可梦卡牌"
             RbtnT2.Text = "类型 2 " 'A modifier
             RbtnT3.Text = "类型 3 " 'A modifier
+            Me.Text = "选项"
 
             Memory.lblJoueur.Text = "玩家: "
             Memory.lblTempsR.Text = "剩余时间: "
             Memory.btnAbandon.Text = "放弃"
+            Memory.Text = "配对游戏"
 
             formConfirmation.Text = "确认"
             formConfirmation.btnYes.Text = "确定"
             formConfirmation.btnNo.Text = "取消"
+
+            FormScores.Text = "分数"
+            FormScores.GroupBox1.Text = "数据统计"
+            FormScores.GroupBox2.Text = "查找玩家"
+            FormScores.LJoueur.Text = "玩家列表"
+            FormScores.LCarres.Text = "解锁方块"
+            FormScores.LTempsM.Text = "最快纪录"
+            FormScores.LParties.Text = "总场次"
+            FormScores.LTempsT.Text = "累计时长"
+            FormScores.LNom.Text = "玩家ID："
+            FormScores.BtnTrier.Text = "排行榜"
+            FormScores.BtnRetour.Text = "返回菜单"
+            FormScores.BtnRechercher.Text = "查找"
         Else
             MsgBox("Erreur. Langue non choisie???")   'A enlever si ya plus de problèmes
         End If

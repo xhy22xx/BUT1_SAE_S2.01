@@ -22,6 +22,7 @@ Partial Class FormOptions
     'Ne la modifiez pas à l'aide de l'éditeur de code.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormOptions))
         RbtnFacile = New RadioButton()
         pnlOp1 = New Panel()
         RbtnDifficile = New RadioButton()
@@ -46,10 +47,10 @@ Partial Class FormOptions
         ' RbtnFacile
         ' 
         RbtnFacile.AutoSize = True
-        RbtnFacile.Location = New Point(36, 36)
+        RbtnFacile.Location = New Point(39, 51)
         RbtnFacile.Margin = New Padding(5, 6, 5, 6)
         RbtnFacile.Name = "RbtnFacile"
-        RbtnFacile.Size = New Size(89, 34)
+        RbtnFacile.Size = New Size(105, 31)
         RbtnFacile.TabIndex = 0
         RbtnFacile.TabStop = True
         RbtnFacile.Text = "Facile"
@@ -57,22 +58,26 @@ Partial Class FormOptions
         ' 
         ' pnlOp1
         ' 
+        pnlOp1.BackColor = Color.Transparent
+        pnlOp1.BackgroundImage = CType(resources.GetObject("pnlOp1.BackgroundImage"), Image)
+        pnlOp1.BackgroundImageLayout = ImageLayout.Center
         pnlOp1.Controls.Add(RbtnDifficile)
         pnlOp1.Controls.Add(RbtnMoyen)
         pnlOp1.Controls.Add(RbtnFacile)
-        pnlOp1.Location = New Point(58, 128)
+        pnlOp1.Font = New Font("Baskerville Old Face", 9F, FontStyle.Bold)
+        pnlOp1.Location = New Point(61, 80)
         pnlOp1.Margin = New Padding(5, 6, 5, 6)
         pnlOp1.Name = "pnlOp1"
-        pnlOp1.Size = New Size(237, 270)
+        pnlOp1.Size = New Size(257, 288)
         pnlOp1.TabIndex = 1
         ' 
         ' RbtnDifficile
         ' 
         RbtnDifficile.AutoSize = True
-        RbtnDifficile.Location = New Point(36, 194)
+        RbtnDifficile.Location = New Point(39, 182)
         RbtnDifficile.Margin = New Padding(5, 6, 5, 6)
         RbtnDifficile.Name = "RbtnDifficile"
-        RbtnDifficile.Size = New Size(108, 34)
+        RbtnDifficile.Size = New Size(130, 31)
         RbtnDifficile.TabIndex = 2
         RbtnDifficile.TabStop = True
         RbtnDifficile.Text = "Difficile"
@@ -81,10 +86,10 @@ Partial Class FormOptions
         ' RbtnMoyen
         ' 
         RbtnMoyen.AutoSize = True
-        RbtnMoyen.Location = New Point(36, 114)
+        RbtnMoyen.Location = New Point(39, 117)
         RbtnMoyen.Margin = New Padding(5, 6, 5, 6)
         RbtnMoyen.Name = "RbtnMoyen"
-        RbtnMoyen.Size = New Size(102, 34)
+        RbtnMoyen.Size = New Size(114, 31)
         RbtnMoyen.TabIndex = 3
         RbtnMoyen.TabStop = True
         RbtnMoyen.Text = "Moyen"
@@ -93,41 +98,49 @@ Partial Class FormOptions
         ' lblD
         ' 
         lblD.AutoSize = True
-        lblD.Location = New Point(58, 92)
+        lblD.BackColor = Color.Transparent
+        lblD.Font = New Font("Bernard MT Condensed", 9F)
+        lblD.Location = New Point(61, 41)
         lblD.Margin = New Padding(5, 0, 5, 0)
         lblD.Name = "lblD"
-        lblD.Size = New Size(240, 30)
+        lblD.Size = New Size(241, 28)
         lblD.TabIndex = 2
         lblD.Text = "Sélection de la difficulté:"
         ' 
         ' lblL
         ' 
         lblL.AutoSize = True
-        lblL.Location = New Point(58, 464)
+        lblL.BackColor = Color.Transparent
+        lblL.Font = New Font("Bernard MT Condensed", 9F)
+        lblL.Location = New Point(61, 438)
         lblL.Margin = New Padding(5, 0, 5, 0)
         lblL.Name = "lblL"
-        lblL.Size = New Size(200, 30)
+        lblL.Size = New Size(201, 28)
         lblL.TabIndex = 4
         lblL.Text = "Sélection de langue:"
         ' 
         ' pnlOp2
         ' 
+        pnlOp2.BackColor = Color.Transparent
+        pnlOp2.BackgroundImage = CType(resources.GetObject("pnlOp2.BackgroundImage"), Image)
+        pnlOp2.BackgroundImageLayout = ImageLayout.Center
         pnlOp2.Controls.Add(RbtnL3)
         pnlOp2.Controls.Add(RbtnL2)
         pnlOp2.Controls.Add(RbtnL1)
-        pnlOp2.Location = New Point(58, 500)
+        pnlOp2.Font = New Font("Baskerville Old Face", 9F, FontStyle.Bold)
+        pnlOp2.Location = New Point(61, 476)
         pnlOp2.Margin = New Padding(5, 6, 5, 6)
         pnlOp2.Name = "pnlOp2"
-        pnlOp2.Size = New Size(194, 270)
+        pnlOp2.Size = New Size(257, 288)
         pnlOp2.TabIndex = 3
         ' 
         ' RbtnL3
         ' 
         RbtnL3.AutoSize = True
-        RbtnL3.Location = New Point(36, 194)
+        RbtnL3.Location = New Point(39, 181)
         RbtnL3.Margin = New Padding(5, 6, 5, 6)
         RbtnL3.Name = "RbtnL3"
-        RbtnL3.Size = New Size(103, 34)
+        RbtnL3.Size = New Size(117, 31)
         RbtnL3.TabIndex = 2
         RbtnL3.TabStop = True
         RbtnL3.Text = "chinois"
@@ -136,10 +149,10 @@ Partial Class FormOptions
         ' RbtnL2
         ' 
         RbtnL2.AutoSize = True
-        RbtnL2.Location = New Point(36, 114)
+        RbtnL2.Location = New Point(39, 117)
         RbtnL2.Margin = New Padding(5, 6, 5, 6)
         RbtnL2.Name = "RbtnL2"
-        RbtnL2.Size = New Size(103, 34)
+        RbtnL2.Size = New Size(112, 31)
         RbtnL2.TabIndex = 3
         RbtnL2.TabStop = True
         RbtnL2.Text = "anglais"
@@ -148,10 +161,10 @@ Partial Class FormOptions
         ' RbtnL1
         ' 
         RbtnL1.AutoSize = True
-        RbtnL1.Location = New Point(36, 36)
+        RbtnL1.Location = New Point(39, 51)
         RbtnL1.Margin = New Padding(5, 6, 5, 6)
         RbtnL1.Name = "RbtnL1"
-        RbtnL1.Size = New Size(110, 34)
+        RbtnL1.Size = New Size(122, 31)
         RbtnL1.TabIndex = 0
         RbtnL1.TabStop = True
         RbtnL1.Text = "francais"
@@ -160,31 +173,37 @@ Partial Class FormOptions
         ' lblC
         ' 
         lblC.AutoSize = True
-        lblC.Location = New Point(389, 464)
+        lblC.BackColor = Color.Transparent
+        lblC.Font = New Font("Bernard MT Condensed", 9F)
+        lblC.Location = New Point(411, 225)
         lblC.Margin = New Padding(5, 0, 5, 0)
         lblC.Name = "lblC"
-        lblC.Size = New Size(218, 30)
+        lblC.Size = New Size(219, 28)
         lblC.TabIndex = 6
         lblC.Text = "Style visuel des cartes:"
         ' 
         ' pnlOp3
         ' 
+        pnlOp3.BackColor = Color.Transparent
+        pnlOp3.BackgroundImage = CType(resources.GetObject("pnlOp3.BackgroundImage"), Image)
+        pnlOp3.BackgroundImageLayout = ImageLayout.Center
         pnlOp3.Controls.Add(RbtnT3)
         pnlOp3.Controls.Add(RbtnT2)
         pnlOp3.Controls.Add(RbtnT1)
-        pnlOp3.Location = New Point(389, 500)
+        pnlOp3.Font = New Font("Baskerville Old Face", 9F, FontStyle.Bold)
+        pnlOp3.Location = New Point(411, 263)
         pnlOp3.Margin = New Padding(5, 6, 5, 6)
         pnlOp3.Name = "pnlOp3"
-        pnlOp3.Size = New Size(256, 270)
+        pnlOp3.Size = New Size(277, 288)
         pnlOp3.TabIndex = 5
         ' 
         ' RbtnT3
         ' 
         RbtnT3.AutoSize = True
-        RbtnT3.Location = New Point(36, 194)
+        RbtnT3.Location = New Point(39, 182)
         RbtnT3.Margin = New Padding(5, 6, 5, 6)
         RbtnT3.Name = "RbtnT3"
-        RbtnT3.Size = New Size(95, 34)
+        RbtnT3.Size = New Size(107, 31)
         RbtnT3.TabIndex = 2
         RbtnT3.TabStop = True
         RbtnT3.Text = "type 3"
@@ -193,10 +212,10 @@ Partial Class FormOptions
         ' RbtnT2
         ' 
         RbtnT2.AutoSize = True
-        RbtnT2.Location = New Point(36, 114)
+        RbtnT2.Location = New Point(39, 117)
         RbtnT2.Margin = New Padding(5, 6, 5, 6)
         RbtnT2.Name = "RbtnT2"
-        RbtnT2.Size = New Size(95, 34)
+        RbtnT2.Size = New Size(107, 31)
         RbtnT2.TabIndex = 3
         RbtnT2.TabStop = True
         RbtnT2.Text = "type 2"
@@ -205,10 +224,10 @@ Partial Class FormOptions
         ' RbtnT1
         ' 
         RbtnT1.AutoSize = True
-        RbtnT1.Location = New Point(36, 36)
+        RbtnT1.Location = New Point(39, 50)
         RbtnT1.Margin = New Padding(5, 6, 5, 6)
         RbtnT1.Name = "RbtnT1"
-        RbtnT1.Size = New Size(188, 34)
+        RbtnT1.Size = New Size(214, 31)
         RbtnT1.TabIndex = 0
         RbtnT1.TabStop = True
         RbtnT1.Text = "Cartes Pokémon"
@@ -216,19 +235,29 @@ Partial Class FormOptions
         ' 
         ' btnValidation
         ' 
-        btnValidation.Location = New Point(281, 820)
+        btnValidation.BackColor = Color.Transparent
+        btnValidation.BackgroundImage = My.Resources.Resources.button21
+        btnValidation.BackgroundImageLayout = ImageLayout.Center
+        btnValidation.Cursor = Cursors.Hand
+        btnValidation.FlatAppearance.BorderSize = 0
+        btnValidation.FlatAppearance.MouseDownBackColor = Color.Transparent
+        btnValidation.FlatAppearance.MouseOverBackColor = Color.Transparent
+        btnValidation.FlatStyle = FlatStyle.Flat
+        btnValidation.Font = New Font("Felix Titling", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        btnValidation.Location = New Point(227, 790)
         btnValidation.Margin = New Padding(5, 6, 5, 6)
         btnValidation.Name = "btnValidation"
-        btnValidation.Size = New Size(129, 46)
+        btnValidation.Size = New Size(290, 132)
         btnValidation.TabIndex = 7
         btnValidation.Text = "Valider"
-        btnValidation.UseVisualStyleBackColor = True
+        btnValidation.UseVisualStyleBackColor = False
         ' 
         ' FormOptions
         ' 
-        AutoScaleDimensions = New SizeF(12F, 30F)
+        AutoScaleDimensions = New SizeF(13F, 32F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(708, 908)
+        BackColor = SystemColors.ButtonHighlight
+        ClientSize = New Size(767, 969)
         Controls.Add(btnValidation)
         Controls.Add(lblC)
         Controls.Add(pnlOp3)
@@ -236,6 +265,7 @@ Partial Class FormOptions
         Controls.Add(pnlOp2)
         Controls.Add(lblD)
         Controls.Add(pnlOp1)
+        FormBorderStyle = FormBorderStyle.FixedSingle
         Margin = New Padding(5, 6, 5, 6)
         Name = "FormOptions"
         Text = "Options"

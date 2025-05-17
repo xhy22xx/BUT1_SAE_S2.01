@@ -59,8 +59,20 @@ Public Class FormScores
         Dim index As Integer = LstJoueurs.Items.IndexOf(nom)
 
         If nom = "" Then
-            MsgBox("Veuillez entrer un nom.")
-            Exit Sub
+            If FormOptions.RbtnL1.Checked = True Then
+                formErreur.lblErreur.Text = "Veuillez entrer un nom."
+                formErreur.Text = "Erreur d'entrée"
+            ElseIf FormOptions.RbtnL2.Checked = True Then
+                formErreur.lblErreur.Text = "Please enter a name."
+                formErreur.Text = "Input error"
+            ElseIf FormOptions.RbtnL3.Checked = True Then
+                formErreur.lblErreur.Text = "请输入玩家名称。"
+                formErreur.Text = "输入错误"
+            End If
+            Dim result As DialogResult = formErreur.ShowDialog()
+            If result = DialogResult.OK Then
+                Exit Sub
+            End If
         End If
 
         If index >= 0 Then
@@ -72,7 +84,18 @@ Public Class FormScores
 
             MsgBox(message, MsgBoxStyle.Information, "Statistiques")
         Else
-            MsgBox("Joueur non trouvé.")
+            If FormOptions.RbtnL1.Checked = True Then
+                formErreur.lblErreur.Text = "Joueur non trouvé."
+                formErreur.Text = "Joueur inexistant"
+            ElseIf FormOptions.RbtnL2.Checked = True Then
+                formErreur.lblErreur.Text = "Player not found."
+                formErreur.Text = "Ghost player? They don’t exist!"
+            ElseIf FormOptions.RbtnL3.Checked = True Then
+                formErreur.lblErreur.Text = "未找到玩家。"
+                formErreur.Text = "玩家不存在！"
+            End If
+            formErreur.ShowDialog()
+            'Jsp si c bon ici
         End If
     End Sub
 

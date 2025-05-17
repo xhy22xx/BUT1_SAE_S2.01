@@ -45,153 +45,193 @@ Partial Class FormScores
         ' 
         ' BtnTrier
         ' 
-        BtnTrier.BackColor = Color.FromArgb(CByte(192), CByte(192), CByte(255))
-        BtnTrier.Location = New Point(945, 200)
+        BtnTrier.BackColor = Color.Transparent
+        BtnTrier.BackgroundImage = My.Resources.Resources.buttonS1
+        BtnTrier.BackgroundImageLayout = ImageLayout.Center
+        BtnTrier.CausesValidation = False
+        BtnTrier.Cursor = Cursors.Hand
+        BtnTrier.FlatAppearance.BorderSize = 0
+        BtnTrier.FlatAppearance.MouseDownBackColor = Color.White
+        BtnTrier.FlatAppearance.MouseOverBackColor = Color.White
+        BtnTrier.FlatStyle = FlatStyle.Flat
+        BtnTrier.ForeColor = Color.FromArgb(CByte(247), CByte(218), CByte(227))
+        BtnTrier.Location = New Point(852, 394)
         BtnTrier.Margin = New Padding(3, 4, 3, 4)
         BtnTrier.Name = "BtnTrier"
-        BtnTrier.Size = New Size(111, 48)
+        BtnTrier.Size = New Size(120, 68)
         BtnTrier.TabIndex = 10
         BtnTrier.Text = "TRIER"
         BtnTrier.UseVisualStyleBackColor = False
         ' 
         ' LTempsT
         ' 
-        LTempsT.AutoSize = True
-        LTempsT.Location = New Point(693, 68)
+        LTempsT.Location = New Point(788, 73)
         LTempsT.Name = "LTempsT"
-        LTempsT.Size = New Size(185, 30)
+        LTempsT.Size = New Size(221, 34)
         LTempsT.TabIndex = 9
-        LTempsT.Text = "Temps Total de jeu"
+        LTempsT.Text = "Temps de Jeu Total"
+        LTempsT.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' LParties
         ' 
-        LParties.AutoSize = True
-        LParties.Location = New Point(531, 68)
+        LParties.Location = New Point(613, 73)
         LParties.Name = "LParties"
-        LParties.Size = New Size(143, 30)
+        LParties.Size = New Size(169, 34)
         LParties.TabIndex = 8
         LParties.Text = "Parties Jouées"
+        LParties.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' LTempsM
         ' 
-        LTempsM.AutoSize = True
-        LTempsM.Location = New Point(393, 68)
+        LTempsM.Location = New Point(418, 73)
         LTempsM.Name = "LTempsM"
-        LTempsM.Size = New Size(114, 30)
+        LTempsM.Size = New Size(189, 34)
         LTempsM.TabIndex = 7
-        LTempsM.Text = "Temps Min"
+        LTempsM.Text = "Meilleurs Temps"
+        LTempsM.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' LCarres
         ' 
-        LCarres.AutoSize = True
-        LCarres.Location = New Point(202, 68)
+        LCarres.Location = New Point(223, 73)
         LCarres.Name = "LCarres"
-        LCarres.Size = New Size(162, 30)
+        LCarres.Size = New Size(189, 34)
         LCarres.TabIndex = 6
         LCarres.Text = "Carrés Identifiés"
+        LCarres.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' LJoueur
         ' 
-        LJoueur.AutoSize = True
-        LJoueur.Location = New Point(82, 68)
+        LJoueur.Location = New Point(34, 73)
         LJoueur.Name = "LJoueur"
-        LJoueur.Size = New Size(75, 30)
+        LJoueur.Size = New Size(183, 34)
         LJoueur.TabIndex = 5
-        LJoueur.Text = "Joueur"
+        LJoueur.Text = "Joueurs"
+        LJoueur.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' LstTempsT
         ' 
+        LstTempsT.Font = New Font("Bookman Old Style", 9F)
+        LstTempsT.ForeColor = Color.FromArgb(CByte(107), CByte(75), CByte(88))
         LstTempsT.FormattingEnabled = True
-        LstTempsT.ItemHeight = 30
-        LstTempsT.Location = New Point(693, 122)
+        LstTempsT.ItemHeight = 27
+        LstTempsT.Location = New Point(788, 130)
         LstTempsT.Margin = New Padding(3, 4, 3, 4)
         LstTempsT.Name = "LstTempsT"
-        LstTempsT.Size = New Size(211, 244)
+        LstTempsT.Size = New Size(221, 247)
         LstTempsT.TabIndex = 4
         ' 
         ' LstParties
         ' 
+        LstParties.Font = New Font("Bookman Old Style", 9F)
+        LstParties.ForeColor = Color.FromArgb(CByte(107), CByte(75), CByte(88))
         LstParties.FormattingEnabled = True
-        LstParties.ItemHeight = 30
-        LstParties.Location = New Point(535, 122)
+        LstParties.ItemHeight = 27
+        LstParties.Location = New Point(613, 130)
         LstParties.Margin = New Padding(3, 4, 3, 4)
         LstParties.Name = "LstParties"
-        LstParties.Size = New Size(148, 244)
+        LstParties.Size = New Size(169, 247)
         LstParties.TabIndex = 3
         ' 
         ' LstTempsM
         ' 
+        LstTempsM.Font = New Font("Bookman Old Style", 9F)
+        LstTempsM.ForeColor = Color.FromArgb(CByte(107), CByte(75), CByte(88))
         LstTempsM.FormattingEnabled = True
-        LstTempsM.ItemHeight = 30
-        LstTempsM.Location = New Point(377, 122)
+        LstTempsM.ItemHeight = 27
+        LstTempsM.Location = New Point(418, 130)
         LstTempsM.Margin = New Padding(3, 4, 3, 4)
         LstTempsM.Name = "LstTempsM"
-        LstTempsM.Size = New Size(148, 244)
+        LstTempsM.Size = New Size(189, 247)
         LstTempsM.TabIndex = 2
         ' 
         ' LstCarres
         ' 
+        LstCarres.Font = New Font("Bookman Old Style", 9F)
+        LstCarres.ForeColor = Color.FromArgb(CByte(107), CByte(75), CByte(88))
         LstCarres.FormattingEnabled = True
-        LstCarres.ItemHeight = 30
-        LstCarres.Location = New Point(207, 122)
+        LstCarres.ItemHeight = 27
+        LstCarres.Location = New Point(223, 130)
         LstCarres.Margin = New Padding(3, 4, 3, 4)
         LstCarres.Name = "LstCarres"
-        LstCarres.Size = New Size(160, 244)
+        LstCarres.Size = New Size(189, 247)
         LstCarres.TabIndex = 1
         ' 
         ' LstJoueurs
         ' 
+        LstJoueurs.Font = New Font("Bookman Old Style", 9F)
+        LstJoueurs.ForeColor = Color.FromArgb(CByte(107), CByte(75), CByte(88))
         LstJoueurs.FormattingEnabled = True
-        LstJoueurs.ItemHeight = 30
-        LstJoueurs.Location = New Point(31, 122)
+        LstJoueurs.ItemHeight = 27
+        LstJoueurs.Location = New Point(34, 130)
         LstJoueurs.Margin = New Padding(3, 4, 3, 4)
         LstJoueurs.Name = "LstJoueurs"
-        LstJoueurs.Size = New Size(169, 244)
+        LstJoueurs.Size = New Size(183, 247)
         LstJoueurs.TabIndex = 0
         ' 
         ' LNom
         ' 
         LNom.AutoSize = True
-        LNom.Location = New Point(57, 66)
+        LNom.ForeColor = Color.FromArgb(CByte(107), CByte(75), CByte(88))
+        LNom.Location = New Point(80, 93)
         LNom.Name = "LNom"
-        LNom.Size = New Size(168, 30)
+        LNom.Size = New Size(164, 28)
         LNom.TabIndex = 2
         LNom.Text = "Nom du Joueur :"
         ' 
         ' BtnRechercher
         ' 
-        BtnRechercher.BackColor = Color.FromArgb(CByte(192), CByte(192), CByte(255))
-        BtnRechercher.Location = New Point(144, 198)
+        BtnRechercher.BackColor = Color.Transparent
+        BtnRechercher.BackgroundImage = My.Resources.Resources.buttonS3
+        BtnRechercher.BackgroundImageLayout = ImageLayout.Center
+        BtnRechercher.Cursor = Cursors.Hand
+        BtnRechercher.FlatAppearance.BorderSize = 0
+        BtnRechercher.FlatAppearance.MouseDownBackColor = Color.White
+        BtnRechercher.FlatAppearance.MouseOverBackColor = Color.White
+        BtnRechercher.FlatStyle = FlatStyle.Flat
+        BtnRechercher.ForeColor = Color.FromArgb(CByte(107), CByte(75), CByte(88))
+        BtnRechercher.Location = New Point(154, 212)
         BtnRechercher.Margin = New Padding(3, 4, 3, 4)
         BtnRechercher.Name = "BtnRechercher"
-        BtnRechercher.Size = New Size(190, 48)
+        BtnRechercher.Size = New Size(221, 75)
         BtnRechercher.TabIndex = 1
         BtnRechercher.Text = "RECHERCHER"
         BtnRechercher.UseVisualStyleBackColor = False
         ' 
         ' ComboBoxJoueur
         ' 
+        ComboBoxJoueur.Font = New Font("Bookman Old Style", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        ComboBoxJoueur.ForeColor = Color.FromArgb(CByte(107), CByte(75), CByte(88))
         ComboBoxJoueur.FormattingEnabled = True
-        ComboBoxJoueur.Location = New Point(63, 120)
+        ComboBoxJoueur.Location = New Point(80, 145)
         ComboBoxJoueur.Margin = New Padding(3, 4, 3, 4)
         ComboBoxJoueur.Name = "ComboBoxJoueur"
-        ComboBoxJoueur.Size = New Size(359, 38)
+        ComboBoxJoueur.Size = New Size(389, 35)
         ComboBoxJoueur.TabIndex = 0
         ' 
         ' BtnRetour
         ' 
-        BtnRetour.BackColor = Color.FromArgb(CByte(192), CByte(192), CByte(255))
-        BtnRetour.Location = New Point(665, 574)
+        BtnRetour.BackColor = Color.Transparent
+        BtnRetour.BackgroundImage = My.Resources.Resources.buttonS2
+        BtnRetour.BackgroundImageLayout = ImageLayout.Center
+        BtnRetour.Cursor = Cursors.Hand
+        BtnRetour.FlatAppearance.BorderSize = 0
+        BtnRetour.FlatAppearance.MouseDownBackColor = Color.Transparent
+        BtnRetour.FlatAppearance.MouseOverBackColor = Color.Transparent
+        BtnRetour.FlatStyle = FlatStyle.Flat
+        BtnRetour.Font = New Font("Bernard MT Condensed", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        BtnRetour.ForeColor = Color.FromArgb(CByte(107), CByte(75), CByte(88))
+        BtnRetour.Location = New Point(686, 695)
         BtnRetour.Margin = New Padding(3, 4, 3, 4)
         BtnRetour.Name = "BtnRetour"
-        BtnRetour.Size = New Size(381, 66)
+        BtnRetour.Size = New Size(298, 92)
         BtnRetour.TabIndex = 3
         BtnRetour.Text = "RETOUR"
         BtnRetour.UseVisualStyleBackColor = False
         ' 
         ' GroupBox1
         ' 
-        GroupBox1.BackColor = Color.FromArgb(CByte(192), CByte(192), CByte(255))
+        GroupBox1.BackColor = Color.White
+        GroupBox1.BackgroundImageLayout = ImageLayout.Center
         GroupBox1.Controls.Add(BtnTrier)
         GroupBox1.Controls.Add(LstTempsT)
         GroupBox1.Controls.Add(LstTempsM)
@@ -203,44 +243,52 @@ Partial Class FormScores
         GroupBox1.Controls.Add(LTempsM)
         GroupBox1.Controls.Add(LJoueur)
         GroupBox1.Controls.Add(LCarres)
-        GroupBox1.Location = New Point(31, 48)
+        GroupBox1.Font = New Font("Bernard MT Condensed", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        GroupBox1.ForeColor = Color.FromArgb(CByte(107), CByte(75), CByte(88))
+        GroupBox1.Location = New Point(25, 25)
         GroupBox1.Margin = New Padding(3, 4, 3, 4)
         GroupBox1.Name = "GroupBox1"
         GroupBox1.Padding = New Padding(3, 4, 3, 4)
-        GroupBox1.Size = New Size(1099, 404)
+        GroupBox1.Size = New Size(1028, 490)
         GroupBox1.TabIndex = 4
         GroupBox1.TabStop = False
         GroupBox1.Text = "Statistiques"
         ' 
         ' GroupBox2
         ' 
-        GroupBox2.BackColor = Color.FromArgb(CByte(192), CByte(192), CByte(255))
+        GroupBox2.BackColor = Color.Transparent
+        GroupBox2.BackgroundImage = My.Resources.Resources.affichebulle
+        GroupBox2.BackgroundImageLayout = ImageLayout.Center
         GroupBox2.Controls.Add(BtnRechercher)
         GroupBox2.Controls.Add(LNom)
         GroupBox2.Controls.Add(ComboBoxJoueur)
-        GroupBox2.Location = New Point(31, 478)
+        GroupBox2.FlatStyle = FlatStyle.Flat
+        GroupBox2.Font = New Font("Bernard MT Condensed", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        GroupBox2.ForeColor = Color.FromArgb(CByte(107), CByte(75), CByte(88))
+        GroupBox2.Location = New Point(96, 565)
         GroupBox2.Margin = New Padding(3, 4, 3, 4)
         GroupBox2.Name = "GroupBox2"
         GroupBox2.Padding = New Padding(3, 4, 3, 4)
-        GroupBox2.Size = New Size(495, 284)
+        GroupBox2.Size = New Size(536, 364)
         GroupBox2.TabIndex = 0
         GroupBox2.TabStop = False
         GroupBox2.Text = "Rechercher un joueur"
         ' 
         ' FormScores
         ' 
-        AutoScaleDimensions = New SizeF(12F, 30F)
+        AutoScaleDimensions = New SizeF(13F, 32F)
         AutoScaleMode = AutoScaleMode.Font
-        BackColor = Color.FromArgb(CByte(128), CByte(128), CByte(255))
-        ClientSize = New Size(1178, 804)
+        BackColor = Color.White
+        BackgroundImageLayout = ImageLayout.Center
+        ClientSize = New Size(1074, 981)
         Controls.Add(GroupBox2)
         Controls.Add(BtnRetour)
         Controls.Add(GroupBox1)
+        FormBorderStyle = FormBorderStyle.FixedSingle
         Margin = New Padding(3, 4, 3, 4)
         Name = "FormScores"
         Text = "Scores"
         GroupBox1.ResumeLayout(False)
-        GroupBox1.PerformLayout()
         GroupBox2.ResumeLayout(False)
         GroupBox2.PerformLayout()
         ResumeLayout(False)

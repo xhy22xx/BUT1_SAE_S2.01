@@ -29,49 +29,66 @@ Partial Class formConfirmation
         ' 
         ' btnNo
         ' 
-        btnNo.Location = New Point(295, 191)
-        btnNo.Margin = New Padding(2, 2, 2, 2)
+        btnNo.BackColor = Color.Transparent
+        btnNo.BackgroundImage = My.Resources.Resources.button22
+        btnNo.BackgroundImageLayout = ImageLayout.Center
+        btnNo.Cursor = Cursors.Hand
+        btnNo.FlatAppearance.BorderSize = 0
+        btnNo.FlatAppearance.MouseDownBackColor = Color.White
+        btnNo.FlatAppearance.MouseOverBackColor = Color.White
+        btnNo.FlatStyle = FlatStyle.Flat
+        btnNo.Font = New Font("Bernard MT Condensed", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnNo.Location = New Point(383, 184)
         btnNo.Name = "btnNo"
-        btnNo.Size = New Size(145, 41)
+        btnNo.Size = New Size(188, 86)
         btnNo.TabIndex = 0
         btnNo.Text = "Non"
-        btnNo.UseVisualStyleBackColor = True
+        btnNo.UseVisualStyleBackColor = False
         ' 
         ' btnYes
         ' 
-        btnYes.Location = New Point(92, 191)
-        btnYes.Margin = New Padding(2, 2, 2, 2)
+        btnYes.BackColor = Color.Transparent
+        btnYes.BackgroundImage = My.Resources.Resources.button22
+        btnYes.BackgroundImageLayout = ImageLayout.Center
+        btnYes.Cursor = Cursors.Hand
+        btnYes.FlatAppearance.BorderSize = 0
+        btnYes.FlatAppearance.MouseDownBackColor = Color.White
+        btnYes.FlatAppearance.MouseOverBackColor = Color.White
+        btnYes.FlatStyle = FlatStyle.Flat
+        btnYes.Font = New Font("Bernard MT Condensed", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnYes.Location = New Point(163, 184)
         btnYes.Name = "btnYes"
-        btnYes.Size = New Size(145, 41)
+        btnYes.Size = New Size(188, 86)
         btnYes.TabIndex = 1
         btnYes.Text = "Oui"
-        btnYes.UseVisualStyleBackColor = True
+        btnYes.UseVisualStyleBackColor = False
         ' 
         ' lblConfirmation
         ' 
-        lblConfirmation.AutoSize = True
-        lblConfirmation.Location = New Point(92, 100)
-        lblConfirmation.Margin = New Padding(2, 0, 2, 0)
+        lblConfirmation.BackColor = Color.Transparent
+        lblConfirmation.Font = New Font("Bernard MT Condensed", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblConfirmation.Location = New Point(87, 123)
         lblConfirmation.Name = "lblConfirmation"
-        lblConfirmation.Size = New Size(20, 25)
+        lblConfirmation.Size = New Size(564, 41)
         lblConfirmation.TabIndex = 2
         lblConfirmation.Text = "x"
-        lblConfirmation.TextAlign = ContentAlignment.MiddleLeft
+        lblConfirmation.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' formConfirmation
         ' 
-        AutoScaleDimensions = New SizeF(10F, 25F)
+        AutoScaleDimensions = New SizeF(13F, 32F)
         AutoScaleMode = AutoScaleMode.Font
         AutoValidate = AutoValidate.Disable
-        ClientSize = New Size(540, 274)
+        BackgroundImage = My.Resources.Resources.affiche
+        BackgroundImageLayout = ImageLayout.Center
+        ClientSize = New Size(738, 339)
         Controls.Add(lblConfirmation)
         Controls.Add(btnYes)
         Controls.Add(btnNo)
-        Margin = New Padding(2, 2, 2, 2)
+        DoubleBuffered = True
         Name = "formConfirmation"
         Text = "Confirmation"
         ResumeLayout(False)
-        PerformLayout()
     End Sub
 
     Friend WithEvents btnNo As Button

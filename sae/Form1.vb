@@ -58,14 +58,16 @@ Public Class Form1
     Private Sub btnLancer_Click(sender As Object, e As EventArgs) Handles btnLancer.Click
         If cbxNoms.Text = "" Then
             If FormOptions.RbtnL1.Checked = True Then
-                MsgBox("Nom obligatoire.")
+                formErreur.lblErreur.Text = "Nom obligatoire."
+                formErreur.Text = "Erreur d'entrée"
             ElseIf FormOptions.RbtnL2.Checked = True Then
-                MsgBox("Please enter a name.")
+                formErreur.lblErreur.Text = "Please enter a name."
+                formErreur.Text = "Input error"
             ElseIf FormOptions.RbtnL3.Checked = True Then
-                MsgBox("请输入玩家名称。")
-            Else
-                MsgBox("Erreur!!! (dans la boucle) Nom obligatoire.") ' A enlever si c bon
+                formErreur.lblErreur.Text = "请输入玩家名称。"
+                formErreur.Text = "输入错误"
             End If
+            formErreur.ShowDialog()
             cbxNoms.Focus()
             Exit Sub
         End If
@@ -127,28 +129,8 @@ Public Class Form1
 
         End If
     End Sub
-
-
-
-
-
     Private Sub btnOptions_Click(sender As Object, e As EventArgs) Handles btnOptions.Click
         FormOptions.Show()
     End Sub
 
-    Private Sub cbxNoms_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxNoms.SelectedIndexChanged
-
-    End Sub
-
-    Private Sub AxWindowsMediaPlayer1_Enter(sender As Object, e As EventArgs) Handles AxWindowsMediaPlayer1.Enter
-
-    End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles ButtonStopMusic.Click
-
-    End Sub
-
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles ButtonContinueMusic.Click
-
-    End Sub
 End Class

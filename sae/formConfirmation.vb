@@ -6,8 +6,4 @@
     Private Sub btnNo_Click(sender As Object, e As EventArgs) Handles btnNo.Click
         Me.DialogResult = DialogResult.No
     End Sub
-
-    Private Sub formConfirmation_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
 End Class
