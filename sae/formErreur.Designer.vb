@@ -41,6 +41,10 @@ Partial Class formErreur
         btnOK.BackColor = Color.Transparent
         btnOK.BackgroundImage = My.Resources.Resources.button22
         btnOK.BackgroundImageLayout = ImageLayout.Center
+        btnOK.FlatAppearance.BorderSize = 0
+        btnOK.FlatAppearance.MouseDownBackColor = Color.Transparent
+        btnOK.FlatAppearance.MouseOverBackColor = Color.Transparent
+        btnOK.FlatStyle = FlatStyle.Flat
         btnOK.Location = New Point(277, 155)
         btnOK.Name = "btnOK"
         btnOK.Size = New Size(169, 131)
