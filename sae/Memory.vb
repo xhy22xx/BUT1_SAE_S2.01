@@ -138,12 +138,15 @@ Public Class Memory
         If pointsJoueur = 5 Or Label4.Text.Equals("0:00") Then
             Timer1.Stop()
             If FormOptions.RbtnL1.Checked = True Then
-                MsgBox("Bravoooo! Vous avez trouvé toutes les paires de cartes!")
+                Message.lblMess.Text = "Bravoooo! Vous avez trouvé toutes les paires de cartes!"
             ElseIf FormOptions.RbtnL2.Checked = True Then
-                MsgBox("You won! You found all the pairs of cards!")
+                Message.lblMess.Text = "You won! You found all the pairs of cards!"
             ElseIf FormOptions.RbtnL3.Checked = True Then
-                MsgBox("你赢了！你找到了所有的卡片！")
+                Message.lblMess.Text = "你赢了！你找到了所有的卡片！"
             End If
+            Message.ShowDialog()
+            'Est ce que il faut que la personne sort le memory??
+            'Memory.Close()
         End If
 
     End Sub
