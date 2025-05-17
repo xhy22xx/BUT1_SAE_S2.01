@@ -79,17 +79,12 @@ Public Class FormScores
             MsgBox(message, MsgBoxStyle.Information, "Statistiques")
         Else
             If FormOptions.RbtnL1.Checked = True Then
-                formErreur.lblErreur.Text = "Joueur non trouvé."
-                formErreur.Text = "Joueur inexistant"
+                MsgBox("Joueur non trouvé.", MsgBoxStyle.Information, "Joueur inexistant")
             ElseIf FormOptions.RbtnL2.Checked = True Then
-                formErreur.lblErreur.Text = "Player not found."
-                formErreur.Text = "Ghost player? They don’t exist!"
+                MsgBox("Player not found.", MsgBoxStyle.Information, "Ghost player? They don’t exist!")
             ElseIf FormOptions.RbtnL3.Checked = True Then
-                formErreur.lblErreur.Text = "未找到玩家。"
-                formErreur.Text = "玩家不存在！"
+                MsgBox("未找到玩家。", MsgBoxStyle.Information, "玩家不存在！")
             End If
-            formErreur.ShowDialog()
-            'Jsp si c bon ici
         End If
     End Sub
 
