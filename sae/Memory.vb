@@ -3,18 +3,18 @@
 Public Class Memory
     Dim time As Integer
     Dim listeImages As New List(Of Image)
+    Dim imageDos As Image
     Dim listeCartes As New List(Of PictureBox)
     Dim listeCartesFlipped As New List(Of PictureBox)
     Dim compteurCarteRetournee As Integer
     Dim pointsJoueur As Integer
     Dim tempsJoueur As Integer
-    Dim pictureBoxes As PictureBox() = {
-    PictureBox1, PictureBox2, PictureBox3, PictureBox4, PictureBox5,
-    PictureBox6, PictureBox7, PictureBox8, PictureBox9, PictureBox10,
-    PictureBox11, PictureBox12, PictureBox13, PictureBox14, PictureBox15,
-    PictureBox16, PictureBox17, PictureBox18, PictureBox19, PictureBox20}
+    'Dim pictureBoxes As PictureBox() = {
+    'PictureBox1, PictureBox2, PictureBox3, PictureBox4, PictureBox5,
+    'PictureBox6, PictureBox7, PictureBox8, PictureBox9, PictureBox10,
+    'PictureBox11, PictureBox12, PictureBox13, PictureBox14, PictureBox15,
+    'PictureBox16, PictureBox17, PictureBox18, PictureBox19, PictureBox20}
     Private Sub btnAbandon_Click(sender As Object, e As EventArgs) Handles btnAbandon.Click
-
         If FormOptions.RbtnL1.Checked = True Then
             formConfirmation.lblConfirmation.Text = "Voulez-vous abandonner la partie en cours?"
         ElseIf FormOptions.RbtnL2.Checked = True Then
@@ -32,6 +32,11 @@ Public Class Memory
     Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
     End Sub
     Private Sub Memory_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If FormOptions.RbtnT1.Checked Then
+            imageDos = My.Resources.Carte_pokemon_dos
+        ElseIf FormOptions.RbtnT2.Checked Then
+            imageDos = My.Resources.LC
+        End If
         If FormOptions.RbtnFacile.Checked Then
             time = 90
         ElseIf FormOptions.RbtnMoyen.Checked Then
@@ -87,6 +92,9 @@ Public Class Memory
         Dim rand As New Random()
         listeImages = listeImages.OrderBy(Function() rand.Next()).ToList()
 
+        For Each pb As PictureBox In listeCartes
+            pb.Image = imageDos
+        Next
 
     End Sub
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
@@ -157,7 +165,7 @@ Public Class Memory
             If FormOptions.RbtnL1.Checked = True Then
                 Message.lblMess.Text = "Bravoooo! Vous avez trouvé toutes les paires de cartes!"
             ElseIf FormOptions.RbtnL2.Checked = True Then
-                Message.lblMess.Text = "You won! You found all the pairs of cards!"
+                Message.lblMess.Text = "You won! You found every pair of cards!"
             ElseIf FormOptions.RbtnL3.Checked = True Then
                 Message.lblMess.Text = "你赢了！你找到了所有的卡片！"
             End If
@@ -176,7 +184,7 @@ Public Class Memory
             pbE.Enabled = True
         Next
         For Each pbF As PictureBox In listeCartesFlipped
-            pbF.Image = My.Resources.Carte_pokemon_dos
+            pbF.Image = imageDos
         Next
         compteurCarteRetournee = 0
         listeCartesFlipped.Clear()
