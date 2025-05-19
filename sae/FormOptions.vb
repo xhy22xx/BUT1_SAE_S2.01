@@ -89,7 +89,7 @@
         DefaultTextScores = FormScores.Text
     End Sub
 
-    'A mettre dans les autres FORMULAIREEEEEEEEEEEEEEEEEEEEEEEEEEEE
+    'A mettre dans les autres FORMULAIREEEEEEEEEEEEEEEEEEEEEEEEEEEE (qui a écrit ça T-T - Fitia)
     'If RadioButton1.Checked = True Then
     'TextBox1.Text = RadioButton1.Text
     'End If

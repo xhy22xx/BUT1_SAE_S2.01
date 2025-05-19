@@ -51,12 +51,12 @@ Public Class Form1
 
     Private Sub ButtonStop_Click(sender As Object, e As EventArgs) Handles ButtonStopMusic.Click
         positionMusique = AxWindowsMediaPlayer1.Ctlcontrols.currentPosition
-        AxWindowsMediaPlayer1.Ctlcontrols.pause()
+        AxWindowsMediaPlayer1.Ctlcontrols.play()
     End Sub
 
     Private Sub ButtonResume_Click(sender As Object, e As EventArgs) Handles ButtonContinueMusic.Click
         AxWindowsMediaPlayer1.Ctlcontrols.currentPosition = positionMusique
-        AxWindowsMediaPlayer1.Ctlcontrols.play()
+        AxWindowsMediaPlayer1.Ctlcontrols.pause()
     End Sub
 
     Private Sub btnLancer_Click(sender As Object, e As EventArgs) Handles btnLancer.Click

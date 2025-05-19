@@ -50,7 +50,7 @@ Partial Class FormOptions
         RbtnFacile.Location = New Point(39, 51)
         RbtnFacile.Margin = New Padding(5, 6, 5, 6)
         RbtnFacile.Name = "RbtnFacile"
-        RbtnFacile.Size = New Size(105, 31)
+        RbtnFacile.Size = New Size(82, 25)
         RbtnFacile.TabIndex = 0
         RbtnFacile.TabStop = True
         RbtnFacile.Text = "Facile"
@@ -77,7 +77,7 @@ Partial Class FormOptions
         RbtnDifficile.Location = New Point(39, 182)
         RbtnDifficile.Margin = New Padding(5, 6, 5, 6)
         RbtnDifficile.Name = "RbtnDifficile"
-        RbtnDifficile.Size = New Size(130, 31)
+        RbtnDifficile.Size = New Size(99, 25)
         RbtnDifficile.TabIndex = 2
         RbtnDifficile.TabStop = True
         RbtnDifficile.Text = "Difficile"
@@ -89,7 +89,7 @@ Partial Class FormOptions
         RbtnMoyen.Location = New Point(39, 117)
         RbtnMoyen.Margin = New Padding(5, 6, 5, 6)
         RbtnMoyen.Name = "RbtnMoyen"
-        RbtnMoyen.Size = New Size(114, 31)
+        RbtnMoyen.Size = New Size(90, 25)
         RbtnMoyen.TabIndex = 3
         RbtnMoyen.TabStop = True
         RbtnMoyen.Text = "Moyen"
@@ -103,7 +103,7 @@ Partial Class FormOptions
         lblD.Location = New Point(61, 41)
         lblD.Margin = New Padding(5, 0, 5, 0)
         lblD.Name = "lblD"
-        lblD.Size = New Size(241, 28)
+        lblD.Size = New Size(184, 21)
         lblD.TabIndex = 2
         lblD.Text = "Sélection de la difficulté:"
         ' 
@@ -115,7 +115,7 @@ Partial Class FormOptions
         lblL.Location = New Point(61, 438)
         lblL.Margin = New Padding(5, 0, 5, 0)
         lblL.Name = "lblL"
-        lblL.Size = New Size(201, 28)
+        lblL.Size = New Size(152, 21)
         lblL.TabIndex = 4
         lblL.Text = "Sélection de langue:"
         ' 
@@ -140,7 +140,7 @@ Partial Class FormOptions
         RbtnL3.Location = New Point(39, 181)
         RbtnL3.Margin = New Padding(5, 6, 5, 6)
         RbtnL3.Name = "RbtnL3"
-        RbtnL3.Size = New Size(117, 31)
+        RbtnL3.Size = New Size(90, 25)
         RbtnL3.TabIndex = 2
         RbtnL3.TabStop = True
         RbtnL3.Text = "chinois"
@@ -152,7 +152,7 @@ Partial Class FormOptions
         RbtnL2.Location = New Point(39, 117)
         RbtnL2.Margin = New Padding(5, 6, 5, 6)
         RbtnL2.Name = "RbtnL2"
-        RbtnL2.Size = New Size(112, 31)
+        RbtnL2.Size = New Size(88, 25)
         RbtnL2.TabIndex = 3
         RbtnL2.TabStop = True
         RbtnL2.Text = "anglais"
@@ -164,7 +164,7 @@ Partial Class FormOptions
         RbtnL1.Location = New Point(39, 51)
         RbtnL1.Margin = New Padding(5, 6, 5, 6)
         RbtnL1.Name = "RbtnL1"
-        RbtnL1.Size = New Size(122, 31)
+        RbtnL1.Size = New Size(96, 25)
         RbtnL1.TabIndex = 0
         RbtnL1.TabStop = True
         RbtnL1.Text = "francais"
@@ -178,7 +178,7 @@ Partial Class FormOptions
         lblC.Location = New Point(411, 225)
         lblC.Margin = New Padding(5, 0, 5, 0)
         lblC.Name = "lblC"
-        lblC.Size = New Size(219, 28)
+        lblC.Size = New Size(165, 21)
         lblC.TabIndex = 6
         lblC.Text = "Style visuel des cartes:"
         ' 
@@ -203,7 +203,7 @@ Partial Class FormOptions
         RbtnT3.Location = New Point(39, 182)
         RbtnT3.Margin = New Padding(5, 6, 5, 6)
         RbtnT3.Name = "RbtnT3"
-        RbtnT3.Size = New Size(107, 31)
+        RbtnT3.Size = New Size(85, 25)
         RbtnT3.TabIndex = 2
         RbtnT3.TabStop = True
         RbtnT3.Text = "type 3"
@@ -215,10 +215,10 @@ Partial Class FormOptions
         RbtnT2.Location = New Point(39, 117)
         RbtnT2.Margin = New Padding(5, 6, 5, 6)
         RbtnT2.Name = "RbtnT2"
-        RbtnT2.Size = New Size(107, 31)
+        RbtnT2.Size = New Size(119, 25)
         RbtnT2.TabIndex = 3
         RbtnT2.TabStop = True
-        RbtnT2.Text = "type 2"
+        RbtnT2.Text = "Link Click"
         RbtnT2.UseVisualStyleBackColor = True
         ' 
         ' RbtnT1
@@ -227,7 +227,7 @@ Partial Class FormOptions
         RbtnT1.Location = New Point(39, 50)
         RbtnT1.Margin = New Padding(5, 6, 5, 6)
         RbtnT1.Name = "RbtnT1"
-        RbtnT1.Size = New Size(214, 31)
+        RbtnT1.Size = New Size(167, 25)
         RbtnT1.TabIndex = 0
         RbtnT1.TabStop = True
         RbtnT1.Text = "Cartes Pokémon"

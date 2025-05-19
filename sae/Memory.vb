@@ -1,7 +1,7 @@
 ﻿Imports System.Security.Cryptography
 
 Public Class Memory
-    Dim time As Integer = 60
+    Dim time As Integer
     Dim listeImages As New List(Of Image)
     Dim listeCartes As New List(Of PictureBox)
     Dim listeCartesFlipped As New List(Of PictureBox)
@@ -32,6 +32,13 @@ Public Class Memory
     Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
     End Sub
     Private Sub Memory_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If FormOptions.RbtnFacile.Checked Then
+            time = 90
+        ElseIf FormOptions.RbtnMoyen.Checked Then
+            time = 60
+        ElseIf FormOptions.RbtnDifficile.Checked Then
+            time = 40
+        End If
         pointsJoueur = 0
         tempsJoueur = 0
         Dim minutes As Integer = time \ 60
@@ -120,13 +127,7 @@ Public Class Memory
             Dim toutesIdentiques As Boolean = True
             Dim carteRetournee As Integer = 0
 
-            If listeCartesFlipped.Count = 2 Then
-                carteRetournee = 2
-            ElseIf listeCartesFlipped.Count = 3 Then
-                carteRetournee = 3
-            ElseIf listeCartesFlipped.Count = 4 Then
-                carteRetournee = 4
-            End If
+            carteRetournee = listeCartesFlipped.Count
             For i As Integer = 1 To carteRetournee - 1
                 If Not listeCartesFlipped(i).Image.Equals(listeCartesFlipped(0).Image) Then
                     toutesIdentiques = False
@@ -163,6 +164,7 @@ Public Class Memory
             Message.ShowDialog()
             'Est ce que il faut que la personne sort le memory??
             'Memory.Close()
+            'Il faudrait plutot montrer au joueur le score et le temps qu'il a pris pour réussir à retourner les cartes
         End If
 
     End Sub
