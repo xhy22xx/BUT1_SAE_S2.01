@@ -9,6 +9,7 @@ Public Class MemoryEasy
     Dim compteurCarteRetournee As Integer
     Dim pointsJoueur As Integer
     Dim tempsJoueur As Integer
+    Dim timeInitial As Integer
     'Dim pictureBoxes As PictureBox() = {
     'PictureBox1, PictureBox2, PictureBox3, PictureBox4, PictureBox5,
     'PictureBox6, PictureBox7, PictureBox8, PictureBox9, PictureBox10,
@@ -37,8 +38,8 @@ Public Class MemoryEasy
         ElseIf FormOptions.RbtnT2.Checked Then
             imageDos = My.Resources.LC
         End If
-        time = 90
-
+        timeInitial = 90
+        time = timeInitial
         pointsJoueur = 0
         tempsJoueur = 0
         Dim minutes As Integer = time \ 60
@@ -95,7 +96,7 @@ Public Class MemoryEasy
         tempsJoueur += 1                       'Faut stocker le temps du joueur qq part
         Dim minutes As Integer = time \ 60
         Dim secondes As Integer = (time Mod 60)
-        If Label4.Text = "0:01" Then
+        If Label4.Text = "0:00" Then
             Timer1.Enabled = False
             If FormOptions.RbtnL1.Checked = True Then
                 MsgBox("Temps écoulé!")
@@ -150,7 +151,7 @@ Public Class MemoryEasy
             End If
         End If
 
-        If pointsJoueur = 5 Or Label4.Text.Equals("0:00") Then
+        If pointsJoueur = 4 Then
             Timer1.Stop()
             If FormOptions.RbtnL1.Checked = True Then
                 Message.lblMess.Text = "Bravoooo! Vous avez trouvé toutes les paires de cartes!"
@@ -160,6 +161,7 @@ Public Class MemoryEasy
                 Message.lblMess.Text = "你赢了！你找到了所有的卡片！"
             End If
             Message.ShowDialog()
+            tempsJoueur = timeInitial - time
             'Est ce que il faut que la personne sort le memory??
             'Memory.Close()
             'Il faudrait plutot montrer au joueur le score et le temps qu'il a pris pour réussir à retourner les cartes
