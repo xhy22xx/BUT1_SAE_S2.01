@@ -88,14 +88,14 @@ Public Class Form1
             Module_Enregistrement.AJOUT(name, 0, 0, 0, 0)
 
             If FormOptions.RbtnFacile.Checked = True Then
-                Memory.Show()
+                MemoryEasy.Show()
                 Memory.Label2.Text = name    'Faudrait renommer ca!!
             ElseIf FormOptions.RbtnMoyen.Checked = True Then
-                'Memory2.Show()
+                Memory.Show()
                 'Memory........
                 MsgBox("Memory niv moyen pas encore créer")
             ElseIf FormOptions.RbtnDifficile.Checked = True Then
-                'Memory3.Show()
+                MemoryHard.Show()
                 'Memory........
                 MsgBox("Memory niv difficile pas encore créé")
             Else

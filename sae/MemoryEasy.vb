@@ -1,6 +1,6 @@
 ﻿Imports System.Security.Cryptography
 
-Public Class Memory
+Public Class MemoryEasy
     Dim time As Integer
     Dim listeImages As New List(Of Image)
     Dim imageDos As Image
@@ -37,11 +37,7 @@ Public Class Memory
         ElseIf FormOptions.RbtnT2.Checked Then
             imageDos = My.Resources.LC
         End If
-        If FormOptions.RbtnFacile.Checked Then
-            time = 90
-        ElseIf FormOptions.RbtnMoyen.Checked Then
-            time = 60
-        End If
+        time = 90
 
         pointsJoueur = 0
         tempsJoueur = 0
@@ -51,12 +47,12 @@ Public Class Memory
         'j'ajoute nos images dans une liste
         listeImages.Clear()
         If FormOptions.RbtnT1.Checked = True Then
-            listeImages.AddRange({My.Resources.Celebi, My.Resources.Mew, My.Resources.Marill,
+            listeImages.AddRange({My.Resources.Mew, My.Resources.Marill,
                               My.Resources.Dracaufeu, My.Resources.Evoli})
         ElseIf FormOptions.RbtnT2.Checked = True Then
             'Modifier le dos des cartes. Je n'y arrive pas TvT
             listeImages.AddRange({My.Resources.LC1, My.Resources.LC2, My.Resources.LC3,
-                                 My.Resources.LC4, My.Resources.LC5})
+                                 My.Resources.LC4})
         ElseIf FormOptions.RbtnT3.Checked = True Then
 
             'Les autres cartes
@@ -83,10 +79,6 @@ Public Class Memory
         listeCartes.Add(PictureBox14)
         listeCartes.Add(PictureBox15)
         listeCartes.Add(PictureBox16)
-        listeCartes.Add(PictureBox17)
-        listeCartes.Add(PictureBox18)
-        listeCartes.Add(PictureBox19)
-        listeCartes.Add(PictureBox20)
 
         Dim rand As New Random()
         listeImages = listeImages.OrderBy(Function() rand.Next()).ToList()
@@ -120,8 +112,7 @@ Public Class Memory
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click,
         PictureBox2.Click, PictureBox3.Click, PictureBox4.Click, PictureBox5.Click, PictureBox6.Click,
         PictureBox7.Click, PictureBox8.Click, PictureBox9.Click, PictureBox10.Click, PictureBox11.Click, PictureBox12.Click,
-        PictureBox13.Click, PictureBox14.Click, PictureBox15.Click, PictureBox16.Click, PictureBox17.Click,
-        PictureBox18.Click, PictureBox19.Click, PictureBox20.Click
+        PictureBox13.Click, PictureBox14.Click, PictureBox15.Click, PictureBox16.Click
         If Not Timer1.Enabled Then
             Timer1.Start()
         End If

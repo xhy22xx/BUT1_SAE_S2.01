@@ -1,6 +1,6 @@
 ﻿Imports System.Security.Cryptography
 
-Public Class Memory
+Public Class MemoryHard
     Dim time As Integer
     Dim listeImages As New List(Of Image)
     Dim imageDos As Image
@@ -31,18 +31,13 @@ Public Class Memory
 
     Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
     End Sub
-    Private Sub Memory_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub MemoryHard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If FormOptions.RbtnT1.Checked Then
             imageDos = My.Resources.Carte_pokemon_dos
         ElseIf FormOptions.RbtnT2.Checked Then
             imageDos = My.Resources.LC
         End If
-        If FormOptions.RbtnFacile.Checked Then
-            time = 90
-        ElseIf FormOptions.RbtnMoyen.Checked Then
-            time = 60
-        End If
-
+        time = 50
         pointsJoueur = 0
         tempsJoueur = 0
         Dim minutes As Integer = time \ 60
@@ -52,11 +47,11 @@ Public Class Memory
         listeImages.Clear()
         If FormOptions.RbtnT1.Checked = True Then
             listeImages.AddRange({My.Resources.Celebi, My.Resources.Mew, My.Resources.Marill,
-                              My.Resources.Dracaufeu, My.Resources.Evoli})
+                              My.Resources.Dracaufeu, My.Resources.Evoli}) 'ajouter une image en plus
         ElseIf FormOptions.RbtnT2.Checked = True Then
             'Modifier le dos des cartes. Je n'y arrive pas TvT
             listeImages.AddRange({My.Resources.LC1, My.Resources.LC2, My.Resources.LC3,
-                                 My.Resources.LC4, My.Resources.LC5})
+                                 My.Resources.LC4, My.Resources.LC5}) 'ajouter une image en plus
         ElseIf FormOptions.RbtnT3.Checked = True Then
 
             'Les autres cartes
@@ -87,6 +82,10 @@ Public Class Memory
         listeCartes.Add(PictureBox18)
         listeCartes.Add(PictureBox19)
         listeCartes.Add(PictureBox20)
+        listeCartes.Add(PictureBox21)
+        listeCartes.Add(PictureBox22)
+        listeCartes.Add(PictureBox23)
+        listeCartes.Add(PictureBox24)
 
         Dim rand As New Random()
         listeImages = listeImages.OrderBy(Function() rand.Next()).ToList()
@@ -121,7 +120,8 @@ Public Class Memory
         PictureBox2.Click, PictureBox3.Click, PictureBox4.Click, PictureBox5.Click, PictureBox6.Click,
         PictureBox7.Click, PictureBox8.Click, PictureBox9.Click, PictureBox10.Click, PictureBox11.Click, PictureBox12.Click,
         PictureBox13.Click, PictureBox14.Click, PictureBox15.Click, PictureBox16.Click, PictureBox17.Click,
-        PictureBox18.Click, PictureBox19.Click, PictureBox20.Click
+        PictureBox18.Click, PictureBox19.Click, PictureBox20.Click, PictureBox21.Click,
+        PictureBox22.Click, PictureBox23.Click, PictureBox24.Click
         If Not Timer1.Enabled Then
             Timer1.Start()
         End If
