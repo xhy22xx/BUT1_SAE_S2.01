@@ -112,7 +112,7 @@ Public Class MemoryEasy
             Dim resultat As String = "Temps écoulé !" & vbCrLf &
                                             "Carrés identifiés : " & pointsJoueur & vbCrLf &
                                             "Temps utilisé : " & tempsJoueur & " secondes"
-            MsgBox(resultat, MsgBoxStyle.Information, "Resultat")
+            MsgBox(resultat, MsgBoxStyle.Information, "Resultat du joueur")
 
 
         End If

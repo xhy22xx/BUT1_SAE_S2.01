@@ -110,6 +110,13 @@ Public Class Memory
                 MsgBox("时间限制已到!")
             End If
             Timer1.Stop()
+            tempsJoueur = timeInitial
+
+
+            Dim resultat As String = "Temps écoulé !" & vbCrLf &
+                                            "Carrés identifiés : " & pointsJoueur & vbCrLf &
+                                            "Temps utilisé : " & tempsJoueur & " secondes"
+            MsgBox(resultat, MsgBoxStyle.Information, "Resultat du joueur")
         End If
         Label4.Text = minutes.ToString("0") & ":" & secondes.ToString("00")
     End Sub
