@@ -106,6 +106,15 @@ Public Class MemoryEasy
                 MsgBox("时间限制已到!")
             End If
             Timer1.Stop()
+            tempsJoueur = timeInitial
+
+            'Faudrait traduire ça aussi du coup
+            Dim resultat As String = "Temps écoulé !" & vbCrLf &
+                                            "Carrés identifiés : " & pointsJoueur & vbCrLf &
+                                            "Temps utilisé : " & tempsJoueur & " secondes"
+            MsgBox(resultat, MsgBoxStyle.Information, "Resultat")
+
+
         End If
         Label4.Text = minutes.ToString("0") & ":" & secondes.ToString("00")
     End Sub
@@ -164,7 +173,12 @@ Public Class MemoryEasy
             tempsJoueur = timeInitial - time
             'Est ce que il faut que la personne sort le memory??
             'Memory.Close()
-            'Il faudrait plutot montrer au joueur le score et le temps qu'il a pris pour réussir à retourner les cartes
+            'Il faudrait plutot montrer au joueur le score et le temps qu'il a pris pour réussir à retourner les cartes - oui
+            Dim resultat As String = "Carrés identifiés : " & pointsJoueur & vbCrLf &
+                                "Temps utilisé : " & tempsJoueur & " secondes"
+
+            MsgBox(resultat, MsgBoxStyle.Information, "Resultat du joueur")
+
         End If
 
     End Sub

@@ -203,10 +203,10 @@ Partial Class FormOptions
         RbtnT3.Location = New Point(39, 182)
         RbtnT3.Margin = New Padding(5, 6, 5, 6)
         RbtnT3.Name = "RbtnT3"
-        RbtnT3.Size = New Size(85, 25)
+        RbtnT3.Size = New Size(70, 25)
         RbtnT3.TabIndex = 2
         RbtnT3.TabStop = True
-        RbtnT3.Text = "type 3"
+        RbtnT3.Text = "Uno"
         RbtnT3.UseVisualStyleBackColor = True
         ' 
         ' RbtnT2

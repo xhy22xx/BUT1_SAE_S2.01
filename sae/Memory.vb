@@ -170,6 +170,11 @@ Public Class Memory
             'Est ce que il faut que la personne sort le memory??
             'Memory.Close()
             'Il faudrait plutot montrer au joueur le score et le temps qu'il a pris pour réussir à retourner les cartes
+
+            Dim resultat As String = "Carrés identifiés : " & pointsJoueur & vbCrLf &
+                                "Temps utilisé : " & tempsJoueur & " secondes"
+
+            MsgBox(resultat, MsgBoxStyle.Information, "Resultat du joueur")
         End If
 
     End Sub

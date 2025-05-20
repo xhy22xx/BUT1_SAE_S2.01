@@ -157,8 +157,8 @@
             RbtnL2.Text = "English"
             RbtnL3.Text = "Chinese"
             RbtnT1.Text = "Pokémon Card"
-            RbtnT2.Text = "type 2 en" 'A modifier
-            RbtnT3.Text = "type 3 en" 'A modifier
+            RbtnT2.Text = "Link Click Card"
+            RbtnT3.Text = "Uno Card"
             Me.Text = "Options"
 
             Memory.lblJoueur.Text = "Player: "
