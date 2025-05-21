@@ -30,7 +30,7 @@ Public Class MemoryHard
         End If
     End Sub
 
-    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
+    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles lblname2.Click
     End Sub
     Private Sub MemoryHard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If FormOptions.RbtnT1.Checked Then
@@ -137,7 +137,9 @@ Public Class MemoryHard
         Timer2.Interval = 450
 
         Dim pbCliquee As PictureBox = CType(sender, PictureBox)
-        pbCliquee.Image = listeImages(listeCartes.IndexOf(pbCliquee))
+        pbCliquee.Image = listeImages(listeCartes.IndexOf(pbCliquee))  'Y'a un problème ici je ne sais pas pk 'faudrait ppeut etre augmenter le format, pck qu'il est en int je crois
+
+
         listeCartesFlipped.Add(pbCliquee)
         If listeCartesFlipped.Count >= 1 Then
             Dim toutesIdentiques As Boolean = True

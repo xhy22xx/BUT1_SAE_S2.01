@@ -22,7 +22,11 @@
     Dim DefaultTextFormOptions As String
 
     Dim DefaultTextlblJoueur As String
+    Dim DefaultTextlblJoueur1 As String
+    Dim DefaultTextlblJoueur2 As String
     Dim DefaultTextlblTempsR As String
+    Dim DefaultTextlblTempsR1 As String
+    Dim DefaultTextlblTempsR2 As String
     Dim DefaultTextbtnAbandon As String
     Dim DefaultTextMemory As String
 
@@ -67,7 +71,11 @@
 
         'Sauvegarde des textes initiales (Memory)
         DefaultTextlblJoueur = Memory.lblJoueur.Text
+        DefaultTextlblJoueur1 = MemoryEasy.lblJoueur1.Text
+        DefaultTextlblJoueur2 = MemoryHard.lblJoueur2.Text
         DefaultTextlblTempsR = Memory.lblTempsR.Text
+        DefaultTextlblTempsR1 = MemoryEasy.lblTempsR1.Text
+        DefaultTextlblTempsR2 = MemoryHard.lblTempsR2.Text
         DefaultTextbtnAbandon = Memory.btnAbandon.Text
         DefaultTextMemory = Memory.Text
         'Initialisation de la boîte de Confirmation
@@ -118,7 +126,11 @@
             Me.Text = DefaultTextFormOptions
 
             Memory.lblJoueur.Text = DefaultTextlblJoueur
+            MemoryEasy.lblJoueur1.Text = DefaultTextlblJoueur1
+            MemoryHard.lblJoueur2.Text = DefaultTextlblJoueur2
             Memory.lblTempsR.Text = DefaultTextlblTempsR
+            MemoryEasy.lblTempsR1.Text = DefaultTextlblTempsR1
+            MemoryHard.lblTempsR2.Text = DefaultTextlblTempsR2
             Memory.btnAbandon.Text = DefaultTextbtnAbandon
             Memory.Text = DefaultTextMemory
 
@@ -162,7 +174,11 @@
             Me.Text = "Options"
 
             Memory.lblJoueur.Text = "Player: "
+            MemoryEasy.lblJoueur1.Text = "Player: "
+            MemoryHard.lblJoueur2.Text = "Player: "
             Memory.lblTempsR.Text = "Time remaining: "
+            MemoryEasy.lblTempsR1.Text = "Time remaining: "
+            MemoryHard.lblTempsR2.Text = "Time remaining: "
             Memory.btnAbandon.Text = "Give Up"
             Memory.Text = "Memory"
 
@@ -200,12 +216,16 @@
             RbtnL2.Text = "英文"
             RbtnL3.Text = "中文"
             RbtnT1.Text = "宝可梦卡牌"
-            RbtnT2.Text = "类型 2 " 'A modifier
-            RbtnT3.Text = "类型 3 " 'A modifier
+            RbtnT2.Text = "时光代理人卡牌"
+            RbtnT3.Text = "UNO卡牌"
             Me.Text = "选项"
 
             Memory.lblJoueur.Text = "玩家: "
-            Memory.lblTempsR.Text = "剩余时间: "
+            Memory.lblJoueur.Text = "玩家: "
+            MemoryEasy.lblJoueur1.Text = "玩家: "
+            MemoryHard.lblTempsR2.Text = "剩余时间: "
+            MemoryEasy.lblTempsR1.Text = "剩余时间: "
+            MemoryHard.lblTempsR2.Text = "剩余时间: "
             Memory.btnAbandon.Text = "放弃"
             Memory.Text = "配对游戏"
 

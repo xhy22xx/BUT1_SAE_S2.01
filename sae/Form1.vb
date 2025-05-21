@@ -89,15 +89,13 @@ Public Class Form1
 
             If FormOptions.RbtnFacile.Checked = True Then
                 MemoryEasy.Show()
-                Memory.Label2.Text = name    'Faudrait renommer ca!!
+                MemoryEasy.lblname1.Text = name
             ElseIf FormOptions.RbtnMoyen.Checked = True Then
                 Memory.Show()
-                'Memory........
-                MsgBox("Memory niv moyen pas encore créer")
+                Memory.Label2.Text = name
             ElseIf FormOptions.RbtnDifficile.Checked = True Then
                 MemoryHard.Show()
-                'Memory........
-                MsgBox("Memory niv difficile pas encore créé")
+                MemoryHard.lblname2.Text = name
             Else
                 'Normalement il n'affiche pas ca 
                 MsgBox("Erreur. Niveau de difficulté non choisit. Aller sur options et choisir le niveau.")

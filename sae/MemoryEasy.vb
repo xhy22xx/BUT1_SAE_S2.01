@@ -30,7 +30,7 @@ Public Class MemoryEasy
         End If
     End Sub
 
-    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
+    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles lblname1.Click
     End Sub
     Private Sub Memory_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If FormOptions.RbtnT1.Checked Then

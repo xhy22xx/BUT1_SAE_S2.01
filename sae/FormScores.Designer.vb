@@ -113,11 +113,10 @@ Partial Class FormScores
         LstTempsT.Font = New Font("Bookman Old Style", 9F)
         LstTempsT.ForeColor = Color.FromArgb(CByte(107), CByte(75), CByte(88))
         LstTempsT.FormattingEnabled = True
-        LstTempsT.ItemHeight = 27
         LstTempsT.Location = New Point(788, 130)
         LstTempsT.Margin = New Padding(3, 4, 3, 4)
         LstTempsT.Name = "LstTempsT"
-        LstTempsT.Size = New Size(221, 247)
+        LstTempsT.Size = New Size(221, 244)
         LstTempsT.TabIndex = 4
         ' 
         ' LstParties
@@ -125,11 +124,10 @@ Partial Class FormScores
         LstParties.Font = New Font("Bookman Old Style", 9F)
         LstParties.ForeColor = Color.FromArgb(CByte(107), CByte(75), CByte(88))
         LstParties.FormattingEnabled = True
-        LstParties.ItemHeight = 27
         LstParties.Location = New Point(613, 130)
         LstParties.Margin = New Padding(3, 4, 3, 4)
         LstParties.Name = "LstParties"
-        LstParties.Size = New Size(169, 247)
+        LstParties.Size = New Size(169, 244)
         LstParties.TabIndex = 3
         ' 
         ' LstTempsM
@@ -137,11 +135,10 @@ Partial Class FormScores
         LstTempsM.Font = New Font("Bookman Old Style", 9F)
         LstTempsM.ForeColor = Color.FromArgb(CByte(107), CByte(75), CByte(88))
         LstTempsM.FormattingEnabled = True
-        LstTempsM.ItemHeight = 27
         LstTempsM.Location = New Point(418, 130)
         LstTempsM.Margin = New Padding(3, 4, 3, 4)
         LstTempsM.Name = "LstTempsM"
-        LstTempsM.Size = New Size(189, 247)
+        LstTempsM.Size = New Size(189, 244)
         LstTempsM.TabIndex = 2
         ' 
         ' LstCarres
@@ -149,11 +146,10 @@ Partial Class FormScores
         LstCarres.Font = New Font("Bookman Old Style", 9F)
         LstCarres.ForeColor = Color.FromArgb(CByte(107), CByte(75), CByte(88))
         LstCarres.FormattingEnabled = True
-        LstCarres.ItemHeight = 27
         LstCarres.Location = New Point(223, 130)
         LstCarres.Margin = New Padding(3, 4, 3, 4)
         LstCarres.Name = "LstCarres"
-        LstCarres.Size = New Size(189, 247)
+        LstCarres.Size = New Size(189, 244)
         LstCarres.TabIndex = 1
         ' 
         ' LstJoueurs
@@ -161,11 +157,10 @@ Partial Class FormScores
         LstJoueurs.Font = New Font("Bookman Old Style", 9F)
         LstJoueurs.ForeColor = Color.FromArgb(CByte(107), CByte(75), CByte(88))
         LstJoueurs.FormattingEnabled = True
-        LstJoueurs.ItemHeight = 27
         LstJoueurs.Location = New Point(34, 130)
         LstJoueurs.Margin = New Padding(3, 4, 3, 4)
         LstJoueurs.Name = "LstJoueurs"
-        LstJoueurs.Size = New Size(183, 247)
+        LstJoueurs.Size = New Size(183, 244)
         LstJoueurs.TabIndex = 0
         ' 
         ' LNom
@@ -174,7 +169,7 @@ Partial Class FormScores
         LNom.ForeColor = Color.FromArgb(CByte(107), CByte(75), CByte(88))
         LNom.Location = New Point(80, 93)
         LNom.Name = "LNom"
-        LNom.Size = New Size(164, 28)
+        LNom.Size = New Size(83, 15)
         LNom.TabIndex = 2
         LNom.Text = "Nom du Joueur :"
         ' 
@@ -205,7 +200,7 @@ Partial Class FormScores
         ComboBoxJoueur.Location = New Point(80, 145)
         ComboBoxJoueur.Margin = New Padding(3, 4, 3, 4)
         ComboBoxJoueur.Name = "ComboBoxJoueur"
-        ComboBoxJoueur.Size = New Size(389, 35)
+        ComboBoxJoueur.Size = New Size(389, 24)
         ComboBoxJoueur.TabIndex = 0
         ' 
         ' BtnRetour

@@ -53,7 +53,7 @@ Public Class FormScores
         End If
 
         If index >= 0 Then
-            Dim message As String = "Joueur : " & LstJoueurs.Items(index).ToString() & vbCrLf &
+            Dim message As String = "Joueur : " & LstJoueurs.Items(index).ToString() & vbCrLf &                         'Ajouter les autres langues aussi ici je crois
                                     "Carrés identifiés : " & LstCarres.Items(index).ToString() & vbCrLf &
                                     "Temps minimum : " & LstTempsM.Items(index).ToString() & " s" & vbCrLf &
                                     "Parties jouées : " & LstParties.Items(index).ToString() & vbCrLf &
