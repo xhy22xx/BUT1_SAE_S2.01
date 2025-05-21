@@ -59,6 +59,7 @@ Partial Class Message
         ClientSize = New Size(695, 406)
         Controls.Add(Button1)
         Controls.Add(lblMess)
+        FormBorderStyle = FormBorderStyle.None
         Name = "Message"
         ResumeLayout(False)
     End Sub

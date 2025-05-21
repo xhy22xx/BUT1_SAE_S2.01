@@ -85,6 +85,7 @@ Partial Class formConfirmation
         Controls.Add(btnYes)
         Controls.Add(btnNo)
         DoubleBuffered = True
+        FormBorderStyle = FormBorderStyle.None
         Name = "formConfirmation"
         Text = "Confirmation"
         ResumeLayout(False)

@@ -264,7 +264,7 @@ Partial Class FormOptions
         Controls.Add(pnlOp2)
         Controls.Add(lblD)
         Controls.Add(pnlOp1)
-        FormBorderStyle = FormBorderStyle.FixedSingle
+        FormBorderStyle = FormBorderStyle.None
         Margin = New Padding(5, 6, 5, 6)
         Name = "FormOptions"
         Text = "Options"

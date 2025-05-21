@@ -117,7 +117,7 @@ Partial Class Memory
         ' btnAbandon
         ' 
         btnAbandon.Location = New Point(646, 38)
-        btnAbandon.Margin = New Padding(2, 2, 2, 2)
+        btnAbandon.Margin = New Padding(2)
         btnAbandon.Name = "btnAbandon"
         btnAbandon.Size = New Size(114, 37)
         btnAbandon.TabIndex = 4
@@ -482,8 +482,8 @@ Partial Class Memory
         Controls.Add(lblTempsR)
         Controls.Add(Label2)
         Controls.Add(lblJoueur)
-        FormBorderStyle = FormBorderStyle.FixedSingle
-        Margin = New Padding(2, 2, 2, 2)
+        FormBorderStyle = FormBorderStyle.None
+        Margin = New Padding(2)
         Name = "Memory"
         Text = "Form2"
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
