@@ -88,12 +88,15 @@ Public Class Form1
             Module_Enregistrement.AJOUT(name, 0, 0, 0, 0)
 
             If FormOptions.RbtnFacile.Checked = True Then
+                Me.Hide()
                 MemoryEasy.Show()
                 MemoryEasy.lblname1.Text = name
             ElseIf FormOptions.RbtnMoyen.Checked = True Then
+                Me.Hide()
                 Memory.Show()
                 Memory.Label2.Text = name
             ElseIf FormOptions.RbtnDifficile.Checked = True Then
+                Me.Hide()
                 MemoryHard.Show()
                 MemoryHard.lblname2.Text = name
             Else
@@ -118,6 +121,7 @@ Public Class Form1
     End Sub
 
     Private Sub btnAfficherScore_Click(sender As Object, e As EventArgs) Handles btnAfficherScore.Click
+        Me.Hide()
         FormScores.Show()
     End Sub
 

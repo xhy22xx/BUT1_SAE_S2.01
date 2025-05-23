@@ -1,4 +1,5 @@
-﻿Imports System.Security.Cryptography
+﻿Imports System.Media
+Imports System.Security.Cryptography
 
 Public Class Memory
     Dim time As Integer
@@ -10,11 +11,7 @@ Public Class Memory
     Dim pointsJoueur As Integer
     Dim tempsJoueur As Integer
     Dim timeInitial As Integer
-    'Dim pictureBoxes As PictureBox() = {
-    'PictureBox1, PictureBox2, PictureBox3, PictureBox4, PictureBox5,
-    'PictureBox6, PictureBox7, PictureBox8, PictureBox9, PictureBox10,
-    'PictureBox11, PictureBox12, PictureBox13, PictureBox14, PictureBox15,
-    'PictureBox16, PictureBox17, PictureBox18, PictureBox19, PictureBox20}
+    Private player As New System.Media.SoundPlayer()
     Private Sub btnAbandon_Click(sender As Object, e As EventArgs) Handles btnAbandon.Click
         If FormOptions.RbtnL1.Checked = True Then
             formConfirmation.lblConfirmation.Text = "Voulez-vous abandonner la partie en cours?"
@@ -25,12 +22,10 @@ Public Class Memory
         End If
         Dim result As DialogResult = formConfirmation.ShowDialog()
         If result = DialogResult.Yes Then
+            player.Stop()
             Me.Close()
             Form1.Show()
         End If
-    End Sub
-
-    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
     End Sub
     Private Sub Memory_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If FormOptions.RbtnT1.Checked Or FormOptions.RbtnT2.Checked Or FormOptions.RbtnT3.Checked Then
@@ -40,10 +35,13 @@ Public Class Memory
             Label4.ForeColor = Color.Black
             Me.BackColor = Color.White
             If FormOptions.RbtnT1.Checked Then
+                player.SoundLocation = Application.StartupPath & "\PokemonTGC.wav"
                 imageDos = My.Resources.Carte_pokemon_dos
             ElseIf FormOptions.RbtnT2.Checked Then
+                player.SoundLocation = Application.StartupPath & "\LinkClickOpening.wav"
                 imageDos = My.Resources.LC
             ElseIf FormOptions.RbtnT3.Checked Then
+                player.SoundLocation = Application.StartupPath & "\Chopin.wav"
                 imageDos = My.Resources.Uno_Dos
             End If
         ElseIf FormOptions.RbtnT4.Checked Or FormOptions.RbtnT5.Checked Then
@@ -53,11 +51,14 @@ Public Class Memory
             Label4.ForeColor = Color.White
             Me.BackColor = Color.Black
             If FormOptions.RbtnT4.Checked Then
+                player.SoundLocation = Application.StartupPath & "\naranciaMusic.wav"
                 imageDos = My.Resources.Jojo_Dos
             ElseIf FormOptions.RbtnT5.Checked Then
+                player.SoundLocation = Application.StartupPath & "\jujutsuOpening.wav"
                 imageDos = My.Resources.jjk_Dos
             End If
         End If
+        player.Play()
         timeInitial = 60
         time = timeInitial
         pointsJoueur = 0
@@ -71,7 +72,7 @@ Public Class Memory
             listeImages.AddRange({My.Resources.Celebi, My.Resources.Mew, My.Resources.Marill,
                               My.Resources.Dracaufeu, My.Resources.Evoli})
         ElseIf FormOptions.RbtnT2.Checked = True Then
-            listeImages.AddRange({My.Resources.LC1, My.Resources.LC2, My.Resources.LC3,
+            listeImages.AddRange({My.Resources.LC1, My.Resources.LC2, My.Resources.LC7,
                                  My.Resources.LC4, My.Resources.LC5})
         ElseIf FormOptions.RbtnT3.Checked = True Then
             listeImages.AddRange({My.Resources.Uno1, My.Resources.Uno2, My.Resources.Uno3,
@@ -135,11 +136,28 @@ Public Class Memory
             Timer1.Stop()
             tempsJoueur = timeInitial
 
+            Dim messages As New Dictionary(Of String, (Title As String, Message As String)) From {
+    {"French", ("Résultat du joueur", "Temps écoulé !" & vbCrLf & "Carrés identifiés : " & pointsJoueur & vbCrLf & "Temps utilisé : " & tempsJoueur & " secondes")},
+    {"English", ("Player Results", "Time's up!" & vbCrLf & "Correct matches: " & pointsJoueur & vbCrLf & "Time used: " & tempsJoueur & " seconds")},
+    {"Chinese", ("玩家成绩", "时间到！" & vbCrLf & "正确配对: " & pointsJoueur & vbCrLf & "用时: " & tempsJoueur & " 秒")}
+}
 
-            Dim resultat As String = "Temps écoulé !" & vbCrLf &
-                                            "Carrés identifiés : " & pointsJoueur & vbCrLf &
-                                            "Temps utilisé : " & tempsJoueur & " secondes"
-            MsgBox(resultat, MsgBoxStyle.Information, "Resultat du joueur")
+            Dim selectedLanguage As String = ""
+            If FormOptions.RbtnL1.Checked Then
+                selectedLanguage = "French"
+            ElseIf FormOptions.RbtnL2.Checked Then
+                selectedLanguage = "English"
+            ElseIf FormOptions.RbtnL3.Checked Then
+                selectedLanguage = "Chinese"
+            End If
+
+            If messages.ContainsKey(selectedLanguage) Then
+                Dim msg = messages(selectedLanguage)
+                MsgBox(msg.Message, MsgBoxStyle.Information, msg.Title)
+            End If
+            Me.Close()
+            player.Stop()
+            Form1.Show()
         End If
         Label4.Text = minutes.ToString("0") & ":" & secondes.ToString("00")
     End Sub
@@ -195,16 +213,23 @@ Public Class Memory
             ElseIf FormOptions.RbtnL3.Checked = True Then
                 Message.lblMess.Text = "你赢了！你找到了所有的卡片！"
             End If
+            Me.Close()
             Message.ShowDialog()
             tempsJoueur = timeInitial - time
-            'Est ce que il faut que la personne sort le memory??
-            'Memory.Close()
-            'Il faudrait plutot montrer au joueur le score et le temps qu'il a pris pour réussir à retourner les cartes
+            Dim messages As New Dictionary(Of String, (Text As String, Title As String)) From {
+    {"French", ($"Carrés identifiés : {pointsJoueur}{vbCrLf}Temps utilisé : {tempsJoueur} secondes", "Résultat du joueur")},
+    {"English", ($"Time's up!{vbCrLf}Correct matches: {pointsJoueur}{vbCrLf}Time used: {tempsJoueur} seconds", "Player Results")},
+    {"Chinese", ($"时间到！{vbCrLf}正确配对: {pointsJoueur}{vbCrLf}用时: {tempsJoueur} 秒", "玩家成绩")}
+}
+            Dim langue = If(FormOptions.RbtnL1.Checked, "French",
+             If(FormOptions.RbtnL2.Checked, "English",
+             If(FormOptions.RbtnL3.Checked, "Chinese", "")))
 
-            Dim resultat As String = "Carrés identifiés : " & pointsJoueur & vbCrLf &
-                                "Temps utilisé : " & tempsJoueur & " secondes"
-
-            MsgBox(resultat, MsgBoxStyle.Information, "Resultat du joueur")
+            If messages.ContainsKey(langue) Then
+                MsgBox(messages(langue).Text, MsgBoxStyle.Information, messages(langue).Title)
+            End If
+            player.Stop()
+            Form1.Show()
         End If
 
     End Sub

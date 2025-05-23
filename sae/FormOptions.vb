@@ -30,6 +30,8 @@
     Dim DefaultTextlblTempsR1 As String
     Dim DefaultTextlblTempsR2 As String
     Dim DefaultTextbtnAbandon As String
+    Dim DefaultTextbtnAbandon1 As String
+    Dim DefaultTextbtnAbandon2 As String
     Dim DefaultTextMemory As String
 
     Dim DefaultTextConfirmation As String
@@ -81,6 +83,8 @@
         DefaultTextlblTempsR1 = MemoryEasy.lblTempsR1.Text
         DefaultTextlblTempsR2 = MemoryHard.lblTempsR2.Text
         DefaultTextbtnAbandon = Memory.btnAbandon.Text
+        DefaultTextbtnAbandon1 = MemoryEasy.btnAbandon1.Text
+        DefaultTextbtnAbandon2 = MemoryHard.btnAbandon2.Text
         DefaultTextMemory = Memory.Text
         'Initialisation de la boîte de Confirmation
         DefaultTextConfirmation = formConfirmation.Text
@@ -138,6 +142,8 @@
             MemoryEasy.lblTempsR1.Text = DefaultTextlblTempsR1
             MemoryHard.lblTempsR2.Text = DefaultTextlblTempsR2
             Memory.btnAbandon.Text = DefaultTextbtnAbandon
+            MemoryEasy.btnAbandon1.Text = DefaultTextbtnAbandon1
+            MemoryHard.btnAbandon2.Text = DefaultTextbtnAbandon2
             Memory.Text = DefaultTextMemory
 
             formConfirmation.Text = DefaultTextConfirmation
@@ -188,6 +194,8 @@
             MemoryEasy.lblTempsR1.Text = "Time remaining: "
             MemoryHard.lblTempsR2.Text = "Time remaining: "
             Memory.btnAbandon.Text = "Give Up"
+            MemoryEasy.btnAbandon1.Text = "Give Up"
+            MemoryHard.btnAbandon2.Text = "Give Up"
             Memory.Text = "Memory"
 
             formConfirmation.Text = "Confirmation"
@@ -237,6 +245,8 @@
             MemoryEasy.lblTempsR1.Text = "剩余时间: "
             MemoryHard.lblTempsR2.Text = "剩余时间: "
             Memory.btnAbandon.Text = "放弃"
+            MemoryEasy.btnAbandon1.Text = "放弃"
+            MemoryHard.btnAbandon2.Text = "放弃"
             Memory.Text = "配对游戏"
 
             formConfirmation.Text = "确认"

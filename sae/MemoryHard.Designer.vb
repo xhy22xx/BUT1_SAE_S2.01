@@ -27,7 +27,7 @@ Partial Class MemoryHard
         lblname2 = New Label()
         lblTempsR2 = New Label()
         Label4 = New Label()
-        btnAbandon = New Button()
+        btnAbandon2 = New Button()
         Timer1 = New Timer(components)
         Timer2 = New Timer(components)
         PictureBox1 = New PictureBox()
@@ -122,15 +122,15 @@ Partial Class MemoryHard
         Label4.TabIndex = 3
         Label4.Text = "Label4"
         ' 
-        ' btnAbandon
+        ' btnAbandon2
         ' 
-        btnAbandon.Location = New Point(840, 49)
-        btnAbandon.Margin = New Padding(1, 3, 1, 3)
-        btnAbandon.Name = "btnAbandon"
-        btnAbandon.Size = New Size(148, 47)
-        btnAbandon.TabIndex = 4
-        btnAbandon.Text = "Abandon"
-        btnAbandon.UseVisualStyleBackColor = True
+        btnAbandon2.Location = New Point(840, 49)
+        btnAbandon2.Margin = New Padding(1, 3, 1, 3)
+        btnAbandon2.Name = "btnAbandon2"
+        btnAbandon2.Size = New Size(148, 47)
+        btnAbandon2.TabIndex = 4
+        btnAbandon2.Text = "Abandon"
+        btnAbandon2.UseVisualStyleBackColor = True
         ' 
         ' Timer1
         ' 
@@ -550,7 +550,7 @@ Partial Class MemoryHard
         BackColor = Color.White
         ClientSize = New Size(1140, 1222)
         Controls.Add(TableLayoutPanel1)
-        Controls.Add(btnAbandon)
+        Controls.Add(btnAbandon2)
         Controls.Add(Label4)
         Controls.Add(lblTempsR2)
         Controls.Add(lblname2)
@@ -592,7 +592,7 @@ Partial Class MemoryHard
     Friend WithEvents lblname2 As Label
     Friend WithEvents lblTempsR2 As Label
     Friend WithEvents Label4 As Label
-    Friend WithEvents btnAbandon As Button
+    Friend WithEvents btnAbandon2 As Button
     Friend WithEvents Timer1 As Timer
     Friend WithEvents Timer2 As Timer
     Friend WithEvents PictureBox1 As PictureBox

@@ -53,13 +53,29 @@ Public Class FormScores
         End If
 
         If index >= 0 Then
-            Dim message As String = "Joueur : " & LstJoueurs.Items(index).ToString() & vbCrLf &                         'Ajouter les autres langues aussi ici je crois
+            If FormOptions.RbtnL1.Checked Then
+                Dim message As String = "Joueur : " & LstJoueurs.Items(index).ToString() & vbCrLf &                         'Ajouter les autres langues aussi ici je crois
                                     "Carrés identifiés : " & LstCarres.Items(index).ToString() & vbCrLf &
                                     "Temps minimum : " & LstTempsM.Items(index).ToString() & " s" & vbCrLf &
                                     "Parties jouées : " & LstParties.Items(index).ToString() & vbCrLf &
                                     "Temps total de jeu: " & LstTempsT.Items(index).ToString() & " s"
 
-            MsgBox(message, MsgBoxStyle.Information, "Statistiques")
+                MsgBox(message, MsgBoxStyle.Information, "Statistiques")
+            ElseIf FormOptions.RbtnL2.Checked Then
+                Dim message As String = "Player: " & LstJoueurs.Items(index).ToString() & vbCrLf &
+                                    "Squares identified: " & LstCarres.Items(index).ToString() & vbCrLf &
+                                    "Minimum time: " & LstTempsM.Items(index).ToString() & " s" & vbCrLf &
+                                    "Games played: " & LstParties.Items(index).ToString() & vbCrLf &
+                                    "Total playtime: " & LstTempsT.Items(index).ToString() & " s"
+                MsgBox(message, MsgBoxStyle.Information, "Statistics")
+            ElseIf FormOptions.RbtnL3.Checked Then
+                Dim message As String = "玩家：" & LstJoueurs.Items(index).ToString() & vbCrLf &
+                                    "识别的方块：" & LstCarres.Items(index).ToString() & vbCrLf &
+                                    "最短时间：" & LstTempsM.Items(index).ToString() & " 秒" & vbCrLf &
+                                    "玩过的游戏：" & LstParties.Items(index).ToString() & vbCrLf &
+                                    "总游戏时间：" & LstTempsT.Items(index).ToString() & " 秒"
+                MsgBox(message, MsgBoxStyle.Information, "统计数据")
+            End If
         Else
             If FormOptions.RbtnL1.Checked = True Then
                 MsgBox("Joueur non trouvé.", MsgBoxStyle.Information, "Joueur inexistant")
