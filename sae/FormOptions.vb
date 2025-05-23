@@ -19,6 +19,8 @@
     Dim DefaultTextRbtnT1 As String
     Dim DefaultTextRbtnT2 As String
     Dim DefaultTextRbtnT3 As String
+    Dim DefaultTextRbtnT4 As String
+    Dim DefaultTextRbtnT5 As String
     Dim DefaultTextFormOptions As String
 
     Dim DefaultTextlblJoueur As String
@@ -67,6 +69,8 @@
         DefaultTextRbtnT1 = RbtnT1.Text
         DefaultTextRbtnT2 = RbtnT2.Text
         DefaultTextRbtnT3 = RbtnT3.Text
+        DefaultTextRbtnT4 = RbtnT4.Text
+        DefaultTextRbtnT5 = RbtnT5.Text
         DefaultTextFormOptions = Me.Text
 
         'Sauvegarde des textes initiales (Memory)
@@ -123,6 +127,8 @@
             RbtnT1.Text = DefaultTextRbtnT1
             RbtnT2.Text = DefaultTextRbtnT2
             RbtnT3.Text = DefaultTextRbtnT3
+            RbtnT4.Text = DefaultTextRbtnT4
+            RbtnT5.Text = DefaultTextRbtnT5
             Me.Text = DefaultTextFormOptions
 
             Memory.lblJoueur.Text = DefaultTextlblJoueur
@@ -171,6 +177,8 @@
             RbtnT1.Text = "Pokémon Card"
             RbtnT2.Text = "Link Click Card"
             RbtnT3.Text = "Uno Card"
+            RbtnT4.Text = "Jojo Card"
+            RbtnT5.Text = "JJK Card"
             Me.Text = "Options"
 
             Memory.lblJoueur.Text = "Player: "
@@ -218,6 +226,8 @@
             RbtnT1.Text = "宝可梦卡牌"
             RbtnT2.Text = "时光代理人卡牌"
             RbtnT3.Text = "UNO卡牌"
+            RbtnT4.Text = "JOJO卡牌"
+            RbtnT5.Text = "咒术回战卡牌"
             Me.Text = "选项"
 
             Memory.lblJoueur.Text = "玩家: "
@@ -252,6 +262,5 @@
         Me.Hide()
         Form1.Show()
     End Sub
-
 
 End Class

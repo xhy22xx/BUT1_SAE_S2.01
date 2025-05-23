@@ -118,6 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="jjk5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\jjk5.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="LC" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LC.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -126,6 +129,9 @@
   </data>
   <data name="button" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="jjk6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\jjk6.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="LC2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LC2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -136,20 +142,47 @@
   <data name="menu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\menu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="buttonS1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\buttonS1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="LC6" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LC6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btnStop" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnStop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Uno5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Uno5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Uno1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Uno1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="LC3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LC3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="jjk2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\jjk2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="jjk1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\jjk1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="buttonS3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\buttonS3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="LC7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LC7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Uno2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Uno2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="fond3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fond3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Uno Dos" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Uno Dos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Jojo6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Jojo6.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="jjk3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\jjk3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Marill" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Marill.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -157,11 +190,29 @@
   <data name="button22" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\button22.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="btnStop" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnStop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Jojo2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Jojo2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Celebi" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Celebi.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="buttonS2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\buttonS2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="jjk Dos" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\jjk Dos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Griffes" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Griffes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\Griffes1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="jjk4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\jjk4.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Uno3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Uno3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Carte-pokemon dos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Carte-pokemon dos.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -175,8 +226,8 @@
   <data name="LC4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LC4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Dracaufeu" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Dracaufeu.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Jojo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Jojo1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="LC1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LC1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -184,20 +235,35 @@
   <data name="button3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\button3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="buttonS1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\buttonS1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Uno4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Uno4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Jojo5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Jojo5.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Uno6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Uno6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Dracaufeu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dracaufeu.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Mew" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Mew.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Jojo Dos" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Jojo Dos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="affiche" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\affiche.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="buttonS2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\buttonS2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Jojo4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Jojo4.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="fond" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fond.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Jojo3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Jojo3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="button21" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\button21.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -205,7 +271,10 @@
   <data name="Evoli" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Evoli.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Griffes" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Griffes1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="jjk21" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\jjk21.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="jjk11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\jjk11.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

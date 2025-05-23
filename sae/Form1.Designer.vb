@@ -43,7 +43,7 @@ Partial Class Form1
         cbxNoms.Location = New Point(339, 273)
         cbxNoms.Margin = New Padding(3, 5, 3, 5)
         cbxNoms.Name = "cbxNoms"
-        cbxNoms.Size = New Size(241, 33)
+        cbxNoms.Size = New Size(241, 40)
         cbxNoms.TabIndex = 0
         ' 
         ' btnLancer

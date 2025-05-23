@@ -33,10 +33,30 @@ Public Class MemoryEasy
     Private Sub Label2_Click(sender As Object, e As EventArgs) Handles lblname1.Click
     End Sub
     Private Sub Memory_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        If FormOptions.RbtnT1.Checked Then
-            imageDos = My.Resources.Carte_pokemon_dos
-        ElseIf FormOptions.RbtnT2.Checked Then
-            imageDos = My.Resources.LC
+        If FormOptions.RbtnT1.Checked Or FormOptions.RbtnT2.Checked Or FormOptions.RbtnT3.Checked Then
+            lblJoueur1.ForeColor = Color.Black
+            lblname1.ForeColor = Color.Black
+            lblTempsR1.ForeColor = Color.Black
+            Label4.ForeColor = Color.Black
+            Me.BackColor = Color.White
+            If FormOptions.RbtnT1.Checked Then
+                imageDos = My.Resources.Carte_pokemon_dos
+            ElseIf FormOptions.RbtnT2.Checked Then
+                imageDos = My.Resources.LC
+            ElseIf FormOptions.RbtnT3.Checked Then
+                imageDos = My.Resources.Uno_Dos
+            End If
+        ElseIf FormOptions.RbtnT4.Checked Or FormOptions.RbtnT5.Checked Then
+            lblJoueur1.ForeColor = Color.White
+            lblname1.ForeColor = Color.White
+            lblTempsR1.ForeColor = Color.White
+            Label4.ForeColor = Color.White
+            Me.BackColor = Color.Black
+            If FormOptions.RbtnT4.Checked Then
+                imageDos = My.Resources.Jojo_Dos
+            ElseIf FormOptions.RbtnT5.Checked Then
+                imageDos = My.Resources.jjk_Dos
+            End If
         End If
         timeInitial = 90
         time = timeInitial
@@ -51,14 +71,17 @@ Public Class MemoryEasy
             listeImages.AddRange({My.Resources.Mew, My.Resources.Marill,
                               My.Resources.Dracaufeu, My.Resources.Evoli})
         ElseIf FormOptions.RbtnT2.Checked = True Then
-            'Modifier le dos des cartes. Je n'y arrive pas TvT
             listeImages.AddRange({My.Resources.LC1, My.Resources.LC2, My.Resources.LC3,
                                  My.Resources.LC4})
         ElseIf FormOptions.RbtnT3.Checked = True Then
-
-            'Les autres cartes
-        Else
-            MsgBox("Erreur qq part")
+            listeImages.AddRange({My.Resources.Uno1, My.Resources.Uno2, My.Resources.Uno3,
+                                 My.Resources.Uno4})
+        ElseIf FormOptions.RbtnT4.Checked = True Then
+            listeImages.AddRange({My.Resources.Jojo1, My.Resources.Jojo2, My.Resources.Jojo3,
+                                    My.Resources.Jojo4})
+        ElseIf FormOptions.RbtnT5.Checked = True Then
+            listeImages.AddRange({My.Resources.jjk11, My.Resources.jjk21, My.Resources.jjk3,
+                                    My.Resources.jjk4})
         End If
         listeImages.AddRange(listeImages)
         listeImages.AddRange(listeImages)
