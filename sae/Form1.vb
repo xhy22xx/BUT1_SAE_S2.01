@@ -9,7 +9,7 @@ Public Class Form1
 
         If personne IsNot Nothing AndAlso personne.Length > 0 Then
             For Each s As PERS In personne
-                If Not cbxNoms.Items.Contains(s.Nom) Then
+                If Not String.IsNullOrWhiteSpace(s.Nom) Then
                     cbxNoms.Items.Add(s.Nom)
                 End If
             Next
@@ -60,6 +60,7 @@ Public Class Form1
     End Sub
 
     Private Sub btnLancer_Click(sender As Object, e As EventArgs) Handles btnLancer.Click
+
         If cbxNoms.Text = "" Then
             If FormOptions.RbtnL1.Checked = True Then
                 MsgBox("Nom obligatoire.", MsgBoxStyle.Information, "Erreur d'entrée")
@@ -84,21 +85,45 @@ Public Class Form1
         Else
             AxWindowsMediaPlayer1.Ctlcontrols.currentPosition = 0
             AxWindowsMediaPlayer1.Ctlcontrols.pause()
+
             Dim name As String = cbxNoms.Text
-            Module_Enregistrement.AJOUT(name, 0, 0, 0, 0)
+            Dim niveau As String = ""
+            If FormOptions.RbtnFacile.Checked Then
+                niveau = "Facile"
+
+            ElseIf FormOptions.RbtnMoyen.Checked Then
+                niveau = "Moyen"
+
+            ElseIf FormOptions.RbtnDifficile.Checked Then
+                niveau = "Difficile"
+            End If
+
+
+            Module_Enregistrement.ChangerStats(name, 0, 0, niveau)
 
             If FormOptions.RbtnFacile.Checked = True Then
+                niveau = "Facile"
                 Me.Hide()
+                MemoryEasy.niveau = niveau
                 MemoryEasy.Show()
-                MemoryEasy.lblname1.Text = name
+                MemoryEasy.Joueur = name
+                MemoryEasy.Label2.Text = name
+
             ElseIf FormOptions.RbtnMoyen.Checked = True Then
+                niveau = "Moyen"
                 Me.Hide()
+                Memory.niveau = niveau
                 Memory.Show()
+                Memory.Joueur = name
                 Memory.Label2.Text = name
+
             ElseIf FormOptions.RbtnDifficile.Checked = True Then
+                niveau = "Difficile"
                 Me.Hide()
+                MemoryHard.niveau = niveau
                 MemoryHard.Show()
-                MemoryHard.lblname2.Text = name
+                MemoryHard.Joueur = name
+                MemoryHard.Label2.Text = name
             Else
                 'Normalement il n'affiche pas ca 
                 MsgBox("Erreur. Niveau de difficulté non choisit. Aller sur options et choisir le niveau.")

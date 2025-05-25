@@ -1,4 +1,5 @@
 ﻿Imports System.Media
+Imports System.Reflection.Emit
 Imports System.Security.Cryptography
 
 Public Class MemoryHard
@@ -11,6 +12,8 @@ Public Class MemoryHard
     Dim pointsJoueur As Integer
     Dim tempsJoueur As Integer
     Dim timeInitial As Integer
+    Public niveau As String
+    Public Joueur As String
     Private player As New System.Media.SoundPlayer()
     Private Sub btnAbandon_Click(sender As Object, e As EventArgs) Handles btnAbandon2.Click
         If FormOptions.RbtnL1.Checked = True Then
@@ -30,7 +33,7 @@ Public Class MemoryHard
     Private Sub MemoryHard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If FormOptions.RbtnT1.Checked Or FormOptions.RbtnT2.Checked Or FormOptions.RbtnT3.Checked Then
             lblJoueur2.ForeColor = Color.Black
-            lblname2.ForeColor = Color.Black
+            Label2.ForeColor = Color.Black
             lblTempsR2.ForeColor = Color.Black
             Label4.ForeColor = Color.Black
             Me.BackColor = Color.White
@@ -46,7 +49,7 @@ Public Class MemoryHard
             End If
         ElseIf FormOptions.RbtnT4.Checked Or FormOptions.RbtnT5.Checked Then
             lblJoueur2.ForeColor = Color.White
-            lblname2.ForeColor = Color.White
+            Label2.ForeColor = Color.White
             lblTempsR2.ForeColor = Color.White
             Label4.ForeColor = Color.White
             Me.BackColor = Color.Black
@@ -125,7 +128,7 @@ Public Class MemoryHard
         Timer1.Start()
         Timer1.Interval = 1000
         time -= 1
-        tempsJoueur += 1                       'Faut stocker le temps du joueur qq part
+        tempsJoueur += 1
         Dim minutes As Integer = time \ 60
         Dim secondes As Integer = (time Mod 60)
         If Label4.Text = "0:00" Then
@@ -159,6 +162,8 @@ Public Class MemoryHard
                 Dim msg = messages(selectedLanguage)
                 MsgBox(msg.Message, MsgBoxStyle.Information, msg.Title)
             End If
+
+            Module_Enregistrement.ChangerStats(Joueur, pointsJoueur, tempsJoueur, niveau)
             Me.Close()
             player.Stop()
             Form1.Show()
@@ -235,6 +240,8 @@ Public Class MemoryHard
             If messages.ContainsKey(langue) Then
                 MsgBox(messages(langue).Text, MsgBoxStyle.Information, messages(langue).Title)
             End If
+
+            Module_Enregistrement.ChangerStats(Joueur, pointsJoueur, tempsJoueur, niveau)
             player.Stop()
             Form1.Show()
         End If

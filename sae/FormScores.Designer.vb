@@ -38,6 +38,8 @@ Partial Class FormScores
         ComboBoxJoueur = New ComboBox()
         BtnRetour = New Button()
         GroupBox1 = New GroupBox()
+        Label1 = New Label()
+        ComboBoxNiveau = New ComboBox()
         GroupBox2 = New GroupBox()
         GroupBox1.SuspendLayout()
         GroupBox2.SuspendLayout()
@@ -232,6 +234,8 @@ Partial Class FormScores
         ' 
         GroupBox1.BackColor = Color.White
         GroupBox1.BackgroundImageLayout = ImageLayout.Center
+        GroupBox1.Controls.Add(Label1)
+        GroupBox1.Controls.Add(ComboBoxNiveau)
         GroupBox1.Controls.Add(BtnTrier)
         GroupBox1.Controls.Add(LstTempsT)
         GroupBox1.Controls.Add(LstTempsM)
@@ -253,6 +257,23 @@ Partial Class FormScores
         GroupBox1.TabIndex = 4
         GroupBox1.TabStop = False
         GroupBox1.Text = "Statistiques"
+        ' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.Location = New Point(18, 438)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(154, 21)
+        Label1.TabIndex = 12
+        Label1.Text = "Niveau de difficulté :"
+        ' 
+        ' ComboBoxNiveau
+        ' 
+        ComboBoxNiveau.FormattingEnabled = True
+        ComboBoxNiveau.Location = New Point(178, 433)
+        ComboBoxNiveau.Name = "ComboBoxNiveau"
+        ComboBoxNiveau.Size = New Size(178, 29)
+        ComboBoxNiveau.TabIndex = 11
         ' 
         ' GroupBox2
         ' 
@@ -288,6 +309,7 @@ Partial Class FormScores
         Name = "FormScores"
         Text = "Scores"
         GroupBox1.ResumeLayout(False)
+        GroupBox1.PerformLayout()
         GroupBox2.ResumeLayout(False)
         GroupBox2.PerformLayout()
         ResumeLayout(False)
@@ -310,4 +332,6 @@ Partial Class FormScores
     Friend WithEvents BtnRetour As Button
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents ComboBoxNiveau As ComboBox
 End Class

@@ -11,6 +11,8 @@ Public Class Memory
     Dim pointsJoueur As Integer
     Dim tempsJoueur As Integer
     Dim timeInitial As Integer
+    Public niveau As String
+    Public Joueur As String
     Private player As New System.Media.SoundPlayer()
     Private Sub btnAbandon_Click(sender As Object, e As EventArgs) Handles btnAbandon.Click
         If FormOptions.RbtnL1.Checked = True Then
@@ -34,16 +36,21 @@ Public Class Memory
             lblTempsR.ForeColor = Color.Black
             Label4.ForeColor = Color.Black
             Me.BackColor = Color.White
+
             If FormOptions.RbtnT1.Checked Then
                 player.SoundLocation = Application.StartupPath & "\PokemonTGC.wav"
                 imageDos = My.Resources.Carte_pokemon_dos
+
             ElseIf FormOptions.RbtnT2.Checked Then
                 player.SoundLocation = Application.StartupPath & "\LinkClickOpening.wav"
                 imageDos = My.Resources.LC
+
             ElseIf FormOptions.RbtnT3.Checked Then
                 player.SoundLocation = Application.StartupPath & "\Chopin.wav"
                 imageDos = My.Resources.Uno_Dos
             End If
+
+
         ElseIf FormOptions.RbtnT4.Checked Or FormOptions.RbtnT5.Checked Then
             lblJoueur.ForeColor = Color.White
             Label2.ForeColor = Color.White
@@ -58,7 +65,9 @@ Public Class Memory
                 imageDos = My.Resources.jjk_Dos
             End If
         End If
-        player.Play()
+
+
+        '   player.Play()  ça ne marche pas :(
         timeInitial = 60
         time = timeInitial
         pointsJoueur = 0
@@ -86,8 +95,6 @@ Public Class Memory
         End If
         listeImages.AddRange(listeImages)
         listeImages.AddRange(listeImages)
-
-
         listeCartes.Add(PictureBox1)
         listeCartes.Add(PictureBox2)
         listeCartes.Add(PictureBox3)
@@ -155,6 +162,8 @@ Public Class Memory
                 Dim msg = messages(selectedLanguage)
                 MsgBox(msg.Message, MsgBoxStyle.Information, msg.Title)
             End If
+
+            Module_Enregistrement.ChangerStats(Joueur, pointsJoueur, tempsJoueur, niveau)
             Me.Close()
             player.Stop()
             Form1.Show()
@@ -228,6 +237,8 @@ Public Class Memory
             If messages.ContainsKey(langue) Then
                 MsgBox(messages(langue).Text, MsgBoxStyle.Information, messages(langue).Title)
             End If
+
+            Module_Enregistrement.ChangerStats(Joueur, pointsJoueur, tempsJoueur, niveau)
             player.Stop()
             Form1.Show()
         End If

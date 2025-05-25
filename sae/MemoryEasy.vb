@@ -1,5 +1,6 @@
 ﻿Imports System.Drawing.Imaging
 Imports System.Media
+Imports System.Reflection.Emit
 Imports System.Security.Cryptography
 
 Public Class MemoryEasy
@@ -12,6 +13,8 @@ Public Class MemoryEasy
     Dim pointsJoueur As Integer
     Dim tempsJoueur As Integer
     Dim timeInitial As Integer
+    Public niveau As String
+    Public Joueur As String
     Private player As New System.Media.SoundPlayer()
     Private Sub btnAbandon_Click(sender As Object, e As EventArgs) Handles btnAbandon1.Click
         If FormOptions.RbtnL1.Checked = True Then
@@ -31,35 +34,42 @@ Public Class MemoryEasy
     Private Sub Memory_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If FormOptions.RbtnT1.Checked Or FormOptions.RbtnT2.Checked Or FormOptions.RbtnT3.Checked Then
             lblJoueur1.ForeColor = Color.Black
-            lblname1.ForeColor = Color.Black
+            Label2.ForeColor = Color.Black
             lblTempsR1.ForeColor = Color.Black
             Label4.ForeColor = Color.Black
             Me.BackColor = Color.White
+
             If FormOptions.RbtnT1.Checked Then
                 player.SoundLocation = Application.StartupPath & "\PokemonTGC.wav"
                 imageDos = My.Resources.Carte_pokemon_dos
+
             ElseIf FormOptions.RbtnT2.Checked Then
                 player.SoundLocation = Application.StartupPath & "\LinkClickOpening.wav"
                 imageDos = My.Resources.LC
+
             ElseIf FormOptions.RbtnT3.Checked Then
                 player.SoundLocation = Application.StartupPath & "\Chopin.wav"
                 imageDos = My.Resources.Uno_Dos
             End If
+
         ElseIf FormOptions.RbtnT4.Checked Or FormOptions.RbtnT5.Checked Then
             lblJoueur1.ForeColor = Color.White
-            lblname1.ForeColor = Color.White
+            Label2.ForeColor = Color.White
             lblTempsR1.ForeColor = Color.White
             Label4.ForeColor = Color.White
             Me.BackColor = Color.Black
+
             If FormOptions.RbtnT4.Checked Then
                 player.SoundLocation = Application.StartupPath & "\naranciaMusic.wav"
                 imageDos = My.Resources.Jojo_Dos
+
             ElseIf FormOptions.RbtnT5.Checked Then
                 player.SoundLocation = Application.StartupPath & "\jujutsuOpening.wav"
                 imageDos = My.Resources.jjk_Dos
             End If
         End If
-        player.Play()
+
+        'player.Play() ça marche pas de mon coté jsp pkk
         timeInitial = 90
         time = timeInitial
         pointsJoueur = 0
@@ -85,10 +95,9 @@ Public Class MemoryEasy
             listeImages.AddRange({My.Resources.jjk11, My.Resources.jjk21, My.Resources.jjk3,
                                     My.Resources.jjk4})
         End If
+
         listeImages.AddRange(listeImages)
         listeImages.AddRange(listeImages)
-
-
         listeCartes.Add(PictureBox1)
         listeCartes.Add(PictureBox2)
         listeCartes.Add(PictureBox3)
@@ -130,6 +139,7 @@ Public Class MemoryEasy
             ElseIf FormOptions.RbtnL3.Checked = True Then
                 MsgBox("时间限制已到!")
             End If
+
             Timer1.Stop()
             tempsJoueur = timeInitial
 
@@ -152,6 +162,8 @@ Public Class MemoryEasy
                 Dim msg = messages(selectedLanguage)
                 MsgBox(msg.Message, MsgBoxStyle.Information, msg.Title)
             End If
+
+            Module_Enregistrement.ChangerStats(Joueur, pointsJoueur, tempsJoueur, niveau)
             Me.Close()
             player.Stop()
             Form1.Show()
@@ -224,6 +236,8 @@ Public Class MemoryEasy
             If messages.ContainsKey(langue) Then
                 MsgBox(messages(langue).Text, MsgBoxStyle.Information, messages(langue).Title)
             End If
+
+            Module_Enregistrement.ChangerStats(Joueur, pointsJoueur, tempsJoueur, niveau)
             player.Stop()
             Form1.Show()
         End If

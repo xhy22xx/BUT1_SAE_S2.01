@@ -2,20 +2,16 @@
 
 Public Class FormScores
 
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub FormScores_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim personnes As PERS() = Module_Enregistrement.GetPersonnes()
 
-        If personnes IsNot Nothing Then
-            For Each p In personnes
-                LstJoueurs.Items.Add(p.Nom)
-                LstCarres.Items.Add(p.Carres)
-                LstTempsM.Items.Add(p.TempsMin)
-                LstParties.Items.Add(p.Parties)
-                LstTempsT.Items.Add(p.TempsTotal)
+        ComboBoxNiveau.Items.Clear()
+        ComboBoxNiveau.Items.AddRange({"Facile", "Moyen", "Difficile"})
+        ComboBoxNiveau.SelectedIndex = 0
 
-                ComboBoxJoueur.Items.Add(p.Nom)
-            Next
-        End If
+        ComboBoxNiveau_SelectedIndexChanged(Nothing, Nothing)
+
+
     End Sub
 
     Private Sub ListBox_SelectedIndexChanged(sender As Object, e As EventArgs) _
@@ -126,4 +122,33 @@ Public Class FormScores
         Form1.Show()
     End Sub
 
+    Private Sub ComboBoxNiveau_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxNiveau.SelectedIndexChanged
+        Dim niveauChoisi As String = ComboBoxNiveau.SelectedItem.ToString()
+
+        LstJoueurs.Items.Clear()
+        LstCarres.Items.Clear()
+        LstTempsM.Items.Clear()
+        LstParties.Items.Clear()
+        LstTempsT.Items.Clear()
+
+        Dim personnes = Module_Enregistrement.GetPersonnes()
+        If personnes Is Nothing Then Exit Sub
+
+        For Each p In personnes
+            If p.Niveau IsNot Nothing AndAlso p.Niveau = niveauChoisi Then
+                LstJoueurs.Items.Add(p.Nom)
+                LstCarres.Items.Add(p.Carres)
+                LstTempsM.Items.Add(p.TempsMin)
+                LstParties.Items.Add(p.Parties)
+                LstTempsT.Items.Add(p.TempsTotal)
+            End If
+        Next
+
+        ComboBoxJoueur.Items.Clear()
+        For Each p In personnes
+            If p.Niveau = niveauChoisi AndAlso Not ComboBoxJoueur.Items.Contains(p.Nom) Then
+                ComboBoxJoueur.Items.Add(p.Nom)
+            End If
+        Next
+    End Sub
 End Class
