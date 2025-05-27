@@ -115,11 +115,11 @@ Partial Class FormScores
         LstTempsT.Font = New Font("Bookman Old Style", 9F)
         LstTempsT.ForeColor = Color.FromArgb(CByte(107), CByte(75), CByte(88))
         LstTempsT.FormattingEnabled = True
-        LstTempsT.ItemHeight = 20
+        LstTempsT.ItemHeight = 27
         LstTempsT.Location = New Point(788, 130)
         LstTempsT.Margin = New Padding(3, 4, 3, 4)
         LstTempsT.Name = "LstTempsT"
-        LstTempsT.Size = New Size(221, 244)
+        LstTempsT.Size = New Size(221, 220)
         LstTempsT.TabIndex = 4
         ' 
         ' LstParties
@@ -127,11 +127,11 @@ Partial Class FormScores
         LstParties.Font = New Font("Bookman Old Style", 9F)
         LstParties.ForeColor = Color.FromArgb(CByte(107), CByte(75), CByte(88))
         LstParties.FormattingEnabled = True
-        LstParties.ItemHeight = 20
+        LstParties.ItemHeight = 27
         LstParties.Location = New Point(613, 130)
         LstParties.Margin = New Padding(3, 4, 3, 4)
         LstParties.Name = "LstParties"
-        LstParties.Size = New Size(169, 244)
+        LstParties.Size = New Size(169, 220)
         LstParties.TabIndex = 3
         ' 
         ' LstTempsM
@@ -139,11 +139,11 @@ Partial Class FormScores
         LstTempsM.Font = New Font("Bookman Old Style", 9F)
         LstTempsM.ForeColor = Color.FromArgb(CByte(107), CByte(75), CByte(88))
         LstTempsM.FormattingEnabled = True
-        LstTempsM.ItemHeight = 20
+        LstTempsM.ItemHeight = 27
         LstTempsM.Location = New Point(418, 130)
         LstTempsM.Margin = New Padding(3, 4, 3, 4)
         LstTempsM.Name = "LstTempsM"
-        LstTempsM.Size = New Size(189, 244)
+        LstTempsM.Size = New Size(189, 220)
         LstTempsM.TabIndex = 2
         ' 
         ' LstCarres
@@ -151,11 +151,11 @@ Partial Class FormScores
         LstCarres.Font = New Font("Bookman Old Style", 9F)
         LstCarres.ForeColor = Color.FromArgb(CByte(107), CByte(75), CByte(88))
         LstCarres.FormattingEnabled = True
-        LstCarres.ItemHeight = 20
+        LstCarres.ItemHeight = 27
         LstCarres.Location = New Point(223, 130)
         LstCarres.Margin = New Padding(3, 4, 3, 4)
         LstCarres.Name = "LstCarres"
-        LstCarres.Size = New Size(189, 244)
+        LstCarres.Size = New Size(189, 220)
         LstCarres.TabIndex = 1
         ' 
         ' LstJoueurs
@@ -163,11 +163,11 @@ Partial Class FormScores
         LstJoueurs.Font = New Font("Bookman Old Style", 9F)
         LstJoueurs.ForeColor = Color.FromArgb(CByte(107), CByte(75), CByte(88))
         LstJoueurs.FormattingEnabled = True
-        LstJoueurs.ItemHeight = 20
+        LstJoueurs.ItemHeight = 27
         LstJoueurs.Location = New Point(34, 130)
         LstJoueurs.Margin = New Padding(3, 4, 3, 4)
         LstJoueurs.Name = "LstJoueurs"
-        LstJoueurs.Size = New Size(183, 244)
+        LstJoueurs.Size = New Size(183, 220)
         LstJoueurs.TabIndex = 0
         ' 
         ' LNom
@@ -176,7 +176,7 @@ Partial Class FormScores
         LNom.ForeColor = Color.FromArgb(CByte(107), CByte(75), CByte(88))
         LNom.Location = New Point(80, 93)
         LNom.Name = "LNom"
-        LNom.Size = New Size(121, 21)
+        LNom.Size = New Size(164, 28)
         LNom.TabIndex = 2
         LNom.Text = "Nom du Joueur :"
         ' 
@@ -207,7 +207,7 @@ Partial Class FormScores
         ComboBoxJoueur.Location = New Point(80, 145)
         ComboBoxJoueur.Margin = New Padding(3, 4, 3, 4)
         ComboBoxJoueur.Name = "ComboBoxJoueur"
-        ComboBoxJoueur.Size = New Size(389, 28)
+        ComboBoxJoueur.Size = New Size(389, 35)
         ComboBoxJoueur.TabIndex = 0
         ' 
         ' BtnRetour
@@ -263,16 +263,16 @@ Partial Class FormScores
         Label1.AutoSize = True
         Label1.Location = New Point(18, 438)
         Label1.Name = "Label1"
-        Label1.Size = New Size(154, 21)
+        Label1.Size = New Size(202, 28)
         Label1.TabIndex = 12
         Label1.Text = "Niveau de difficulté :"
         ' 
         ' ComboBoxNiveau
         ' 
         ComboBoxNiveau.FormattingEnabled = True
-        ComboBoxNiveau.Location = New Point(178, 433)
+        ComboBoxNiveau.Location = New Point(223, 435)
         ComboBoxNiveau.Name = "ComboBoxNiveau"
-        ComboBoxNiveau.Size = New Size(178, 29)
+        ComboBoxNiveau.Size = New Size(178, 36)
         ComboBoxNiveau.TabIndex = 11
         ' 
         ' GroupBox2

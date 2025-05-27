@@ -67,7 +67,7 @@ Public Class Memory
         End If
 
 
-        '   player.Play()  ça ne marche pas :(
+        player.Play()
         timeInitial = 60
         time = timeInitial
         pointsJoueur = 0
