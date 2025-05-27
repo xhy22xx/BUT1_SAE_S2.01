@@ -38,13 +38,13 @@ Public Class MemoryHard
             Label4.ForeColor = Color.Black
             Me.BackColor = Color.White
             If FormOptions.RbtnT1.Checked Then
-                player.SoundLocation = Application.StartupPath & "\PokemonTGC.wav"
+                player.SoundLocation = Application.StartupPath & "\Resources\PokemonTGC.wav"
                 imageDos = My.Resources.Carte_pokemon_dos
             ElseIf FormOptions.RbtnT2.Checked Then
-                player.SoundLocation = Application.StartupPath & "\LinkClickOpening.wav"
+                player.SoundLocation = Application.StartupPath & "\Resources\LinkClickOpening.wav"
                 imageDos = My.Resources.LC
             ElseIf FormOptions.RbtnT3.Checked Then
-                player.SoundLocation = Application.StartupPath & "\Chopin.wav"
+                player.SoundLocation = Application.StartupPath & "\Resources\Chopin.wav"
                 imageDos = My.Resources.Uno_Dos
             End If
         ElseIf FormOptions.RbtnT4.Checked Or FormOptions.RbtnT5.Checked Then
@@ -54,10 +54,10 @@ Public Class MemoryHard
             Label4.ForeColor = Color.White
             Me.BackColor = Color.Black
             If FormOptions.RbtnT4.Checked Then
-                player.SoundLocation = Application.StartupPath & "\naranciaMusic.wav"
+                player.SoundLocation = Application.StartupPath & "\Resources\naranciaMusic.wav"
                 imageDos = My.Resources.Jojo_Dos
             ElseIf FormOptions.RbtnT5.Checked Then
-                player.SoundLocation = Application.StartupPath & "\jujutsuOpening.wav"
+                player.SoundLocation = Application.StartupPath & "\Resources\jujutsuOpening.wav"
                 imageDos = My.Resources.jjk_Dos
             End If
         End If

@@ -40,15 +40,15 @@ Public Class MemoryEasy
             Me.BackColor = Color.White
 
             If FormOptions.RbtnT1.Checked Then
-                player.SoundLocation = Application.StartupPath & "\PokemonTGC.wav"
+                player.SoundLocation = Application.StartupPath & "\Resources\PokemonTGC.wav"
                 imageDos = My.Resources.Carte_pokemon_dos
 
             ElseIf FormOptions.RbtnT2.Checked Then
-                player.SoundLocation = Application.StartupPath & "\LinkClickOpening.wav"
+                player.SoundLocation = Application.StartupPath & "\Resources\LinkClickOpening.wav"
                 imageDos = My.Resources.LC
 
             ElseIf FormOptions.RbtnT3.Checked Then
-                player.SoundLocation = Application.StartupPath & "\Chopin.wav"
+                player.SoundLocation = Application.StartupPath & "\Resources\Chopin.wav"
                 imageDos = My.Resources.Uno_Dos
             End If
 
@@ -60,16 +60,16 @@ Public Class MemoryEasy
             Me.BackColor = Color.Black
 
             If FormOptions.RbtnT4.Checked Then
-                player.SoundLocation = Application.StartupPath & "\naranciaMusic.wav"
+                player.SoundLocation = Application.StartupPath & "\Resources\naranciaMusic.wav"
                 imageDos = My.Resources.Jojo_Dos
 
             ElseIf FormOptions.RbtnT5.Checked Then
-                player.SoundLocation = Application.StartupPath & "\jujutsuOpening.wav"
+                player.SoundLocation = Application.StartupPath & "\Resources\jujutsuOpening.wav"
                 imageDos = My.Resources.jjk_Dos
             End If
         End If
 
-        'player.Play() ça marche pas de mon coté jsp pkk
+        player.Play()
         timeInitial = 90
         time = timeInitial
         pointsJoueur = 0
@@ -127,7 +127,7 @@ Public Class MemoryEasy
         Timer1.Start()
         Timer1.Interval = 1000
         time -= 1
-        tempsJoueur += 1                       'Faut stocker le temps du joueur qq part
+        tempsJoueur += 1
         Dim minutes As Integer = time \ 60
         Dim secondes As Integer = (time Mod 60)
         If Label4.Text = "0:00" Then
