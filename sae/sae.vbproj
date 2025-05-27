@@ -11,6 +11,11 @@
   <ItemGroup>
     <None Remove="Resources\CallYouMine.wav" />
     <None Remove="Resources\Chopin.wav" />
+    <None Remove="Resources\jujutsuOpening.wav" />
+    <None Remove="Resources\LinkClickOpening.wav" />
+    <None Remove="Resources\Lull.wav" />
+    <None Remove="Resources\naranciaMusic.wav" />
+    <None Remove="Resources\PokemonTGC.wav" />
   </ItemGroup>
 
   <ItemGroup>
@@ -38,6 +43,21 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Chopin.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\jujutsuOpening.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\LinkClickOpening.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Lull.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\naranciaMusic.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PokemonTGC.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
