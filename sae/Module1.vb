@@ -45,7 +45,7 @@ Module Module_Enregistrement
             End If
         Next
 
-        AJOUT(nom, nbCarres, tempsUtilise, 1, tempsUtilise, niveau)
+        AJOUT(nom, nbCarres, tempsUtilise, 0, tempsUtilise, niveau)
     End Sub
 
 End Module

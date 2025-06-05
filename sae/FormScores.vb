@@ -6,7 +6,7 @@ Public Class FormScores
         Dim personnes As PERS() = Module_Enregistrement.GetPersonnes()
 
         ComboBoxNiveau.Items.Clear()
-        ComboBoxNiveau.Items.AddRange({"Facile", "Moyen", "Difficile"})
+        ComboBoxNiveau.Items.AddRange({"+", "++", "+++"})
         ComboBoxNiveau.SelectedIndex = 0
 
         ComboBoxNiveau_SelectedIndexChanged(Nothing, Nothing)
@@ -50,7 +50,7 @@ Public Class FormScores
 
         If index >= 0 Then
             If FormOptions.RbtnL1.Checked Then
-                Dim message As String = "Joueur : " & LstJoueurs.Items(index).ToString() & vbCrLf &                         'Ajouter les autres langues aussi ici je crois
+                Dim message As String = "Joueur : " & LstJoueurs.Items(index).ToString() & vbCrLf &
                                     "Carrés identifiés : " & LstCarres.Items(index).ToString() & vbCrLf &
                                     "Temps minimum : " & LstTempsM.Items(index).ToString() & " s" & vbCrLf &
                                     "Parties jouées : " & LstParties.Items(index).ToString() & vbCrLf &

@@ -89,20 +89,20 @@ Public Class Form1
             Dim name As String = cbxNoms.Text
             Dim niveau As String = ""
             If FormOptions.RbtnFacile.Checked Then
-                niveau = "Facile"
+                niveau = "+"
 
             ElseIf FormOptions.RbtnMoyen.Checked Then
-                niveau = "Moyen"
+                niveau = "++"
 
             ElseIf FormOptions.RbtnDifficile.Checked Then
-                niveau = "Difficile"
+                niveau = "+++"
             End If
 
 
             Module_Enregistrement.ChangerStats(name, 0, 0, niveau)
 
             If FormOptions.RbtnFacile.Checked = True Then
-                niveau = "Facile"
+                niveau = "+"
                 Me.Hide()
                 MemoryEasy.niveau = niveau
                 MemoryEasy.Show()
@@ -110,7 +110,7 @@ Public Class Form1
                 MemoryEasy.Label2.Text = name
 
             ElseIf FormOptions.RbtnMoyen.Checked = True Then
-                niveau = "Moyen"
+                niveau = "++"
                 Me.Hide()
                 Memory.niveau = niveau
                 Memory.Show()
@@ -118,7 +118,7 @@ Public Class Form1
                 Memory.Label2.Text = name
 
             ElseIf FormOptions.RbtnDifficile.Checked = True Then
-                niveau = "Difficile"
+                niveau = "+++"
                 Me.Hide()
                 MemoryHard.niveau = niveau
                 MemoryHard.Show()
