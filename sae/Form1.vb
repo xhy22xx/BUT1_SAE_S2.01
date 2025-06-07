@@ -5,6 +5,7 @@ Public Class Form1
 
     Dim positionMusique As Double = 0
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Module_Enregistrement.ChargerDepuisFichier()
         Dim personne As PERS() = Module_Enregistrement.GetPersonnes()
 
         If personne IsNot Nothing AndAlso personne.Length > 0 Then
@@ -141,8 +142,10 @@ Public Class Form1
         End If
         Dim result As DialogResult = formConfirmation.ShowDialog()
         If result = DialogResult.Yes Then
+            Module_Enregistrement.SauvegarderDansFichier()
             End
         End If
+
     End Sub
 
     Private Sub btnAfficherScore_Click(sender As Object, e As EventArgs) Handles btnAfficherScore.Click
@@ -161,5 +164,7 @@ Public Class Form1
     Private Sub btnOptions_Click(sender As Object, e As EventArgs) Handles btnOptions.Click
         FormOptions.Show()
     End Sub
+
+
 
 End Class

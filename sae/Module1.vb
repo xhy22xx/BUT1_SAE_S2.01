@@ -1,6 +1,8 @@
 ﻿
+Imports System.IO
+
 Module Module_Enregistrement
-        Public Structure PERS
+    Public Structure PERS
         Dim Nom As String
         Dim Carres As Integer
         Dim TempsMin As Integer
@@ -46,6 +48,26 @@ Module Module_Enregistrement
         Next
 
         AJOUT(nom, nbCarres, tempsUtilise, 0, tempsUtilise, niveau)
+    End Sub
+
+    Public Sub ChargerDepuisFichier()
+        If Not File.Exists("donneesDuJeu.txt") Then Exit Sub
+
+        Dim lignes = File.ReadAllLines("donneesDuJeu.txt")
+        For Each ligne In lignes
+            Dim champs = ligne.Split("|"c)
+            If champs.Length = 6 Then
+                AJOUT(champs(0), CInt(champs(1)), CInt(champs(2)), CInt(champs(3)), CInt(champs(4)), champs(5))
+            End If
+        Next
+    End Sub
+
+    Public Sub SauvegarderDansFichier()
+        Dim f As New StreamWriter("donneesDuJeu.txt", False)
+        For Each p In GetPersonnes()
+            f.WriteLine($"{p.Nom}|{p.Carres}|{p.TempsMin}|{p.Parties}|{p.TempsTotal}|{p.Niveau}")
+        Next
+        f.Close()
     End Sub
 
 End Module
