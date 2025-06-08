@@ -30,6 +30,15 @@ Module Module_Enregistrement
         Return TPERS
     End Function
 
+    Public Sub InitialiserJoueur(nom As String, niveau As String)
+        For i As Integer = 0 To index
+            If TPERS(i).Nom = nom AndAlso TPERS(i).Niveau = niveau Then
+                Exit Sub
+            End If
+        Next
+
+        AJOUT(nom, 0, 0, 0, 0, niveau)
+    End Sub
     Public Sub ChangerStats(nom As String, nbCarres As Integer, tempsUtilise As Integer, niveau As String)
         For i As Integer = 0 To index
             If TPERS(i).Nom = nom AndAlso TPERS(i).Niveau = niveau Then

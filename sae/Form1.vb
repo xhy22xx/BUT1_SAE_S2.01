@@ -100,7 +100,7 @@ Public Class Form1
             End If
 
 
-            Module_Enregistrement.ChangerStats(name, 0, 0, niveau)
+            Module_Enregistrement.InitialiserJoueur(name, niveau)
 
             If FormOptions.RbtnFacile.Checked = True Then
                 niveau = "+"
