@@ -64,6 +64,8 @@ Module Module_Enregistrement
 
     Public Sub SauvegarderDansFichier()
         Dim f As New StreamWriter("donneesDuJeu.txt", False)
+        Dim personnes = GetPersonnes()
+        If personnes Is Nothing Then Exit Sub
         For Each p In GetPersonnes()
             f.WriteLine($"{p.Nom}|{p.Carres}|{p.TempsMin}|{p.Parties}|{p.TempsTotal}|{p.Niveau}")
         Next
