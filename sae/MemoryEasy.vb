@@ -16,59 +16,11 @@ Public Class MemoryEasy
     Public Joueur As String
     Private player As New System.Media.SoundPlayer()
     Private Sub btnAbandon_Click(sender As Object, e As EventArgs) Handles btnAbandon1.Click
-        If FormOptions.RbtnL1.Checked = True Then
-            formConfirmation.lblConfirmation.Text = "Voulez-vous abandonner la partie en cours?"
-        ElseIf FormOptions.RbtnL2.Checked = True Then
-            formConfirmation.lblConfirmation.Text = "Do you want to quit the current game?"
-        ElseIf FormOptions.RbtnL3.Checked = True Then
-            formConfirmation.lblConfirmation.Text = "你确定要放弃当前游戏吗？"
-        End If
-        Dim result As DialogResult = formConfirmation.ShowDialog()
-        If result = DialogResult.Yes Then
-            player.Stop()
-            Me.Close()
-            FormAccueil.Show()
-        End If
+        GérerAbandonJeu(Me, player)
     End Sub
     Private Sub Memory_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        If FormOptions.RbtnT1.Checked Or FormOptions.RbtnT2.Checked Or FormOptions.RbtnT3.Checked Then
-            lblJoueur1.ForeColor = Color.Black
-            Label2.ForeColor = Color.Black
-            lblTempsR1.ForeColor = Color.Black
-            Label4.ForeColor = Color.Black
-            Me.BackColor = Color.White
+        ModuleJeu.AppliquerStyleEtSon(FormOptions.RbtnT1.Checked, FormOptions.RbtnT2.Checked, FormOptions.RbtnT3.Checked, FormOptions.RbtnT4.Checked, FormOptions.RbtnT5.Checked, lblJoueur1, Label2, lblTempsR1, Label4, Me, player, imageDos)
 
-            If FormOptions.RbtnT1.Checked Then
-                player.SoundLocation = Application.StartupPath & "\Resources\PokemonTGC.wav"
-                imageDos = My.Resources.Carte_pokemon_dos
-
-            ElseIf FormOptions.RbtnT2.Checked Then
-                player.SoundLocation = Application.StartupPath & "\Resources\LinkClickOpening.wav"
-                imageDos = My.Resources.LC
-
-            ElseIf FormOptions.RbtnT3.Checked Then
-                player.SoundLocation = Application.StartupPath & "\Resources\Chopin.wav"
-                imageDos = My.Resources.Uno_Dos
-            End If
-
-        ElseIf FormOptions.RbtnT4.Checked Or FormOptions.RbtnT5.Checked Then
-            lblJoueur1.ForeColor = Color.White
-            Label2.ForeColor = Color.White
-            lblTempsR1.ForeColor = Color.White
-            Label4.ForeColor = Color.White
-            Me.BackColor = Color.Black
-
-            If FormOptions.RbtnT4.Checked Then
-                player.SoundLocation = Application.StartupPath & "\Resources\naranciaMusic.wav"
-                imageDos = My.Resources.Jojo_Dos
-
-            ElseIf FormOptions.RbtnT5.Checked Then
-                player.SoundLocation = Application.StartupPath & "\Resources\jujutsuOpening.wav"
-                imageDos = My.Resources.jjk_Dos
-            End If
-        End If
-
-        player.Play()
         timeInitial = 90
         time = timeInitial
         pointsJoueur = 0
@@ -257,4 +209,5 @@ Public Class MemoryEasy
         Next
         listeCartesFlipped.Clear()
     End Sub
+
 End Class
