@@ -110,7 +110,7 @@ Public Class FormScores
     End Sub
 
     Private Sub BtnRetour_Click(sender As Object, e As EventArgs) Handles BtnRetour.Click
-        Me.Hide()
+        Me.Close()
         FormAccueil.Show()
     End Sub
 
