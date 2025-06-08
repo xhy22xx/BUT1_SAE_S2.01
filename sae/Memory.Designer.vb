@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Memory
+Partial Class MemoryNormal
     Inherits System.Windows.Forms.Form
 
     'Form remplace la méthode Dispose pour nettoyer la liste des composants.
@@ -465,7 +465,7 @@ Partial Class Memory
         TableLayoutPanel1.Size = New Size(920, 1060)
         TableLayoutPanel1.TabIndex = 5
         ' 
-        ' Memory
+        ' MemoryNormal
         ' 
         AutoScaleDimensions = New SizeF(13F, 32F)
         AutoScaleMode = AutoScaleMode.Font
@@ -479,7 +479,7 @@ Partial Class Memory
         Controls.Add(lblJoueur)
         DoubleBuffered = True
         FormBorderStyle = FormBorderStyle.None
-        Name = "Memory"
+        Name = "MemoryNormal"
         Text = "Form2"
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()

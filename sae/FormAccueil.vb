@@ -1,13 +1,13 @@
 ﻿Imports System.Diagnostics.Eventing.Reader
 Imports System.IO
 Imports System.Media
-Public Class Form1
+Public Class FormAccueil
 
     Dim positionMusique As Double = 0
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'Me.Icon = New Icon("chemin\vers\votre\icone.ico")
         Module_Enregistrement.ChargerDepuisFichier()
         Dim personne As PERS() = Module_Enregistrement.GetPersonnes()
-
         If personne IsNot Nothing AndAlso personne.Length > 0 Then
             For Each s As PERS In personne
                 If Not String.IsNullOrWhiteSpace(s.Nom) Then
@@ -15,8 +15,7 @@ Public Class Form1
                 End If
             Next
         End If
-
-        'Initialisation des radiobuttons à mettre dans le Form1, les Rbtn ne seront pas initialisée si on ne va pas sur options puis on valide.
+        'Initialisation des options
         FormOptions.RbtnFacile.Checked = True
         FormOptions.RbtnFacile.PerformClick()
 
@@ -25,9 +24,7 @@ Public Class Form1
 
         FormOptions.RbtnT1.Checked = True
         FormOptions.RbtnT1.PerformClick()
-
     End Sub
-
 
     Private Sub Form1_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
         cbxNoms.Items.Clear()
@@ -48,7 +45,6 @@ Public Class Form1
         End If
         AxWindowsMediaPlayer1.Ctlcontrols.play()
     End Sub
-
 
     Private Sub ButtonStop_Click(sender As Object, e As EventArgs) Handles ButtonStopMusic.Click
         positionMusique = AxWindowsMediaPlayer1.Ctlcontrols.currentPosition
@@ -99,7 +95,6 @@ Public Class Form1
                 niveau = "+++"
             End If
 
-
             Module_Enregistrement.ChangerStats(name, 0, 0, niveau)
 
             If FormOptions.RbtnFacile.Checked = True Then
@@ -109,15 +104,13 @@ Public Class Form1
                 MemoryEasy.Show()
                 MemoryEasy.Joueur = name
                 MemoryEasy.Label2.Text = name
-
             ElseIf FormOptions.RbtnMoyen.Checked = True Then
                 niveau = "++"
                 Me.Hide()
-                Memory.niveau = niveau
-                Memory.Show()
-                Memory.Joueur = name
-                Memory.Label2.Text = name
-
+                MemoryNormal.niveau = niveau
+                MemoryNormal.Show()
+                MemoryNormal.Joueur = name
+                MemoryNormal.Label2.Text = name
             ElseIf FormOptions.RbtnDifficile.Checked = True Then
                 niveau = "+++"
                 Me.Hide()
@@ -125,14 +118,11 @@ Public Class Form1
                 MemoryHard.Show()
                 MemoryHard.Joueur = name
                 MemoryHard.Label2.Text = name
-            Else
-                'Normalement il n'affiche pas ca 
-                MsgBox("Erreur. Niveau de difficulté non choisit. Aller sur options et choisir le niveau.")
             End If
         End If
     End Sub
 
-    Private Sub btnQuitter_Click(sender As Object, e As EventArgs) Handles btnQuitter.Click   'A modifier le MsgBox à personnaliser!!
+    Private Sub btnQuitter_Click(sender As Object, e As EventArgs) Handles btnQuitter.Click
         If FormOptions.RbtnL1.Checked = True Then
             formConfirmation.lblConfirmation.Text = "Êtes vous sûr de vouloir quitter l'application?"
         ElseIf FormOptions.RbtnL2.Checked = True Then
@@ -145,7 +135,6 @@ Public Class Form1
             Module_Enregistrement.SauvegarderDansFichier()
             End
         End If
-
     End Sub
 
     Private Sub btnAfficherScore_Click(sender As Object, e As EventArgs) Handles btnAfficherScore.Click
@@ -153,18 +142,14 @@ Public Class Form1
         FormScores.Show()
     End Sub
 
-
     Private Sub cbxNoms_alphabet(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles cbxNoms.KeyPress
         If e.KeyChar = vbBack Then Exit Sub
         If Not Char.IsLetter(e.KeyChar) Then
             e.Handled = True
-
         End If
     End Sub
     Private Sub btnOptions_Click(sender As Object, e As EventArgs) Handles btnOptions.Click
         FormOptions.Show()
     End Sub
-
-
 
 End Class

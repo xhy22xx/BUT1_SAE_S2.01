@@ -4,7 +4,7 @@
     Dim DefaultTextbtnQuitter As String
     Dim DefaultTextbtnAfficherScore As String
     Dim DefaultTextbtnOptions As String
-    Dim DefaultTextForm1 As String
+    Dim DefaultTextFormAccueil As String
 
     Dim DefaultTextlblD As String
     Dim DefaultTextlblL As String
@@ -32,7 +32,6 @@
     Dim DefaultTextbtnAbandon As String
     Dim DefaultTextbtnAbandon1 As String
     Dim DefaultTextbtnAbandon2 As String
-    Dim DefaultTextMemory As String
 
     Dim DefaultTextConfirmation As String
     Dim DefaultTextbtnYes As String
@@ -52,11 +51,11 @@
     Dim DefaultTextScores As String
     Private Sub Options_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Sauvegarde des textes initials (PAGE D'ACCUEIL)
-        DefaultTextbtnLancer = Form1.btnLancer.Text
-        DefaultTextbtnQuitter = Form1.btnQuitter.Text
-        DefaultTextbtnAfficherScore = Form1.btnAfficherScore.Text
-        DefaultTextbtnOptions = Form1.btnOptions.Text
-        DefaultTextForm1 = Form1.Text
+        DefaultTextbtnLancer = FormAccueil.btnLancer.Text
+        DefaultTextbtnQuitter = FormAccueil.btnQuitter.Text
+        DefaultTextbtnAfficherScore = FormAccueil.btnAfficherScore.Text
+        DefaultTextbtnOptions = FormAccueil.btnOptions.Text
+        DefaultTextFormAccueil = FormAccueil.Text
         'Sauvegarde des textes initiales (Options)
         DefaultTextlblD = lblD.Text
         DefaultTextlblL = lblL.Text
@@ -76,16 +75,15 @@
         DefaultTextFormOptions = Me.Text
 
         'Sauvegarde des textes initiales (Memory)
-        DefaultTextlblJoueur = Memory.lblJoueur.Text
+        DefaultTextlblJoueur = MemoryNormal.lblJoueur.Text
         DefaultTextlblJoueur1 = MemoryEasy.lblJoueur1.Text
         DefaultTextlblJoueur2 = MemoryHard.lblJoueur2.Text
-        DefaultTextlblTempsR = Memory.lblTempsR.Text
+        DefaultTextlblTempsR = MemoryNormal.lblTempsR.Text
         DefaultTextlblTempsR1 = MemoryEasy.lblTempsR1.Text
         DefaultTextlblTempsR2 = MemoryHard.lblTempsR2.Text
-        DefaultTextbtnAbandon = Memory.btnAbandon.Text
+        DefaultTextbtnAbandon = MemoryNormal.btnAbandon.Text
         DefaultTextbtnAbandon1 = MemoryEasy.btnAbandon1.Text
         DefaultTextbtnAbandon2 = MemoryHard.btnAbandon2.Text
-        DefaultTextMemory = Memory.Text
         'Initialisation de la boîte de Confirmation
         DefaultTextConfirmation = formConfirmation.Text
         DefaultTextbtnYes = formConfirmation.btnYes.Text
@@ -105,18 +103,13 @@
         DefaultTextScores = FormScores.Text
     End Sub
 
-    'A mettre dans les autres FORMULAIREEEEEEEEEEEEEEEEEEEEEEEEEEEE (qui a écrit ça T-T - Fitia)
-    'If RadioButton1.Checked = True Then
-    'TextBox1.Text = RadioButton1.Text
-    'End If
-
     Private Sub btnValidation_Click(sender As Object, e As EventArgs) Handles btnValidation.Click
         If RbtnL1.Checked = True Then
-            Form1.btnLancer.Text = DefaultTextbtnLancer
-            Form1.btnQuitter.Text = DefaultTextbtnQuitter
-            Form1.btnAfficherScore.Text = DefaultTextbtnAfficherScore
-            Form1.btnOptions.Text = DefaultTextbtnOptions
-            Form1.Text = DefaultTextForm1
+            FormAccueil.btnLancer.Text = DefaultTextbtnLancer
+            FormAccueil.btnQuitter.Text = DefaultTextbtnQuitter
+            FormAccueil.btnAfficherScore.Text = DefaultTextbtnAfficherScore
+            FormAccueil.btnOptions.Text = DefaultTextbtnOptions
+            FormAccueil.Text = DefaultTextFormAccueil
 
             lblD.Text = DefaultTextlblD
             lblL.Text = DefaultTextlblL
@@ -135,16 +128,15 @@
             RbtnT5.Text = DefaultTextRbtnT5
             Me.Text = DefaultTextFormOptions
 
-            Memory.lblJoueur.Text = DefaultTextlblJoueur
+            MemoryNormal.lblJoueur.Text = DefaultTextlblJoueur
             MemoryEasy.lblJoueur1.Text = DefaultTextlblJoueur1
             MemoryHard.lblJoueur2.Text = DefaultTextlblJoueur2
-            Memory.lblTempsR.Text = DefaultTextlblTempsR
+            MemoryNormal.lblTempsR.Text = DefaultTextlblTempsR
             MemoryEasy.lblTempsR1.Text = DefaultTextlblTempsR1
             MemoryHard.lblTempsR2.Text = DefaultTextlblTempsR2
-            Memory.btnAbandon.Text = DefaultTextbtnAbandon
+            MemoryNormal.btnAbandon.Text = DefaultTextbtnAbandon
             MemoryEasy.btnAbandon1.Text = DefaultTextbtnAbandon1
             MemoryHard.btnAbandon2.Text = DefaultTextbtnAbandon2
-            Memory.Text = DefaultTextMemory
 
             formConfirmation.Text = DefaultTextConfirmation
             formConfirmation.btnYes.Text = DefaultTextbtnYes
@@ -164,11 +156,11 @@
             FormScores.BtnRechercher.Text = DefaultTextbtnRechercher
 
         ElseIf RbtnL2.Checked = True Then
-            Form1.btnLancer.Text = "Start"
-            Form1.btnQuitter.Text = "Quit"
-            Form1.btnAfficherScore.Text = "Show Score"
-            Form1.btnOptions.Text = "Settings"
-            Form1.Text = "Main Menu"
+            FormAccueil.btnLancer.Text = "Start"
+            FormAccueil.btnQuitter.Text = "Quit"
+            FormAccueil.btnAfficherScore.Text = "Show Score"
+            FormAccueil.btnOptions.Text = "Settings"
+            FormAccueil.Text = "Main Menu"
 
             lblD.Text = "Difficulty selection: "
             lblL.Text = "Language choice: "
@@ -187,16 +179,16 @@
             RbtnT5.Text = "JJK Card"
             Me.Text = "Options"
 
-            Memory.lblJoueur.Text = "Player: "
+            MemoryNormal.lblJoueur.Text = "Player: "
             MemoryEasy.lblJoueur1.Text = "Player: "
             MemoryHard.lblJoueur2.Text = "Player: "
-            Memory.lblTempsR.Text = "Time remaining: "
+            MemoryNormal.lblTempsR.Text = "Time remaining: "
             MemoryEasy.lblTempsR1.Text = "Time remaining: "
             MemoryHard.lblTempsR2.Text = "Time remaining: "
-            Memory.btnAbandon.Text = "Give Up"
+            MemoryNormal.btnAbandon.Text = "Give Up"
             MemoryEasy.btnAbandon1.Text = "Give Up"
             MemoryHard.btnAbandon2.Text = "Give Up"
-            Memory.Text = "Memory"
+            MemoryNormal.Text = "Memory"
 
             formConfirmation.Text = "Confirmation"
             formConfirmation.btnYes.Text = "Yes"
@@ -214,12 +206,13 @@
             FormScores.BtnTrier.Text = "Sort"
             FormScores.BtnRetour.Text = "Back"
             FormScores.BtnRechercher.Text = "Search"
+
         ElseIf RbtnL3.Checked = True Then
-            Form1.btnLancer.Text = "开始"
-            Form1.btnQuitter.Text = "退出"
-            Form1.btnAfficherScore.Text = "显示分数"
-            Form1.btnOptions.Text = "设置"
-            Form1.Text = "主菜单"
+            FormAccueil.btnLancer.Text = "开始"
+            FormAccueil.btnQuitter.Text = "退出"
+            FormAccueil.btnAfficherScore.Text = "显示分数"
+            FormAccueil.btnOptions.Text = "设置"
+            FormAccueil.Text = "主菜单"
 
             lblD.Text = "难度选择: "
             lblL.Text = "语言选择: "
@@ -238,16 +231,16 @@
             RbtnT5.Text = "咒术回战卡牌"
             Me.Text = "选项"
 
-            Memory.lblJoueur.Text = "玩家: "
-            Memory.lblJoueur.Text = "玩家: "
+            MemoryNormal.lblJoueur.Text = "玩家: "
+            MemoryNormal.lblJoueur.Text = "玩家: "
             MemoryEasy.lblJoueur1.Text = "玩家: "
             MemoryHard.lblTempsR2.Text = "剩余时间: "
             MemoryEasy.lblTempsR1.Text = "剩余时间: "
             MemoryHard.lblTempsR2.Text = "剩余时间: "
-            Memory.btnAbandon.Text = "放弃"
+            MemoryNormal.btnAbandon.Text = "放弃"
             MemoryEasy.btnAbandon1.Text = "放弃"
             MemoryHard.btnAbandon2.Text = "放弃"
-            Memory.Text = "配对游戏"
+            MemoryNormal.Text = "配对游戏"
 
             formConfirmation.Text = "确认"
             formConfirmation.btnYes.Text = "确定"
@@ -265,12 +258,10 @@
             FormScores.BtnTrier.Text = "排行榜"
             FormScores.BtnRetour.Text = "返回菜单"
             FormScores.BtnRechercher.Text = "查找"
-        Else
-            MsgBox("Erreur. Langue non choisie???")   'A enlever si ya plus de problèmes
         End If
 
         Me.Hide()
-        Form1.Show()
+        FormAccueil.Show()
     End Sub
 
 End Class

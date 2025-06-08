@@ -1,13 +1,12 @@
 ﻿Imports System.Media
 Imports System.Security.Cryptography
 
-Public Class Memory
+Public Class MemoryNormal
     Dim time As Integer
     Dim listeImages As New List(Of Image)
     Dim imageDos As Image
     Dim listeCartes As New List(Of PictureBox)
     Dim listeCartesFlipped As New List(Of PictureBox)
-    Dim compteurCarteRetournee As Integer
     Dim pointsJoueur As Integer
     Dim tempsJoueur As Integer
     Dim timeInitial As Integer
@@ -26,7 +25,7 @@ Public Class Memory
         If result = DialogResult.Yes Then
             player.Stop()
             Me.Close()
-            Form1.Show()
+            FormAccueil.Show()
         End If
     End Sub
     Private Sub Memory_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -75,7 +74,7 @@ Public Class Memory
         Dim minutes As Integer = time \ 60
         Dim secondes As Integer = (time Mod 60)
         Label4.Text = minutes.ToString("0") & ":" & secondes.ToString("00")
-        'j'ajoute nos images dans une liste
+        'Ajout images dans une liste
         listeImages.Clear()
         If FormOptions.RbtnT1.Checked = True Then
             listeImages.AddRange({My.Resources.Celebi, My.Resources.Mew, My.Resources.Marill,
@@ -166,7 +165,7 @@ Public Class Memory
             Module_Enregistrement.ChangerStats(Joueur, pointsJoueur, tempsJoueur, niveau)
             Me.Close()
             player.Stop()
-            Form1.Show()
+            FormAccueil.Show()
         End If
         Label4.Text = minutes.ToString("0") & ":" & secondes.ToString("00")
     End Sub
@@ -182,8 +181,13 @@ Public Class Memory
         Timer2.Interval = 450
 
         Dim pbCliquee As PictureBox = CType(sender, PictureBox)
-        pbCliquee.Image = listeImages(listeCartes.IndexOf(pbCliquee))
+        If listeCartesFlipped.Contains(pbCliquee) Then Exit Sub
+        If Timer2.Enabled OrElse Not pbCliquee.Enabled Then Exit Sub
+
+        Dim indexCarte As Integer = listeCartes.IndexOf(pbCliquee)
+        pbCliquee.Image = listeImages(indexCarte)
         listeCartesFlipped.Add(pbCliquee)
+
         If listeCartesFlipped.Count >= 1 Then
             Dim toutesIdentiques As Boolean = True
             Dim carteRetournee As Integer = 0
@@ -205,11 +209,10 @@ Public Class Memory
                     listeCartesFlipped.Clear()
                 End If
             Else
-                ' Sinon, déclenche Timer2 pour les retourner
-                Timer2.Start()
-                For Each pb As PictureBox In listeCartes
-                    pb.Enabled = False
-                Next
+                If pbCliquee.Enabled Then
+                    ' Sinon, déclenche Timer2 pour les retourner
+                    Timer2.Start()
+                End If
             End If
         End If
 
@@ -240,7 +243,7 @@ Public Class Memory
 
             Module_Enregistrement.ChangerStats(Joueur, pointsJoueur, tempsJoueur, niveau)
             player.Stop()
-            Form1.Show()
+            FormAccueil.Show()
         End If
 
     End Sub
@@ -248,13 +251,10 @@ Public Class Memory
     Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
         Timer2.Stop()
         ' Réactive les cartes
-        For Each pbE As PictureBox In listeCartes
-            pbE.Enabled = True
+        For Each pb As PictureBox In listeCartesFlipped
+            pb.Enabled = True
+            pb.Image = imageDos
         Next
-        For Each pbF As PictureBox In listeCartesFlipped
-            pbF.Image = imageDos
-        Next
-        compteurCarteRetournee = 0
         listeCartesFlipped.Clear()
     End Sub
 End Class

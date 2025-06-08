@@ -10,8 +10,6 @@ Public Class FormScores
         ComboBoxNiveau.SelectedIndex = 0
 
         ComboBoxNiveau_SelectedIndexChanged(Nothing, Nothing)
-
-
     End Sub
 
     Private Sub ListBox_SelectedIndexChanged(sender As Object, e As EventArgs) _
@@ -55,7 +53,6 @@ Public Class FormScores
                                     "Temps minimum : " & LstTempsM.Items(index).ToString() & " s" & vbCrLf &
                                     "Parties jouées : " & LstParties.Items(index).ToString() & vbCrLf &
                                     "Temps total de jeu: " & LstTempsT.Items(index).ToString() & " s"
-
                 MsgBox(message, MsgBoxStyle.Information, "Statistiques")
             ElseIf FormOptions.RbtnL2.Checked Then
                 Dim message As String = "Player: " & LstJoueurs.Items(index).ToString() & vbCrLf &
@@ -83,17 +80,13 @@ Public Class FormScores
         End If
     End Sub
 
-
-
     Private ordreCroissant As Boolean = True
 
     Private Sub btnTrier_Click(sender As Object, e As EventArgs) Handles BtnTrier.Click
         Dim joueurs = New List(Of (Nom As String, Carres As Integer, TempsMin As String, Parties As String, TempsTotal As String))()
-
         For i = 0 To LstJoueurs.Items.Count - 1
             joueurs.Add((LstJoueurs.Items(i), CInt(LstCarres.Items(i)), LstTempsM.Items(i), LstParties.Items(i), LstTempsT.Items(i)))
         Next
-
         If ordreCroissant Then
             joueurs = joueurs.OrderBy(Function(j) j.Carres).ThenBy(Function(j) j.TempsMin).ToList()
         Else
@@ -113,13 +106,12 @@ Public Class FormScores
             LstParties.Items.Add(j.Parties)
             LstTempsT.Items.Add(j.TempsTotal)
         Next
-
         ordreCroissant = Not ordreCroissant
     End Sub
 
     Private Sub BtnRetour_Click(sender As Object, e As EventArgs) Handles BtnRetour.Click
         Me.Hide()
-        Form1.Show()
+        FormAccueil.Show()
     End Sub
 
     Private Sub ComboBoxNiveau_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxNiveau.SelectedIndexChanged
