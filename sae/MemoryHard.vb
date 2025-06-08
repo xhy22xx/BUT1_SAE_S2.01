@@ -205,6 +205,7 @@ Public Class MemoryHard
                     ' Bloque les cartes trouvées
                     For Each pbTrouve As PictureBox In listeCartesFlipped
                         pbTrouve.Enabled = False
+                        pbTrouve.Image = GriserImage(pbTrouve.Image)
                     Next
                     pointsJoueur += 1
                     listeCartesFlipped.Clear()
