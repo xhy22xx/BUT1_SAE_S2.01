@@ -16,7 +16,7 @@ Public Class FormAccueil
             Next
         End If
         'Initialisation des options
-        FormOptions.RbtnFacile.Checked = True
+        FormOptions.RbtnMoyen.Checked = True
         FormOptions.RbtnFacile.PerformClick()
 
         FormOptions.RbtnL1.Checked = True

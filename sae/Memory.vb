@@ -217,7 +217,7 @@ Public Class MemoryNormal
             End If
         End If
 
-        If pointsJoueur = 5 Or Label4.Text.Equals("0:00") Then
+        If pointsJoueur = 5 Then
             Timer1.Stop()
             If FormOptions.RbtnL1.Checked = True Then
                 Message.lblMess.Text = "Bravoooo! Vous avez trouvé toutes les paires de cartes!"
