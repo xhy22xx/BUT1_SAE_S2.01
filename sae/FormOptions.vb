@@ -234,7 +234,7 @@
             MemoryNormal.lblJoueur.Text = "玩家: "
             MemoryNormal.lblJoueur.Text = "玩家: "
             MemoryEasy.lblJoueur1.Text = "玩家: "
-            MemoryHard.lblTempsR2.Text = "剩余时间: "
+            MemoryNormal.lblTempsR.Text = "剩余时间: "
             MemoryEasy.lblTempsR1.Text = "剩余时间: "
             MemoryHard.lblTempsR2.Text = "剩余时间: "
             MemoryNormal.btnAbandon.Text = "放弃"
