@@ -23,7 +23,7 @@ Public Class MemoryHard
 
         timeInitial = 50
         ModuleJeu.InitialiserTempsJeu(timeInitial, time, pointsJoueur, tempsJoueur, Label4)
-        'Ajout images dans une liste
+
         listeImages.Clear()
         If FormOptions.RbtnT1.Checked = True Then
             listeImages.AddRange({My.Resources.Celebi, My.Resources.Mew, My.Resources.Marill,

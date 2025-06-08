@@ -21,7 +21,7 @@ Public Class MemoryNormal
         ModuleJeu.AppliquerStyleEtSon(FormOptions.RbtnT1.Checked, FormOptions.RbtnT2.Checked, FormOptions.RbtnT3.Checked, FormOptions.RbtnT4.Checked, FormOptions.RbtnT5.Checked, lblJoueur, Label2, lblTempsR, Label4, Me, player, imageDos)
         timeInitial = 60
         ModuleJeu.InitialiserTempsJeu(timeInitial, time, pointsJoueur, tempsJoueur, Label4)
-        'Ajout images dans une liste
+
         listeImages.Clear()
         If FormOptions.RbtnT1.Checked = True Then
             listeImages.AddRange({My.Resources.Celebi, My.Resources.Mew, My.Resources.Marill,

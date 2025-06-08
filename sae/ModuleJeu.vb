@@ -29,7 +29,7 @@ Module ModuleJeu
         Return bmp
     End Function
 
-    Public Sub GérerAbandonJeu(formAppelant As Form, lecteurSon As System.Media.SoundPlayer)
+    Friend Sub GérerAbandonJeu(formAppelant As Form, lecteurSon As System.Media.SoundPlayer)
         If FormOptions.RbtnL1.Checked = True Then
             formConfirmation.lblConfirmation.Text = "Voulez-vous abandonner la partie en cours?"
         ElseIf FormOptions.RbtnL2.Checked = True Then
@@ -37,7 +37,9 @@ Module ModuleJeu
         ElseIf FormOptions.RbtnL3.Checked = True Then
             formConfirmation.lblConfirmation.Text = "你确定要放弃当前游戏吗？"
         End If
+
         Dim result As DialogResult = formConfirmation.ShowDialog()
+
         If result = DialogResult.Yes Then
             lecteurSon.Stop()
             formAppelant.Close()
@@ -45,7 +47,7 @@ Module ModuleJeu
         End If
     End Sub
 
-    Public Sub AppliquerStyleEtSon(RbtnT1Checked As Boolean, RbtnT2Checked As Boolean, RbtnT3Checked As Boolean, RbtnT4Checked As Boolean, RbtnT5Checked As Boolean, lblJoueur As Label, Label2 As Label, lblTempsR As Label, Label4 As Label, form As Form, ByRef player As System.Media.SoundPlayer, ByRef imageDos As Image)
+    Friend Sub AppliquerStyleEtSon(RbtnT1Checked As Boolean, RbtnT2Checked As Boolean, RbtnT3Checked As Boolean, RbtnT4Checked As Boolean, RbtnT5Checked As Boolean, lblJoueur As Label, Label2 As Label, lblTempsR As Label, Label4 As Label, form As Form, ByRef player As System.Media.SoundPlayer, ByRef imageDos As Image)
         If RbtnT1Checked Or RbtnT2Checked Or RbtnT3Checked Then
             lblJoueur.ForeColor = Color.Black
             Label2.ForeColor = Color.Black
@@ -84,7 +86,7 @@ Module ModuleJeu
         player.Play()
     End Sub
 
-    Public Sub InitialiserTempsJeu(timeInitial As Integer, ByRef time As Integer, ByRef pointsJoueur As Integer, ByRef tempsJoueur As Integer, labelTemps As Label)
+    Friend Sub InitialiserTempsJeu(timeInitial As Integer, ByRef time As Integer, ByRef pointsJoueur As Integer, ByRef tempsJoueur As Integer, labelTemps As Label)
         time = timeInitial
         pointsJoueur = 0
         tempsJoueur = 0
@@ -107,12 +109,12 @@ Module ModuleJeu
         Next
     End Sub
 
-    Public Sub AfficherMessageTpsEcoule(pointsJoueur As Integer, tempsJoueur As Integer, formOptions As FormOptions)
+    Friend Sub AfficherMessageTpsEcoule(pointsJoueur As Integer, tempsJoueur As Integer, formOptions As FormOptions)
         Dim messages As New Dictionary(Of String, (Title As String, Message As String)) From {
-    {"French", ("Résultat du joueur", "Temps écoulé !" & vbCrLf & "Carrés identifiés : " & pointsJoueur & vbCrLf & "Temps utilisé : " & tempsJoueur & " secondes")},
-    {"English", ("Player Results", "Time's up!" & vbCrLf & "Correct matches: " & pointsJoueur & vbCrLf & "Time used: " & tempsJoueur & " seconds")},
-    {"Chinese", ("玩家成绩", "时间到！" & vbCrLf & "正确配对: " & pointsJoueur & vbCrLf & "用时: " & tempsJoueur & " 秒")}
-}
+        {"French", ("Résultat du joueur", "Temps écoulé !" & vbCrLf & "Carrés identifiés : " & pointsJoueur & vbCrLf & "Temps utilisé : " & tempsJoueur & " secondes")},
+        {"English", ("Player Results", "Time's up!" & vbCrLf & "Correct matches: " & pointsJoueur & vbCrLf & "Time used: " & tempsJoueur & " seconds")},
+        {"Chinese", ("玩家成绩", "时间到！" & vbCrLf & "正确配对: " & pointsJoueur & vbCrLf & "用时: " & tempsJoueur & " 秒")}
+        }
 
         Dim selectedLanguage As String = ""
         If formOptions.RbtnL1.Checked Then
@@ -128,13 +130,7 @@ Module ModuleJeu
             MsgBox(msg.Message, MsgBoxStyle.Information, msg.Title)
         End If
     End Sub
-    Public Sub VerifierCartesRetournees(
-    ByRef listeCartesFlipped As List(Of PictureBox),
-    pbCliquee As PictureBox,
-    timerRetour As Timer,
-    ByRef pointsJoueur As Integer,
-    nombreCartesIdentiques As Integer
-)
+    Friend Sub VerifierCartesRetournees(ByRef listeCartesFlipped As List(Of PictureBox), pbCliquee As PictureBox, timerRetour As Timer, ByRef pointsJoueur As Integer, nombreCartesIdentiques As Integer)
         If listeCartesFlipped.Count >= 1 Then
             Dim toutesIdentiques As Boolean = True
             Dim carteRetournee As Integer = 0
@@ -148,7 +144,6 @@ Module ModuleJeu
             Next
             If toutesIdentiques Then
                 If carteRetournee = nombreCartesIdentiques Then
-                    ' Bloque les cartes trouvées
                     For Each pbTrouve As PictureBox In listeCartesFlipped
                         pbTrouve.Enabled = False
                         pbTrouve.Image = GriserImage(pbTrouve.Image)
@@ -158,7 +153,6 @@ Module ModuleJeu
                 End If
             Else
                 If pbCliquee.Enabled Then
-                    ' Sinon, déclenche Timer2 pour les retourner
                     timerRetour.Start()
                 End If
             End If
@@ -166,13 +160,13 @@ Module ModuleJeu
 
     End Sub
 
-    Public Sub AfficherResultatGagne(pointsJoueur As Integer, tempsJoueur As Integer)
+    Friend Sub AfficherResultatGagne(pointsJoueur As Integer, tempsJoueur As Integer)
         Message.ShowDialog()
         Dim messages As New Dictionary(Of String, (Text As String, Title As String)) From {
-{"French", ($"Carrés identifiés : {pointsJoueur}{vbCrLf}Temps utilisé : {tempsJoueur} secondes", "Résultat du joueur")},
-{"English", ($"Time's up!{vbCrLf}Correct matches: {pointsJoueur}{vbCrLf}Time used: {tempsJoueur} seconds", "Player Results")},
-{"Chinese", ($"时间到！{vbCrLf}正确配对: {pointsJoueur}{vbCrLf}用时: {tempsJoueur} 秒", "玩家成绩")}
-}
+        {"French", ($"Carrés identifiés : {pointsJoueur}{vbCrLf}Temps utilisé : {tempsJoueur} secondes", "Résultat du joueur")},
+        {"English", ($"Time's up!{vbCrLf}Correct matches: {pointsJoueur}{vbCrLf}Time used: {tempsJoueur} seconds", "Player Results")},
+        {"Chinese", ($"时间到！{vbCrLf}正确配对: {pointsJoueur}{vbCrLf}用时: {tempsJoueur} 秒", "玩家成绩")}
+        }
         Dim langue = If(FormOptions.RbtnL1.Checked, "French",
          If(FormOptions.RbtnL2.Checked, "English",
          If(FormOptions.RbtnL3.Checked, "Chinese", "")))
@@ -181,9 +175,8 @@ Module ModuleJeu
             MsgBox(messages(langue).Text, MsgBoxStyle.Information, messages(langue).Title)
         End If
     End Sub
-    Public Sub ReinitialiserCartes(listeCartesFlipped As List(Of PictureBox), imageDos As Image, timer As Timer)
+    Friend Sub ReinitialiserCartes(listeCartesFlipped As List(Of PictureBox), imageDos As Image, timer As Timer)
         timer.Stop()
-        ' Réactive les cartes
         For Each pb As PictureBox In listeCartesFlipped
             pb.Enabled = True
             pb.Image = imageDos
