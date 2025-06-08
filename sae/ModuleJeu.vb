@@ -83,6 +83,14 @@ Module ModuleJeu
         player.Play()
     End Sub
 
+    Public Sub InitialiserTempsJeu(timeInitial As Integer, ByRef time As Integer, ByRef pointsJoueur As Integer, ByRef tempsJoueur As Integer, labelTemps As Label)
+        time = timeInitial
+        pointsJoueur = 0
+        tempsJoueur = 0
 
+        Dim minutes As Integer = time \ 60
+        Dim secondes As Integer = time Mod 60
+        labelTemps.Text = minutes.ToString("0") & ":" & secondes.ToString("00")
+    End Sub
 
 End Module

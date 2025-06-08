@@ -21,12 +21,7 @@ Public Class MemoryHard
         ModuleJeu.AppliquerStyleEtSon(FormOptions.RbtnT1.Checked, FormOptions.RbtnT2.Checked, FormOptions.RbtnT3.Checked, FormOptions.RbtnT4.Checked, FormOptions.RbtnT5.Checked, lblJoueur2, Label2, lblTempsR2, Label4, Me, player, imageDos)
 
         timeInitial = 50
-        time = timeInitial
-        pointsJoueur = 0
-        tempsJoueur = 0
-        Dim minutes As Integer = time \ 60
-        Dim secondes As Integer = (time Mod 60)
-        Label4.Text = minutes.ToString("0") & ":" & secondes.ToString("00")
+        ModuleJeu.InitialiserTempsJeu(timeInitial, time, pointsJoueur, tempsJoueur, Label4)
         'Ajout images dans une liste
         listeImages.Clear()
         If FormOptions.RbtnT1.Checked = True Then
