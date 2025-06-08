@@ -7,6 +7,7 @@ Public Class MemoryHard
     Dim listeImages As New List(Of Image)
     Dim imageDos As Image
     Dim listeCartes As New List(Of PictureBox)
+    Dim repetitionDesCartes As Integer = 4
     Dim listeCartesFlipped As New List(Of PictureBox)
     Dim pointsJoueur As Integer
     Dim tempsJoueur As Integer
@@ -40,8 +41,7 @@ Public Class MemoryHard
             listeImages.AddRange({My.Resources.jjk11, My.Resources.jjk21, My.Resources.jjk3,
                                     My.Resources.jjk4, My.Resources.jjk5, My.Resources.jjk6})
         End If
-        listeImages.AddRange(listeImages)
-        listeImages.AddRange(listeImages)
+        listeImages = Enumerable.Repeat(listeImages, repetitionDesCartes).SelectMany(Function(x) x).ToList()
 
 
         listeCartes.Add(PictureBox1)
@@ -69,12 +69,7 @@ Public Class MemoryHard
         listeCartes.Add(PictureBox23)
         listeCartes.Add(PictureBox24)
 
-        Dim rand As New Random()
-        listeImages = listeImages.OrderBy(Function() rand.Next()).ToList()
-
-        For Each pb As PictureBox In listeCartes
-            pb.Image = imageDos
-        Next
+        PréparerImagesEtCartes(listeImages, listeCartes, imageDos)
 
     End Sub
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
@@ -96,25 +91,7 @@ Public Class MemoryHard
             Timer1.Stop()
             tempsJoueur = timeInitial
 
-            Dim messages As New Dictionary(Of String, (Title As String, Message As String)) From {
-    {"French", ("Résultat du joueur", "Temps écoulé !" & vbCrLf & "Carrés identifiés : " & pointsJoueur & vbCrLf & "Temps utilisé : " & tempsJoueur & " secondes")},
-    {"English", ("Player Results", "Time's up!" & vbCrLf & "Correct matches: " & pointsJoueur & vbCrLf & "Time used: " & tempsJoueur & " seconds")},
-    {"Chinese", ("玩家成绩", "时间到！" & vbCrLf & "正确配对: " & pointsJoueur & vbCrLf & "用时: " & tempsJoueur & " 秒")}
-}
-
-            Dim selectedLanguage As String = ""
-            If FormOptions.RbtnL1.Checked Then
-                selectedLanguage = "French"
-            ElseIf FormOptions.RbtnL2.Checked Then
-                selectedLanguage = "English"
-            ElseIf FormOptions.RbtnL3.Checked Then
-                selectedLanguage = "Chinese"
-            End If
-
-            If messages.ContainsKey(selectedLanguage) Then
-                Dim msg = messages(selectedLanguage)
-                MsgBox(msg.Message, MsgBoxStyle.Information, msg.Title)
-            End If
+            ModuleJeu.AfficherMessageTpsEcoule(pointsJoueur, tempsJoueur, FormOptions)
 
             Module_Enregistrement.ChangerStats(Joueur, pointsJoueur, tempsJoueur, niveau)
             Me.Close()
@@ -143,34 +120,7 @@ Public Class MemoryHard
         pbCliquee.Image = listeImages(indexCarte)
         listeCartesFlipped.Add(pbCliquee)
 
-        If listeCartesFlipped.Count >= 1 Then
-            Dim toutesIdentiques As Boolean = True
-            Dim carteRetournee As Integer = 0
-
-            carteRetournee = listeCartesFlipped.Count
-            For i As Integer = 1 To carteRetournee - 1
-                If Not listeCartesFlipped(i).Image.Equals(listeCartesFlipped(0).Image) Then
-                    toutesIdentiques = False
-                    Exit For
-                End If
-            Next
-            If toutesIdentiques Then
-                If carteRetournee = 4 Then
-                    ' Bloque les cartes trouvées
-                    For Each pbTrouve As PictureBox In listeCartesFlipped
-                        pbTrouve.Enabled = False
-                        pbTrouve.Image = GriserImage(pbTrouve.Image)
-                    Next
-                    pointsJoueur += 1
-                    listeCartesFlipped.Clear()
-                End If
-            Else
-                If pbCliquee.Enabled Then
-                    ' Sinon, déclenche Timer2 pour les retourner
-                    Timer2.Start()
-                End If
-            End If
-        End If
+        ModuleJeu.VerifierCartesRetournees(listeCartesFlipped, pbCliquee, Timer2, pointsJoueur, repetitionDesCartes)
 
         If pointsJoueur = 6 Then
             Timer1.Stop()
@@ -182,20 +132,8 @@ Public Class MemoryHard
                 Message.lblMess.Text = "你赢了！你找到了所有的卡片！"
             End If
             Me.Close()
-            Message.ShowDialog()
             tempsJoueur = timeInitial - time
-            Dim messages As New Dictionary(Of String, (Text As String, Title As String)) From {
-    {"French", ($"Carrés identifiés : {pointsJoueur}{vbCrLf}Temps utilisé : {tempsJoueur} secondes", "Résultat du joueur")},
-    {"English", ($"Time's up!{vbCrLf}Correct matches: {pointsJoueur}{vbCrLf}Time used: {tempsJoueur} seconds", "Player Results")},
-    {"Chinese", ($"时间到！{vbCrLf}正确配对: {pointsJoueur}{vbCrLf}用时: {tempsJoueur} 秒", "玩家成绩")}
-}
-            Dim langue = If(FormOptions.RbtnL1.Checked, "French",
-             If(FormOptions.RbtnL2.Checked, "English",
-             If(FormOptions.RbtnL3.Checked, "Chinese", "")))
-
-            If messages.ContainsKey(langue) Then
-                MsgBox(messages(langue).Text, MsgBoxStyle.Information, messages(langue).Title)
-            End If
+            AfficherResultatGagne(pointsJoueur, tempsJoueur)
 
             Module_Enregistrement.ChangerStats(Joueur, pointsJoueur, tempsJoueur, niveau)
             player.Stop()
@@ -205,13 +143,7 @@ Public Class MemoryHard
     End Sub
 
     Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
-        Timer2.Stop()
-        ' Réactive les cartes
-        For Each pb As PictureBox In listeCartesFlipped
-            pb.Enabled = True
-            pb.Image = imageDos
-        Next
-        listeCartesFlipped.Clear()
+        ModuleJeu.ReinitialiserCartes(listeCartesFlipped, imageDos, Timer2)
     End Sub
 
 

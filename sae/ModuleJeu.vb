@@ -1,4 +1,5 @@
 ﻿Imports System.Numerics
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock
 
 Module ModuleJeu
 
@@ -93,4 +94,100 @@ Module ModuleJeu
         labelTemps.Text = minutes.ToString("0") & ":" & secondes.ToString("00")
     End Sub
 
+    Public Sub PréparerImagesEtCartes(
+    ByRef listeImages As List(Of Image),
+    ByRef listeCartes As List(Of PictureBox),
+    imageDos As Image
+)
+        Dim rand As New Random()
+        listeImages = listeImages.OrderBy(Function() rand.Next()).ToList()
+
+        For Each pb As PictureBox In listeCartes
+            pb.Image = imageDos
+        Next
+    End Sub
+
+    Public Sub AfficherMessageTpsEcoule(pointsJoueur As Integer, tempsJoueur As Integer, formOptions As FormOptions)
+        Dim messages As New Dictionary(Of String, (Title As String, Message As String)) From {
+    {"French", ("Résultat du joueur", "Temps écoulé !" & vbCrLf & "Carrés identifiés : " & pointsJoueur & vbCrLf & "Temps utilisé : " & tempsJoueur & " secondes")},
+    {"English", ("Player Results", "Time's up!" & vbCrLf & "Correct matches: " & pointsJoueur & vbCrLf & "Time used: " & tempsJoueur & " seconds")},
+    {"Chinese", ("玩家成绩", "时间到！" & vbCrLf & "正确配对: " & pointsJoueur & vbCrLf & "用时: " & tempsJoueur & " 秒")}
+}
+
+        Dim selectedLanguage As String = ""
+        If formOptions.RbtnL1.Checked Then
+            selectedLanguage = "French"
+        ElseIf formOptions.RbtnL2.Checked Then
+            selectedLanguage = "English"
+        ElseIf formOptions.RbtnL3.Checked Then
+            selectedLanguage = "Chinese"
+        End If
+
+        If messages.ContainsKey(selectedLanguage) Then
+            Dim msg = messages(selectedLanguage)
+            MsgBox(msg.Message, MsgBoxStyle.Information, msg.Title)
+        End If
+    End Sub
+    Public Sub VerifierCartesRetournees(
+    ByRef listeCartesFlipped As List(Of PictureBox),
+    pbCliquee As PictureBox,
+    timerRetour As Timer,
+    ByRef pointsJoueur As Integer,
+    nombreCartesIdentiques As Integer
+)
+        If listeCartesFlipped.Count >= 1 Then
+            Dim toutesIdentiques As Boolean = True
+            Dim carteRetournee As Integer = 0
+
+            carteRetournee = listeCartesFlipped.Count
+            For i As Integer = 1 To carteRetournee - 1
+                If Not listeCartesFlipped(i).Image.Equals(listeCartesFlipped(0).Image) Then
+                    toutesIdentiques = False
+                    Exit For
+                End If
+            Next
+            If toutesIdentiques Then
+                If carteRetournee = nombreCartesIdentiques Then
+                    ' Bloque les cartes trouvées
+                    For Each pbTrouve As PictureBox In listeCartesFlipped
+                        pbTrouve.Enabled = False
+                        pbTrouve.Image = GriserImage(pbTrouve.Image)
+                    Next
+                    pointsJoueur += 1
+                    listeCartesFlipped.Clear()
+                End If
+            Else
+                If pbCliquee.Enabled Then
+                    ' Sinon, déclenche Timer2 pour les retourner
+                    timerRetour.Start()
+                End If
+            End If
+        End If
+
+    End Sub
+
+    Public Sub AfficherResultatGagne(pointsJoueur As Integer, tempsJoueur As Integer)
+        Message.ShowDialog()
+        Dim messages As New Dictionary(Of String, (Text As String, Title As String)) From {
+{"French", ($"Carrés identifiés : {pointsJoueur}{vbCrLf}Temps utilisé : {tempsJoueur} secondes", "Résultat du joueur")},
+{"English", ($"Time's up!{vbCrLf}Correct matches: {pointsJoueur}{vbCrLf}Time used: {tempsJoueur} seconds", "Player Results")},
+{"Chinese", ($"时间到！{vbCrLf}正确配对: {pointsJoueur}{vbCrLf}用时: {tempsJoueur} 秒", "玩家成绩")}
+}
+        Dim langue = If(FormOptions.RbtnL1.Checked, "French",
+         If(FormOptions.RbtnL2.Checked, "English",
+         If(FormOptions.RbtnL3.Checked, "Chinese", "")))
+
+        If messages.ContainsKey(langue) Then
+            MsgBox(messages(langue).Text, MsgBoxStyle.Information, messages(langue).Title)
+        End If
+    End Sub
+    Public Sub ReinitialiserCartes(listeCartesFlipped As List(Of PictureBox), imageDos As Image, timer As Timer)
+        timer.Stop()
+        ' Réactive les cartes
+        For Each pb As PictureBox In listeCartesFlipped
+            pb.Enabled = True
+            pb.Image = imageDos
+        Next
+        listeCartesFlipped.Clear()
+    End Sub
 End Module
